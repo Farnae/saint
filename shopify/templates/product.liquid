@@ -17,7 +17,7 @@
       <div class="p-head">
         <div>
           <h1 class="p-name">{{ product.title }}</h1>
-          <p class="p-sub">{{ product.type | default: "Toile jacquard, motif Uroko" }}</p>
+          <p class="p-sub">{{ product.type | default: "Maille noire, motif Uroko" }}</p>
         </div>
         <button class="p-wish" type="button" aria-label="Ajouter aux favoris" onclick="this.classList.toggle('active')">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2 4.5 5.5 4c2-.3 3.8.6 5 2.2C11.7 4.6 13.5 3.7 15.5 4c3.5.5 5 4 3.5 7.7-2.5 4.7-10 9.3-10 9.3z"/></svg>
@@ -59,18 +59,18 @@
         </div>
         <div class="p-tab-panel" data-panel="specs">
           <div class="spec-tiles">
-            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">Toile<br>jacquard</span><span class="spec-tile-lbl">Mati&egrave;re</span></div>
-            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">Cuir<br>pleine fleur</span><span class="spec-tile-lbl">Visi&egrave;re</span></div>
-            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">Laiton<br>brut</span><span class="spec-tile-lbl">Boucle</span></div>
+            <div class="spec-tile"><span class="spec-tile-val">280<small style="font-size:.6em">g</small></span><span class="spec-tile-lbl">Grammage</span></div>
+            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">Confection<br>soign&eacute;e</span><span class="spec-tile-lbl">Fa&ccedil;onnage</span></div>
+            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">Laiton<br>grav&eacute;</span><span class="spec-tile-lbl">M&eacute;daillon</span></div>
           </div>
           <div class="spec-rows">
             {% for pt in product.metafields.specs %}
               <div class="spec-row"><span class="spec-key">{{ pt.key }}</span><span class="spec-val">{{ pt.value }}</span></div>
             {% else %}
-              <div class="spec-row"><span class="spec-key">Composition</span><span class="spec-val">Toile jacquard coton, visi&egrave;re cuir pleine fleur</span></div>
-              <div class="spec-row"><span class="spec-key">Entretien</span><span class="spec-val">Nettoyage &agrave; sec conseill&eacute;, chiffon doux pour le cuir</span></div>
-              <div class="spec-row"><span class="spec-key">Taille</span><span class="spec-val">Unique, r&eacute;glable (boucle laiton)</span></div>
-              <div class="spec-row"><span class="spec-key">Boucle</span><span class="spec-val">Laiton brut, r&eacute;glage sur cuir</span></div>
+              <div class="spec-row"><span class="spec-key">Composition</span><span class="spec-val">70% laine m&eacute;rinos, 30% acrylique</span></div>
+              <div class="spec-row"><span class="spec-key">Entretien</span><span class="spec-val">Lavage main, eau froide</span></div>
+              <div class="spec-row"><span class="spec-key">Taille</span><span class="spec-val">Unique, r&eacute;glable</span></div>
+              <div class="spec-row"><span class="spec-key">M&eacute;daillon</span><span class="spec-val">Laiton brut, gravure laser</span></div>
               <div class="spec-row"><span class="spec-key">Emballage</span><span class="spec-val">Bo&icirc;te carton recycl&eacute; sans plastique</span></div>
             {% endfor %}
           </div>

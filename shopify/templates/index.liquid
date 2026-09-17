@@ -1,18 +1,14 @@
 {%- comment -%}
-  Remplace 'casquette-saint-uroko' par le HANDLE r&eacute;el de ton produit
+  Remplace 'bonnet-saint-uroko' par le HANDLE r&eacute;el de ton produit
   (visible dans l'URL de la fiche produit : /products/CE-HANDLE-LA)
-  Les visuels de cette page (hero, feature, lookbook, mati&egrave;res) sont
-  fix&eacute;s sur les photos casquette-01..04.jpg dans /assets. Une fois le
-  produit cr&eacute;&eacute; dans l'admin, le prix et le lien "D&eacute;couvrir la
-  pi&egrave;ce" se mettent &agrave; jour automatiquement.
 {%- endcomment -%}
-{% assign product = all_products['casquette-saint-uroko'] %}
+{% assign product = all_products['bonnet-saint-uroko'] %}
 
 <section class="hero">
   <div class="hero-copy">
     <p class="hero-kicker fade-up">Maison parisienne. Pi&egrave;ce inaugurale.</p>
     <h1>Le motif<br><em>qui dure.</em></h1>
-    <p class="hero-sub fade-up d3">Toile jacquard motif Uroko, visi&egrave;re en cuir pleine fleur et boucle laiton. La casquette SAINT ouvre la maison, une pi&egrave;ce &agrave; la fois.</p>
+    <p class="hero-sub fade-up d3">Maille noire dense, motif Uroko ton sur ton. Le bonnet SAINT ouvre la maison, une pi&egrave;ce &agrave; la fois.</p>
     <div class="hero-actions fade-up d4">
       <a class="btn-primary" href="{{ product.url }}"><div class="btn-fill"></div><span>D&eacute;couvrir la pi&egrave;ce</span></a>
       <a href="#maison" class="btn-ghost">Notre histoire</a>
@@ -20,14 +16,14 @@
     <p class="hero-edition fade-up d5">Petite s&eacute;rie</p>
   </div>
   <div class="hero-visual">
-    <div class="hpf"><img id="hero-cap" class="cap-hero" src="{{ 'casquette-01.jpg' | asset_url }}" alt="Casquette SAINT Uroko"></div>
+    <div class="hpf"><img id="hero-cap" class="cap-hero" src="{{ product.images[2] | image_url: width: 1600 | default: product.featured_image | image_url: width: 1600 }}" alt="{{ product.title | escape }}"></div>
   </div>
 </section>
 
 <div class="strip">
   <div class="strip-inner">
-    <span>Toile jacquard</span><span>&middot;</span><span>Cuir pleine fleur</span><span>&middot;</span><span>Broderie fil plat</span><span>&middot;</span><span>Boucle laiton</span><span>&middot;</span><span>Confection soign&eacute;e</span><span>&middot;</span>
-    <span>Toile jacquard</span><span>&middot;</span><span>Cuir pleine fleur</span><span>&middot;</span><span>Broderie fil plat</span><span>&middot;</span><span>Boucle laiton</span><span>&middot;</span><span>Confection soign&eacute;e</span><span>&middot;</span>
+    <span>Laine m&eacute;rinos</span><span>&middot;</span><span>Acrylique haute t&eacute;nacit&eacute;</span><span>&middot;</span><span>Broderie fil plat</span><span>&middot;</span><span>M&eacute;daillon laiton</span><span>&middot;</span><span>Confection soign&eacute;e</span><span>&middot;</span>
+    <span>Laine m&eacute;rinos</span><span>&middot;</span><span>Acrylique haute t&eacute;nacit&eacute;</span><span>&middot;</span><span>Broderie fil plat</span><span>&middot;</span><span>M&eacute;daillon laiton</span><span>&middot;</span><span>Confection soign&eacute;e</span><span>&middot;</span>
   </div>
 </div>
 
@@ -38,26 +34,29 @@
   <div class="story-right">
     <p>SAINT est n&eacute;e d&rsquo;une intention claire&nbsp;: prendre le temps de concevoir des pi&egrave;ces qui ont du sens, affranchies de l&rsquo;acc&eacute;l&eacute;ration constante des tendances. Nous envisageons les accessoires non comme des compl&eacute;ments, mais comme des objets d&rsquo;expression &agrave; part enti&egrave;re.</p>
     <div class="srule"></div>
-    <p>Inspir&eacute;e par les lignes &eacute;pur&eacute;es du design contemporain et la rigueur de l&rsquo;esth&eacute;tique japonaise, notre approche privil&eacute;gie le relief de la mati&egrave;re, la pr&eacute;cision de la coupe et l&rsquo;exigence du d&eacute;tail. Du tissage jacquard jusqu&rsquo;&agrave; la boucle laiton, chaque &eacute;l&eacute;ment est pens&eacute; pour traverser le temps et s&rsquo;int&eacute;grer naturellement au vestiaire quotidien.</p>
+    <p>Inspir&eacute;e par les lignes &eacute;pur&eacute;es du design contemporain et la rigueur de l&rsquo;esth&eacute;tique japonaise, notre approche privil&eacute;gie le relief de la mati&egrave;re, la pr&eacute;cision de la coupe et l&rsquo;exigence du d&eacute;tail. Du galbe de la maille jusqu&rsquo;au m&eacute;daillon grav&eacute;, chaque &eacute;l&eacute;ment est pens&eacute; pour traverser le temps et s&rsquo;int&eacute;grer naturellement au vestiaire quotidien.</p>
     <div class="srule"></div>
     <p>Cr&eacute;er avec intention, construire avec patience, donner de l&rsquo;importance &agrave; ce qui dure.</p>
   </div>
 </section>
 
-{% assign cap_images = "casquette-01.jpg,casquette-02.jpg,casquette-03.jpg,casquette-04.jpg" | split: "," %}
-
+{%- comment -%}
+  Bannière lifestyle : uploade ta photo dans l'admin Shopify (Contenu > Fichiers,
+  ou directement dans le dossier Assets du thème) sous le nom EXACT
+  "saint-lifestyle-01.jpg" et elle apparaîtra ici automatiquement.
+{%- endcomment -%}
 <div class="editorial-break" id="editorial-break">
-  <img src="{{ 'casquette-02.jpg' | asset_url }}" alt="D&eacute;tail du motif Uroko SAINT" loading="lazy">
+  <img src="{{ 'saint-lifestyle-01.jpg' | asset_url }}" alt="SAINT Origine, maison parisienne" loading="lazy">
 </div>
 
 <div class="lookbook-wrap reveal" aria-label="Lookbook SAINT">
   <div class="lookbook-track">
-    {% for image in cap_images %}
-      <div class="lookbook-slide"><img src="{{ image | asset_url }}" alt="Casquette SAINT Uroko" loading="lazy"><span class="lookbook-caption">Vue {{ forloop.index }}</span></div>
+    {% for image in product.images %}
+      <div class="lookbook-slide"><img src="{{ image | image_url: width: 1200 }}" alt="{{ product.title | escape }}" loading="lazy"><span class="lookbook-caption">Vue {{ forloop.index }}</span></div>
     {% endfor %}
     {% comment %} duplicat pour boucle infinie du marquee {% endcomment %}
-    {% for image in cap_images %}
-      <div class="lookbook-slide" aria-hidden="true"><img src="{{ image | asset_url }}" alt="" loading="lazy"><span class="lookbook-caption">Vue {{ forloop.index }}</span></div>
+    {% for image in product.images %}
+      <div class="lookbook-slide" aria-hidden="true"><img src="{{ image | image_url: width: 1200 }}" alt="" loading="lazy"><span class="lookbook-caption">Vue {{ forloop.index }}</span></div>
     {% endfor %}
   </div>
 </div>
@@ -66,20 +65,20 @@
   <div class="feature-visual">
     <div class="img-reveal">
       <div class="gallery" data-lenis-prevent>
-        {% for image in cap_images %}
-          <div class="gallery-slide"><div><img src="{{ image | asset_url }}" alt="Casquette SAINT Uroko" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></div><span class="slide-label">Vue {{ forloop.index }}</span></div>
+        {% for image in product.images limit: 4 %}
+          <div class="gallery-slide"><div><img src="{{ image | image_url: width: 1000 }}" alt="{{ product.title | escape }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></div><span class="slide-label">Vue {{ forloop.index }}</span></div>
         {% endfor %}
       </div>
     </div>
     <div class="gdots">
-      {% for image in cap_images %}
+      {% for image in product.images limit: 4 %}
         <span{% if forloop.first %} class="active"{% endif %}></span>
       {% endfor %}
     </div>
   </div>
   <div class="feature-copy">
-    <h2 data-split>{{ product.title | default: "Casquette SAINT Uroko" }}</h2>
-    <p class="feature-desc">{{ product.description | strip_html | truncate: 180 | default: "Toile jacquard motif Uroko, visi&egrave;re en cuir pleine fleur, boucle de r&eacute;glage en laiton brut. Une pi&egrave;ce faite pour durer." }}</p>
+    <h2 data-split>{{ product.title }}</h2>
+    <p class="feature-desc">{{ product.description | strip_html | truncate: 180 }}</p>
     <div class="feature-meta">
       <span class="feature-price">{{ product.price | money }}</span>
       <span class="fsep"></span>
@@ -107,7 +106,7 @@
     <div class="uroko-copy reveal reveal-delay-1">
       <p class="slabel">Le motif</p>
       <h2 data-split>Uroko, l&rsquo;&eacute;caille qui prot&egrave;ge</h2>
-      <p>Dans le textile japonais traditionnel, le motif Uroko habillait armures et kimonos comme un symbole de protection et de renouveau. SAINT le retranscrit en jacquard tiss&eacute;, ton sur ton, sur la toile de la casquette, pour qu&rsquo;il ne se r&eacute;v&egrave;le qu&rsquo;au regard qui s&rsquo;attarde.</p>
+      <p>Dans le textile japonais traditionnel, le motif Uroko habillait armures et kimonos comme un symbole de protection et de renouveau. SAINT le retranscrit &agrave; m&ecirc;me la maille, ton sur ton, pour qu&rsquo;il ne se r&eacute;v&egrave;le qu&rsquo;au regard qui s&rsquo;attarde.</p>
       <p>Ce motif puise aussi dans le seigaiha, la vague japonaise ancestrale symbole de calme et de bonne fortune, et dans la forme de l&rsquo;&eacute;ventail SAINT, que l&rsquo;on retrouve grav&eacute; sur chaque m&eacute;daillon.</p>
     </div>
   </div>
@@ -115,12 +114,12 @@
 
 <section class="turntable-sect">
   <div class="turntable-intro wrap reveal">
-    <p class="slabel">Le d&eacute;tail</p>
-    <h2 data-split>La signature<br>SAINT</h2>
-    <p>La boucle en laiton brut, r&eacute;glable sur cuir pleine fleur, signe chaque casquette UROKO.</p>
+    <p class="slabel">&Agrave; 360&deg;</p>
+    <h2 data-split>La pi&egrave;ce<br>en mouvement</h2>
+    <p>Une rotation compl&egrave;te du bonnet UROKO, film&eacute;e &agrave; 360&deg;.</p>
   </div>
   <div class="turntable-wrap">
-    <img class="turntable-media" src="{{ 'casquette-03.jpg' | asset_url }}" alt="D&eacute;tail boucle laiton SAINT" loading="lazy">
+    <video class="turntable-video" src="{{ 'uroko-360.mp4' | asset_url }}" poster="{{ 'beanie-001.jpg' | asset_url }}" autoplay loop muted playsinline preload="metadata"></video>
     <div class="turntable-caption">SAINT &mdash; &Eacute;dition Uroko</div>
   </div>
 </section>
@@ -140,31 +139,31 @@
     <div class="mat-stack reveal reveal-delay-1">
       <div class="mat-card">
         <div class="mat-card-inner">
-          <div class="mat-card-visual"><img src="{{ 'casquette-01.jpg' | asset_url }}" alt="Toile jacquard motif Uroko" loading="lazy"></div>
+          <div class="mat-card-visual"><img src="{{ 'uroko-face.png' | asset_url }}" alt="Laine m&eacute;rinos" loading="lazy"></div>
           <div class="mat-card-copy">
             <span class="mat-tile-num">01</span>
-            <h4>Toile jacquard Uroko</h4>
-            <p>Tiss&eacute;e ton sur ton, la toile principale de la casquette UROKO r&eacute;v&egrave;le le motif &eacute;caille au regard qui s&rsquo;attarde.</p>
+            <h4>Laine m&eacute;rinos 18 microns</h4>
+            <p>L&eacute;g&egrave;re, thermor&eacute;gulatrice, s&eacute;lectionn&eacute;e pour sa tenue dans le temps. Fibre principale du bonnet UROKO.</p>
           </div>
         </div>
       </div>
       <div class="mat-card">
         <div class="mat-card-inner">
-          <div class="mat-card-visual"><img src="{{ 'casquette-04.jpg' | asset_url }}" alt="Cuir pleine fleur" loading="lazy"></div>
+          <div class="mat-card-visual"><img src="{{ 'uroko-porte.png' | asset_url }}" alt="Acrylique haute t&eacute;nacit&eacute;" loading="lazy"></div>
           <div class="mat-card-copy">
             <span class="mat-tile-num">02</span>
-            <h4>Cuir pleine fleur</h4>
-            <p>Visi&egrave;re et sangle en cuir pleine fleur, choisi pour sa souplesse et sa patine naturelle avec l&rsquo;usage.</p>
+            <h4>Acrylique haute t&eacute;nacit&eacute;</h4>
+            <p>Renforce la maille sans l&rsquo;alourdir. Garantit la forme apr&egrave;s des dizaines de lavages.</p>
           </div>
         </div>
       </div>
       <div class="mat-card">
         <div class="mat-card-inner">
-          <div class="mat-card-visual"><img src="{{ 'casquette-03.jpg' | asset_url }}" alt="Boucle laiton brut" loading="lazy"></div>
+          <div class="mat-card-visual"><img src="{{ 'uroko-detail.png' | asset_url }}" alt="Laiton brut grav&eacute;" loading="lazy"></div>
           <div class="mat-card-copy">
             <span class="mat-tile-num">03</span>
-            <h4>Boucle laiton brut</h4>
-            <p>Boucle de r&eacute;glage sign&eacute;e SAINT, en laiton brut. Patine naturellement avec l&rsquo;usage.</p>
+            <h4>Laiton brut grav&eacute;</h4>
+            <p>M&eacute;daillon sign&eacute; SAINT, press&eacute; et grav&eacute; au laser. Patine naturellement avec l&rsquo;usage.</p>
           </div>
         </div>
       </div>

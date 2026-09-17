@@ -9,7 +9,7 @@
 <link rel="canonical" href="{{ canonical_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 {{ 'saint.css' | asset_url | stylesheet_tag }}
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -21,11 +21,16 @@
 
 <div class="scroll-progress" aria-hidden="true"></div>
 {% if template.name == 'index' %}
-<div id="curtain"><span class="cw">SAINT</span><span class="cw-sub">Origine</span><div class="cline"></div></div>
+<div id="curtain"><span class="cw">SAINT</span><span class="cw-sub">origine</span><div class="cline"></div></div>
 {% endif %}
 
 <header id="hdr">
-  <a href="{{ routes.root_url }}" class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">Origine</span></a>
+  <div class="logo-group">
+    <a href="{{ routes.root_url }}" class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">origine</span></a>
+    <a href="https://instagram.com/saint.origine" target="_blank" rel="noopener" class="ig-link" aria-label="SAINT Origine sur Instagram">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+    </a>
+  </div>
   <div class="navmenu">
     <nav><ul>
       <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}>Accueil</a></li>
@@ -59,7 +64,12 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <span class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">Origine</span></span>
+        <div class="logo-group">
+          <span class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">origine</span></span>
+          <a href="https://instagram.com/saint.origine" target="_blank" rel="noopener" class="ig-link" aria-label="SAINT Origine sur Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+        </div>
         <p>Maison parisienne d'accessoires, fa&ccedil;onn&eacute;s en petites s&eacute;ries &agrave; partir de mati&egrave;res s&eacute;lectionn&eacute;es avec exigence.</p>
       </div>
       <div class="foot-col">
