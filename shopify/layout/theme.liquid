@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+{% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+{{ 'saint.css' | asset_url | stylesheet_tag }}
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+{{ content_for_header }}
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+<div id="cur-ring" aria-hidden="true"><span class="cur-label">Inspect</span></div>
+{% if template.name == 'index' %}
+<div id="curtain"><span class="cw">SAINT</span><span class="cw-sub">Origine</span><div class="cline"></div></div>
+{% endif %}
+
+<header id="hdr">
+  <a href="{{ routes.root_url }}" class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">Origine</span></a>
+  <div class="navmenu">
+    <nav><ul>
+      <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}>Accueil</a></li>
+      <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}>Collection</a></li>
+      <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}>FAQ</a></li>
+      <li><a href="{{ routes.root_url }}#contact">Contact</a></li>
+    </ul></nav>
+    <a class="bag" href="{{ routes.cart_url }}">Panier <span id="cart-count">{{ cart.item_count }}</span></a>
+  </div>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav><ul>
+    <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}><span>Accueil</span></a></li>
+    <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}><span>Collection</span></a></li>
+    <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}><span>FAQ</span></a></li>
+    <li><a href="{{ routes.root_url }}#contact"><span>Contact</span></a></li>
+    <li><a href="{{ routes.cart_url }}"><span>Panier ({{ cart.item_count }})</span></a></li>
+  </ul></nav>
+  <p class="mobile-nav-foot">Maison parisienne. &Eacute;dition N&deg;001.</p>
+</div>
+
+<main id="site-main">
+  {{ content_for_layout }}
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">Origine</span></span>
+        <p>Maison parisienne d'accessoires, fa&ccedil;onn&eacute;s en petites s&eacute;ries &agrave; partir de mati&egrave;res s&eacute;lectionn&eacute;es avec exigence.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Boutique</h5>
+        <ul>
+          <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}">Collection</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Maison</h5>
+        <ul>
+          <li><a href="{{ routes.root_url }}#maison">Notre histoire</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} SAINT. Tous droits r&eacute;serv&eacute;s.</span>
+      <span>Paris, France</span>
+    </div>
+  </div>
+</footer>
+
+{{ 'saint.js' | asset_url | script_tag }}
+</body>
+</html>

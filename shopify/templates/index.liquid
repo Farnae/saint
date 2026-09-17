@@ -1,0 +1,197 @@
+{%- comment -%}
+  Remplace 'bonnet-saint-uroko' par le HANDLE r&eacute;el de ton produit
+  (visible dans l'URL de la fiche produit : /products/CE-HANDLE-LA)
+{%- endcomment -%}
+{% assign product = all_products['bonnet-saint-uroko'] %}
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="hero-kicker fade-up">Maison parisienne. Pi&egrave;ce inaugurale.</p>
+    <h1>Le motif<br><em>qui dure.</em></h1>
+    <p class="hero-sub fade-up d3">Maille noire dense, motif Uroko ton sur ton. Le bonnet SAINT ouvre la maison, une pi&egrave;ce &agrave; la fois.</p>
+    <div class="hero-actions fade-up d4">
+      <a class="btn-primary" href="{{ product.url }}"><div class="btn-fill"></div><span>D&eacute;couvrir la pi&egrave;ce</span></a>
+      <a href="#maison" class="btn-ghost">Notre histoire</a>
+    </div>
+    <p class="hero-edition fade-up d5">Petite s&eacute;rie</p>
+  </div>
+  <div class="hero-visual specular" data-cursor="inspect">
+    <div class="hpf"><img id="hero-cap" class="cap-hero" src="{{ product.images[2] | image_url: width: 1600 | default: product.featured_image | image_url: width: 1600 }}" alt="{{ product.title | escape }}"></div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <span>Laine m&eacute;rinos</span><span>&middot;</span><span>Acrylique haute t&eacute;nacit&eacute;</span><span>&middot;</span><span>Broderie fil plat</span><span>&middot;</span><span>M&eacute;daillon laiton</span><span>&middot;</span><span>Confection soign&eacute;e</span><span>&middot;</span>
+    <span>Laine m&eacute;rinos</span><span>&middot;</span><span>Acrylique haute t&eacute;nacit&eacute;</span><span>&middot;</span><span>Broderie fil plat</span><span>&middot;</span><span>M&eacute;daillon laiton</span><span>&middot;</span><span>Confection soign&eacute;e</span><span>&middot;</span>
+  </div>
+</div>
+
+<section class="story wrap reveal" id="maison">
+  <div>
+    <h2 data-split>L&rsquo;Histoire<br>de SAINT</h2>
+  </div>
+  <div class="story-right">
+    <p>SAINT est n&eacute;e d&rsquo;une intention claire&nbsp;: prendre le temps de concevoir des pi&egrave;ces qui ont du sens, affranchies de l&rsquo;acc&eacute;l&eacute;ration constante des tendances. Nous envisageons les accessoires non comme des compl&eacute;ments, mais comme des objets d&rsquo;expression &agrave; part enti&egrave;re.</p>
+    <div class="srule"></div>
+    <p>Inspir&eacute;e par les lignes &eacute;pur&eacute;es du design contemporain et la rigueur de l&rsquo;esth&eacute;tique japonaise, notre approche privil&eacute;gie le relief de la mati&egrave;re, la pr&eacute;cision de la coupe et l&rsquo;exigence du d&eacute;tail. Du galbe de la maille jusqu&rsquo;au m&eacute;daillon grav&eacute;, chaque &eacute;l&eacute;ment est pens&eacute; pour traverser le temps et s&rsquo;int&eacute;grer naturellement au vestiaire quotidien.</p>
+    <div class="srule"></div>
+    <p>Cr&eacute;er avec intention, construire avec patience, donner de l&rsquo;importance &agrave; ce qui dure.</p>
+  </div>
+</section>
+
+<div class="editorial-break" id="editorial-break">
+  <img src="{{ product.images[3] | image_url: width: 1800 | default: product.featured_image | image_url: width: 1800 }}" alt="D&eacute;tail du motif Uroko SAINT" loading="lazy">
+</div>
+
+<div class="lookbook-wrap reveal" aria-label="Lookbook SAINT">
+  <div class="lookbook-track">
+    {% for image in product.images %}
+      <div class="lookbook-slide"><img src="{{ image | image_url: width: 1200 }}" alt="{{ product.title | escape }}" loading="lazy"><span class="lookbook-caption">Vue {{ forloop.index }}</span></div>
+    {% endfor %}
+    {% comment %} duplicat pour boucle infinie du marquee {% endcomment %}
+    {% for image in product.images %}
+      <div class="lookbook-slide" aria-hidden="true"><img src="{{ image | image_url: width: 1200 }}" alt="" loading="lazy"><span class="lookbook-caption">Vue {{ forloop.index }}</span></div>
+    {% endfor %}
+  </div>
+</div>
+
+<section class="feature wrap reveal">
+  <div class="feature-visual specular" data-cursor="inspect">
+    <div class="img-reveal">
+      <div class="gallery" data-lenis-prevent>
+        {% for image in product.images limit: 4 %}
+          <div class="gallery-slide"><div><img src="{{ image | image_url: width: 1000 }}" alt="{{ product.title | escape }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></div><span class="slide-label">Vue {{ forloop.index }}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="gdots">
+      {% for image in product.images limit: 4 %}
+        <span{% if forloop.first %} class="active"{% endif %}></span>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="feature-copy">
+    <h2 data-split>{{ product.title }}</h2>
+    <p class="feature-desc">{{ product.description | strip_html | truncate: 180 }}</p>
+    <div class="feature-meta">
+      <span class="feature-price">{{ product.price | money }}</span>
+      <span class="fsep"></span>
+      <span class="fmeta-txt">Petite s&eacute;rie</span>
+    </div>
+    <div class="float-badge">{% if product.available %}Pr&eacute;commande exclusive{% else %}Rupture de stock{% endif %}</div>
+    <a class="btn-primary" href="{{ product.url }}"><div class="btn-fill"></div><span>D&eacute;couvrir la pi&egrave;ce</span></a>
+  </div>
+</section>
+
+<section class="uroko-sect" style="--uroko-texture:url('{{ 'uroko-detail.png' | asset_url }}');">
+  <div class="wrap uroko-grid">
+    <div class="uroko-motif reveal">
+      <svg viewBox="0 0 200 200" fill="none" overflow="visible" xmlns="http://www.w3.org/2000/svg">
+        <path stroke="#064829" stroke-width="1.2" d="
+          M0,0 A20,22 0 0,1 40,0 M40,0 A20,22 0 0,1 80,0 M80,0 A20,22 0 0,1 120,0 M120,0 A20,22 0 0,1 160,0 M160,0 A20,22 0 0,1 200,0
+          M-20,30 A20,22 0 0,1 20,30 M20,30 A20,22 0 0,1 60,30 M60,30 A20,22 0 0,1 100,30 M100,30 A20,22 0 0,1 140,30 M140,30 A20,22 0 0,1 180,30 M180,30 A20,22 0 0,1 220,30
+          M0,60 A20,22 0 0,1 40,60 M40,60 A20,22 0 0,1 80,60 M80,60 A20,22 0 0,1 120,60 M120,60 A20,22 0 0,1 160,60 M160,60 A20,22 0 0,1 200,60
+          M-20,90 A20,22 0 0,1 20,90 M20,90 A20,22 0 0,1 60,90 M60,90 A20,22 0 0,1 100,90 M100,90 A20,22 0 0,1 140,90 M140,90 A20,22 0 0,1 180,90 M180,90 A20,22 0 0,1 220,90
+          M0,120 A20,22 0 0,1 40,120 M40,120 A20,22 0 0,1 80,120 M80,120 A20,22 0 0,1 120,120 M120,120 A20,22 0 0,1 160,120 M160,120 A20,22 0 0,1 200,120
+          M-20,150 A20,22 0 0,1 20,150 M20,150 A20,22 0 0,1 60,150 M60,150 A20,22 0 0,1 100,150 M100,150 A20,22 0 0,1 140,150 M140,150 A20,22 0 0,1 180,150 M180,150 A20,22 0 0,1 220,150
+          M0,180 A20,22 0 0,1 40,180 M40,180 A20,22 0 0,1 80,180 M80,180 A20,22 0 0,1 120,180 M120,180 A20,22 0 0,1 160,180 M160,180 A20,22 0 0,1 200,180
+        "/>
+      </svg>
+    </div>
+    <div class="uroko-copy reveal reveal-delay-1">
+      <p class="slabel">Le motif</p>
+      <h2 data-split>Uroko, l&rsquo;&eacute;caille qui prot&egrave;ge</h2>
+      <p>Dans le textile japonais traditionnel, le motif Uroko habillait armures et kimonos comme un symbole de protection et de renouveau. SAINT le retranscrit &agrave; m&ecirc;me la maille, ton sur ton, pour qu&rsquo;il ne se r&eacute;v&egrave;le qu&rsquo;au regard qui s&rsquo;attarde.</p>
+      <p>Ce motif puise aussi dans le seigaiha, la vague japonaise ancestrale symbole de calme et de bonne fortune, et dans la forme de l&rsquo;&eacute;ventail SAINT, que l&rsquo;on retrouve grav&eacute; sur chaque m&eacute;daillon.</p>
+    </div>
+  </div>
+</section>
+
+<section class="turntable-sect">
+  <div class="turntable-intro wrap reveal">
+    <p class="slabel">&Agrave; 360&deg;</p>
+    <h2 data-split>Faites tourner<br>la pi&egrave;ce</h2>
+    <p>Une rotation compl&egrave;te du bonnet UROKO, image par image. D&eacute;filez pour tourner autour de la pi&egrave;ce.</p>
+  </div>
+  <div class="turntable-wrap" id="turntable-wrap">
+    <div class="turntable-stage">
+      <canvas id="turntable-canvas" width="1280" height="720"></canvas>
+      <div class="turntable-caption">D&eacute;filez pour tourner</div>
+      <div class="turntable-progress"><div class="turntable-progress-bar" id="turntable-progress-bar"></div></div>
+    </div>
+  </div>
+  <script>
+    window.SAINT_TURNTABLE_FRAMES = [
+      {%- for i in (1..120) -%}
+        {%- assign n = i | prepend: '00000' -%}
+        {%- assign n = n | slice: -3, 3 -%}
+        "{{ 'beanie-' | append: n | append: '.jpg' | asset_url }}"{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ];
+  </script>
+</section>
+
+<section class="manifesto">
+  <div class="manifesto-line reveal"><h3>Cr&eacute;er avec intention.</h3></div>
+  <div class="manifesto-line reveal"><h3>Construire avec patience.</h3></div>
+  <div class="manifesto-line reveal"><h3>Donner de l&rsquo;importance &agrave; ce qui dure.</h3></div>
+</section>
+
+<section class="matiere" id="matieres">
+  <div class="wrap">
+    <div class="mat-head reveal">
+      <h2 data-split>Trois mati&egrave;res,<br>aucune concession</h2>
+      <p class="mat-intro">Un nombre volontairement restreint de fibres, s&eacute;lectionn&eacute;es pour leur tenue dans le temps et non pour leur co&ucirc;t.</p>
+    </div>
+    <div class="mat-stack reveal reveal-delay-1">
+      <div class="mat-card">
+        <div class="mat-card-inner">
+          <div class="mat-card-visual"><img src="{{ 'uroko-face.png' | asset_url }}" alt="Laine m&eacute;rinos" loading="lazy"></div>
+          <div class="mat-card-copy">
+            <span class="mat-tile-num">01</span>
+            <h4>Laine m&eacute;rinos 18 microns</h4>
+            <p>L&eacute;g&egrave;re, thermor&eacute;gulatrice, s&eacute;lectionn&eacute;e pour sa tenue dans le temps. Fibre principale du bonnet UROKO.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-card-inner">
+          <div class="mat-card-visual"><img src="{{ 'uroko-porte.png' | asset_url }}" alt="Acrylique haute t&eacute;nacit&eacute;" loading="lazy"></div>
+          <div class="mat-card-copy">
+            <span class="mat-tile-num">02</span>
+            <h4>Acrylique haute t&eacute;nacit&eacute;</h4>
+            <p>Renforce la maille sans l&rsquo;alourdir. Garantit la forme apr&egrave;s des dizaines de lavages.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-card-inner">
+          <div class="mat-card-visual"><img src="{{ 'uroko-detail.png' | asset_url }}" alt="Laiton brut grav&eacute;" loading="lazy"></div>
+          <div class="mat-card-copy">
+            <span class="mat-tile-num">03</span>
+            <h4>Laiton brut grav&eacute;</h4>
+            <p>M&eacute;daillon sign&eacute; SAINT, press&eacute; et grav&eacute; au laser. Patine naturellement avec l&rsquo;usage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta reveal">
+  <div class="wrap cta-grid">
+    <h2 data-split>Avant chaque sortie,<br><em>soyez le premier<br>inform&eacute;.</em></h2>
+    <div class="cta-right">
+      <p class="cta-sub">Chaque s&eacute;rie est pens&eacute;e comme une &eacute;dition &agrave; part, fa&ccedil;onn&eacute;e avec le temps qu&rsquo;il faut.</p>
+      {% form 'customer' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="cta-form">
+          <input type="email" name="contact[email]" placeholder="Votre adresse email" required>
+          <button type="submit">S'inscrire</button>
+        </div>
+      {% endform %}
+      <p class="cta-note">Sans spam. D&eacute;sabonnement en un clic.</p>
+    </div>
+  </div>
+</section>

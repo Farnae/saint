@@ -1,0 +1,35 @@
+<div class="wrap subhead"><p class="eyebrow">Panier</p><h1>Votre s&eacute;lection</h1></div>
+<div class="wrap" style="padding-bottom:180px;">
+  {% if cart.item_count == 0 %}
+    <div class="empty-cart">Votre panier est vide.<br><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}">Voir la collection</a></div>
+  {% else %}
+    {% form 'cart', cart %}
+      <div class="panier-list">
+        {% for item in cart.items %}
+          <div class="panier-row">
+            <div class="p-thumb"><img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}"></div>
+            <div>
+              <h4>{{ item.product.title }}</h4>
+              <p class="ptsubsub">{{ item.variant.title | unless: 'Default Title' }}</p>
+              <a href="{{ item.url_to_remove }}" class="p-remove">Retirer</a>
+            </div>
+            <div class="stepper cart-line-stepper" data-line-key="{{ item.key }}">
+              <button type="button" data-step="down">&minus;</button>
+              <span class="cart-qty-val">{{ item.quantity }}</span>
+              <button type="button" data-step="up">+</button>
+            </div>
+            <div style="font-family:'EB Garamond',serif;">{{ item.final_line_price | money }}</div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="panier-summary">
+        <div class="panier-summary-box">
+          <div class="sum-row"><span>Sous-total</span><span>{{ cart.total_price | money }}</span></div>
+          <div class="sum-row"><span>Livraison</span><span>Offerte</span></div>
+          <div class="sum-row total"><span>Total</span><span>{{ cart.total_price | money }}</span></div>
+          <button type="submit" name="checkout" class="btn-add-cart" style="width:100%;margin-top:24px;text-align:center;"><span>Passer commande</span></button>
+        </div>
+      </div>
+    {% endform %}
+  {% endif %}
+</div>

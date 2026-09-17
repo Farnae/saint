@@ -1,0 +1,25 @@
+<div class="wrap subhead">
+  <p class="eyebrow">Collection</p>
+  <h1>Toutes les silhouettes</h1>
+</div>
+<section class="collection wrap">
+  <div class="coll-head">
+    <h2>{{ collection.title }}</h2>
+    <p>Peu de pi&egrave;ces sont fa&ccedil;onn&eacute;es &agrave; chaque saison.</p>
+  </div>
+  <div class="grid">
+    {% for product in collection.products %}
+      <a class="card" href="{{ product.url }}">
+        <div class="card-visual specular" data-cursor="inspect">
+          <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
+        </div>
+        <h3>{{ product.title }}</h3>
+        <p class="card-sub">{{ product.type }}</p>
+        <div class="card-price-row">
+          <span class="card-price-val">{{ product.price | money }}</span>
+          <button class="add" type="button" data-quick-add="{{ product.selected_or_first_available_variant.id }}" onclick="event.preventDefault();">+</button>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
