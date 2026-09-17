@@ -14,11 +14,6 @@ if(!prefRedGlobal && window.Lenis){
   }
 }
 
-/* ===== 360deg VIDEO (respects reduced-motion) ===== */
-document.querySelectorAll('.turntable-video').forEach(video=>{
-  if(prefRedGlobal){ video.removeAttribute('autoplay'); video.pause(); }
-});
-
 /* ===== MOBILE NAV ===== */
 const burger=document.getElementById('burger');
 const mobileNav=document.getElementById('mobile-nav');
