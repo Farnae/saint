@@ -15,7 +15,7 @@
     </div>
     <p class="hero-edition fade-up d5">Petite s&eacute;rie</p>
   </div>
-  <div class="hero-visual specular" data-cursor="inspect">
+  <div class="hero-visual">
     <div class="hpf"><img id="hero-cap" class="cap-hero" src="{{ product.images[2] | image_url: width: 1600 | default: product.featured_image | image_url: width: 1600 }}" alt="{{ product.title | escape }}"></div>
   </div>
 </section>
@@ -57,7 +57,7 @@
 </div>
 
 <section class="feature wrap reveal">
-  <div class="feature-visual specular" data-cursor="inspect">
+  <div class="feature-visual">
     <div class="img-reveal">
       <div class="gallery" data-lenis-prevent>
         {% for image in product.images limit: 4 %}
@@ -116,7 +116,7 @@
   </div>
   <div class="turntable-wrap" id="turntable-wrap">
     <div class="turntable-stage">
-      <canvas id="turntable-canvas" width="1280" height="720"></canvas>
+      <canvas id="turntable-canvas" width="1920" height="1080"></canvas>
       <div class="turntable-caption">D&eacute;filez pour tourner</div>
       <div class="turntable-progress"><div class="turntable-progress-bar" id="turntable-progress-bar"></div></div>
     </div>

@@ -10,7 +10,7 @@
   <div class="grid">
     {% for product in collection.products %}
       <a class="card" href="{{ product.url }}">
-        <div class="card-visual specular" data-cursor="inspect">
+        <div class="card-visual">
           <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
         </div>
         <h3>{{ product.title }}</h3>

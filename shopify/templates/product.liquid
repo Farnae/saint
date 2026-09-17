@@ -1,7 +1,7 @@
 <div class="wrap" style="padding-top:160px;">
   <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" class="back-link">&larr; Collection</a>
   <div class="produit-layout">
-    <div class="produit-visual specular" data-cursor="inspect">
+    <div class="produit-visual">
       <div class="gallery produit-gallery" data-lenis-prevent>
         {% for image in product.images %}
           <div class="gallery-slide"><div><img src="{{ image | image_url: width: 1200 }}" alt="{{ product.title | escape }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;"></div><span class="slide-label">Vue {{ forloop.index }}</span></div>
@@ -79,7 +79,7 @@
           <p>Pr&eacute;commande exclusive. Exp&eacute;dition sous 4 &agrave; 6 semaines, le temps d&rsquo;un fa&ccedil;onnage soign&eacute; et sans compromis.<br>Retours gratuits sous 30 jours.</p>
         </div>
         <div class="p-tab-panel" data-panel="contact">
-          <p>Une question sur cette pi&egrave;ce&nbsp;? &Eacute;crivez-nous &agrave; <a href="mailto:{{ shop.email }}" style="color:var(--green);border-bottom:1px solid var(--line-m);">{{ shop.email }}</a>.</p>
+          <p>Une question sur cette pi&egrave;ce&nbsp;? &Eacute;crivez-nous &agrave; <a href="mailto:saintorigin26@gmail.com" style="color:var(--green);border-bottom:1px solid var(--line-m);">saintorigin26@gmail.com</a>.</p>
         </div>
       </div>
     </div>
