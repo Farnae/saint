@@ -4,6 +4,7 @@ const prefRedGlobal=window.matchMedia('(prefers-reduced-motion:reduce)').matches
 if('scrollRestoration' in history){ history.scrollRestoration='manual'; }
 window.scrollTo(0,0);
 window.addEventListener('load',()=>window.scrollTo(0,0));
+window.addEventListener('pageshow',()=>window.scrollTo(0,0));
 
 if(window.gsap && window.ScrollTrigger){
   gsap.registerPlugin(ScrollTrigger);
