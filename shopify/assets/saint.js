@@ -14,47 +14,10 @@ if(!prefRedGlobal && window.Lenis){
   }
 }
 
-/* ===== 360deg TURNTABLE (scroll-scrubbed image sequence, real product frames) ===== */
-(function initTurntable(){
-  const canvas=document.getElementById('turntable-canvas');
-  const urls=window.SAINT_TURNTABLE_FRAMES;
-  if(!canvas || !urls || !urls.length) return;
-  const ctx=canvas.getContext('2d');
-  const bar=document.getElementById('turntable-progress-bar');
-  const frameCount=urls.length;
-  let curFrame=-1;
-
-  const images=urls.map((url,i)=>{
-    const img=new Image();
-    img.src=url;
-    if(i===0) img.onload=()=>drawFrame(0);
-    return img;
-  });
-
-  function drawFrame(idx){
-    if(idx===curFrame || !images[idx] || !images[idx].complete) return;
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.drawImage(images[idx],0,0,canvas.width,canvas.height);
-    curFrame=idx;
-  }
-
-  if(prefRedGlobal || !window.gsap || !window.ScrollTrigger){
-    drawFrame(0);
-    return;
-  }
-  gsap.registerPlugin(ScrollTrigger);
-  ScrollTrigger.create({
-    trigger:'#turntable-wrap',
-    start:'top top',
-    end:'bottom bottom',
-    scrub:true,
-    onUpdate:self=>{
-      const idx=Math.min(frameCount-1,Math.floor(self.progress*frameCount));
-      drawFrame(idx);
-      if(bar) bar.style.width=(self.progress*100)+'%';
-    }
-  });
-})();
+/* ===== 360deg VIDEO (respects reduced-motion) ===== */
+document.querySelectorAll('.turntable-video').forEach(video=>{
+  if(prefRedGlobal){ video.removeAttribute('autoplay'); video.pause(); }
+});
 
 /* ===== MOBILE NAV ===== */
 const burger=document.getElementById('burger');
