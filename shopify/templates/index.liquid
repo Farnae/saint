@@ -119,7 +119,7 @@
     <p>Une rotation compl&egrave;te du bonnet UROKO, film&eacute;e &agrave; 360&deg;.</p>
   </div>
   <div class="turntable-wrap">
-    <video class="turntable-video" src="{{ 'uroko-360.mp4' | asset_url }}" poster="{{ 'beanie-001.jpg' | asset_url }}" autoplay loop muted playsinline preload="metadata"></video>
+    <video class="turntable-media" src="{{ 'uroko-360.mp4' | asset_url }}" poster="{{ 'beanie-001.jpg' | asset_url }}" autoplay loop muted playsinline preload="metadata"></video>
     <div class="turntable-caption">SAINT &mdash; &Eacute;dition Uroko</div>
   </div>
 </section>
@@ -136,37 +136,29 @@
       <h2 data-split>Trois mati&egrave;res,<br>aucune concession</h2>
       <p class="mat-intro">Un nombre volontairement restreint de fibres, s&eacute;lectionn&eacute;es pour leur tenue dans le temps et non pour leur co&ucirc;t.</p>
     </div>
-    <div class="mat-stack reveal reveal-delay-1">
-      <div class="mat-card">
-        <div class="mat-card-inner">
-          <div class="mat-card-visual"><img src="{{ 'uroko-face.png' | asset_url }}" alt="Laine m&eacute;rinos" loading="lazy"></div>
-          <div class="mat-card-copy">
-            <span class="mat-tile-num">01</span>
-            <h4>Laine m&eacute;rinos 18 microns</h4>
-            <p>L&eacute;g&egrave;re, thermor&eacute;gulatrice, s&eacute;lectionn&eacute;e pour sa tenue dans le temps. Fibre principale du bonnet UROKO.</p>
-          </div>
-        </div>
-      </div>
-      <div class="mat-card">
-        <div class="mat-card-inner">
-          <div class="mat-card-visual"><img src="{{ 'uroko-porte.png' | asset_url }}" alt="Acrylique haute t&eacute;nacit&eacute;" loading="lazy"></div>
-          <div class="mat-card-copy">
-            <span class="mat-tile-num">02</span>
-            <h4>Acrylique haute t&eacute;nacit&eacute;</h4>
-            <p>Renforce la maille sans l&rsquo;alourdir. Garantit la forme apr&egrave;s des dizaines de lavages.</p>
-          </div>
-        </div>
-      </div>
-      <div class="mat-card">
-        <div class="mat-card-inner">
-          <div class="mat-card-visual"><img src="{{ 'uroko-detail.png' | asset_url }}" alt="Laiton brut grav&eacute;" loading="lazy"></div>
-          <div class="mat-card-copy">
-            <span class="mat-tile-num">03</span>
-            <h4>Laiton brut grav&eacute;</h4>
-            <p>M&eacute;daillon sign&eacute; SAINT, press&eacute; et grav&eacute; au laser. Patine naturellement avec l&rsquo;usage.</p>
-          </div>
-        </div>
-      </div>
+  </div>
+  <div class="mat-row wrap reveal">
+    <div class="mat-visual"><img src="{{ 'uroko-face.png' | asset_url }}" alt="Laine m&eacute;rinos" loading="lazy"></div>
+    <div class="mat-copy">
+      <span class="mat-tile-num">01</span>
+      <h4>Laine m&eacute;rinos 18 microns</h4>
+      <p>L&eacute;g&egrave;re, thermor&eacute;gulatrice, s&eacute;lectionn&eacute;e pour sa tenue dans le temps. Fibre principale du bonnet UROKO.</p>
+    </div>
+  </div>
+  <div class="mat-row mat-row-rev wrap reveal">
+    <div class="mat-visual"><img src="{{ 'uroko-porte.png' | asset_url }}" alt="Acrylique haute t&eacute;nacit&eacute;" loading="lazy"></div>
+    <div class="mat-copy">
+      <span class="mat-tile-num">02</span>
+      <h4>Acrylique haute t&eacute;nacit&eacute;</h4>
+      <p>Renforce la maille sans l&rsquo;alourdir. Garantit la forme apr&egrave;s des dizaines de lavages.</p>
+    </div>
+  </div>
+  <div class="mat-row wrap reveal">
+    <div class="mat-visual"><img src="{{ 'uroko-detail.png' | asset_url }}" alt="Laiton brut grav&eacute;" loading="lazy"></div>
+    <div class="mat-copy">
+      <span class="mat-tile-num">03</span>
+      <h4>Laiton brut grav&eacute;</h4>
+      <p>M&eacute;daillon sign&eacute; SAINT, press&eacute; et grav&eacute; au laser. Patine naturellement avec l&rsquo;usage.</p>
     </div>
   </div>
 </section>

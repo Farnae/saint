@@ -1,17 +1,12 @@
 const prefRedGlobal=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-/* ===== LENIS SMOOTH SCROLL ===== */
-let lenis=null;
-if(!prefRedGlobal && window.Lenis){
-  lenis=new Lenis({duration:1.2,easing:t=>1-Math.pow(1-t,3),prevent:node=>node.closest && node.closest('[data-lenis-prevent]')});
-  lenis.on('scroll',()=>{ if(window.ScrollTrigger) ScrollTrigger.update(); });
-  function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
-  requestAnimationFrame(raf);
-  if(window.gsap && window.ScrollTrigger){
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.ticker.add(time=>{lenis.raf(time*1000);});
-    gsap.ticker.lagSmoothing(0);
-  }
+/* ===== ALWAYS START AT THE TOP (no scroll position kept on refresh) ===== */
+if('scrollRestoration' in history){ history.scrollRestoration='manual'; }
+window.scrollTo(0,0);
+window.addEventListener('load',()=>window.scrollTo(0,0));
+
+if(window.gsap && window.ScrollTrigger){
+  gsap.registerPlugin(ScrollTrigger);
 }
 
 /* ===== MOBILE NAV ===== */
