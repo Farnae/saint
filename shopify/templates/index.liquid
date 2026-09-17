@@ -46,13 +46,13 @@
   "saint-lifestyle-01.jpg" et elle apparaîtra ici automatiquement.
 {%- endcomment -%}
 <div class="editorial-break" id="editorial-break">
-  <img src="{{ 'saint-lifestyle-01.jpg' | asset_url }}" alt="SAINT Origine, maison parisienne" loading="lazy">
+  <img src="{{ 'saint-lifestyle-01.jpg' | asset_url }}" alt="SAINT Origine, maison parisienne" loading="eager" fetchpriority="high">
 </div>
 
 <div class="lookbook-wrap reveal" aria-label="Lookbook SAINT">
   <div class="lookbook-track">
     {% for image in product.images %}
-      <div class="lookbook-slide"><img src="{{ image | image_url: width: 1200 }}" alt="{{ product.title | escape }}" loading="lazy"><span class="lookbook-caption">Vue {{ forloop.index }}</span></div>
+      <div class="lookbook-slide"><img src="{{ image | image_url: width: 1200 }}" alt="{{ product.title | escape }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" {% if forloop.first %}fetchpriority="high"{% endif %}><span class="lookbook-caption">Vue {{ forloop.index }}</span></div>
     {% endfor %}
     {% comment %} duplicat pour boucle infinie du marquee {% endcomment %}
     {% for image in product.images %}
@@ -116,11 +116,11 @@
   <div class="turntable-intro wrap reveal">
     <p class="slabel">&Agrave; 360&deg;</p>
     <h2 data-split>La pi&egrave;ce<br>en mouvement</h2>
-    <p>Une rotation compl&egrave;te du bonnet UROKO, film&eacute;e &agrave; 360&deg;.</p>
+    <p>Une rotation compl&egrave;te du bonnet &Eacute;ventail, film&eacute;e &agrave; 360&deg;.</p>
   </div>
   <div class="turntable-wrap">
     <video class="turntable-media" src="{{ 'uroko-360.mp4' | asset_url }}" poster="{{ 'beanie-001.jpg' | asset_url }}" autoplay loop muted playsinline preload="metadata"></video>
-    <div class="turntable-caption">SAINT &mdash; &Eacute;dition Uroko</div>
+    <div class="turntable-caption">SAINT &mdash; &Eacute;dition &Eacute;ventail</div>
   </div>
 </section>
 
@@ -142,7 +142,7 @@
     <div class="mat-copy">
       <span class="mat-tile-num">01</span>
       <h4>Laine m&eacute;rinos 18 microns</h4>
-      <p>L&eacute;g&egrave;re, thermor&eacute;gulatrice, s&eacute;lectionn&eacute;e pour sa tenue dans le temps. Fibre principale du bonnet UROKO.</p>
+      <p>L&eacute;g&egrave;re, thermor&eacute;gulatrice, s&eacute;lectionn&eacute;e pour sa tenue dans le temps. Fibre principale du bonnet &Eacute;ventail.</p>
     </div>
   </div>
   <div class="mat-row mat-row-rev wrap reveal">
