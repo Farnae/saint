@@ -1,8 +1,11 @@
 {%- comment -%}
-  Remplace 'bonnet-saint-uroko' par le HANDLE r&eacute;el de ton produit
-  (visible dans l'URL de la fiche produit : /products/CE-HANDLE-LA)
+  IMPORTANT : ceci doit correspondre exactement au HANDLE (URL) de ton
+  produit dans Shopify. Va dans Produits > ton bonnet > sous le titre,
+  clique sur "Modifier le lien du site web" et mets exactement
+  "saint-eventail" (ou change la valeur ci-dessous pour qu'elle
+  corresponde &agrave; ce que tu choisis).
 {%- endcomment -%}
-{% assign product = all_products['bonnet-saint-uroko'] %}
+{% assign product = all_products['saint-eventail'] %}
 
 <section class="hero">
   <div class="hero-copy">
@@ -169,11 +172,17 @@
     <div class="cta-right">
       <p class="cta-sub">Chaque s&eacute;rie est pens&eacute;e comme une &eacute;dition &agrave; part, fa&ccedil;onn&eacute;e avec le temps qu&rsquo;il faut.</p>
       {% form 'customer' %}
-        <input type="hidden" name="contact[tags]" value="newsletter">
-        <div class="cta-form">
-          <input type="email" name="contact[email]" placeholder="Votre adresse email" required>
-          <button type="submit">S'inscrire</button>
-        </div>
+        {% if form.posted_successfully? %}
+          <p class="cta-success">Merci, vous &ecirc;tes bien inscrit&middot;e&nbsp;!</p>
+        {% elsif form.errors %}
+          <p class="cta-error">{{ form.errors.messages['form'] | default: "Une erreur est survenue, r&eacute;essayez." }}</p>
+        {% else %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="cta-form">
+            <input type="email" name="contact[email]" placeholder="Votre adresse email" required>
+            <button type="submit">S'inscrire</button>
+          </div>
+        {% endif %}
       {% endform %}
       <p class="cta-note">Sans spam. D&eacute;sabonnement en un clic.</p>
     </div>

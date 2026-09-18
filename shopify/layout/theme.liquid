@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#064829">
+<link rel="icon" type="image/svg+xml" href="{{ 'favicon.svg' | asset_url }}">
 <title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
 {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
 <link rel="canonical" href="{{ canonical_url }}">
@@ -32,6 +33,13 @@
       <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}>FAQ</a></li>
       <li><a href="{{ routes.root_url }}#contact">Contact</a></li>
     </ul></nav>
+    {% if shop.customer_accounts_enabled %}
+      {% if customer %}
+        <a class="account-link" href="{{ routes.account_url }}">Mon compte</a>
+      {% else %}
+        <a class="account-link" href="{{ routes.account_login_url }}">Connexion</a>
+      {% endif %}
+    {% endif %}
     <a class="bag" href="{{ routes.cart_url }}">Panier <span id="cart-count">{{ cart.item_count }}</span></a>
   </div>
   <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -46,6 +54,13 @@
     <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}><span>FAQ</span></a></li>
     <li><a href="{{ routes.root_url }}#contact"><span>Contact</span></a></li>
     <li><a href="{{ routes.cart_url }}"><span>Panier ({{ cart.item_count }})</span></a></li>
+    {% if shop.customer_accounts_enabled %}
+      {% if customer %}
+        <li><a href="{{ routes.account_url }}"><span>Mon compte</span></a></li>
+      {% else %}
+        <li><a href="{{ routes.account_login_url }}"><span>Connexion</span></a></li>
+      {% endif %}
+    {% endif %}
   </ul></nav>
   <p class="mobile-nav-foot">Maison parisienne. &Eacute;dition N&deg;001.</p>
 </div>
