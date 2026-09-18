@@ -1,0 +1,189 @@
+{
+  "general": {
+    "nav": {
+      "home": "Accueil",
+      "collection": "Collection",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "cart": "Panier",
+      "account": "Mon compte",
+      "login": "Connexion",
+      "open_menu": "Ouvrir le menu"
+    },
+    "mobile_nav": {
+      "footer": "Maison parisienne. Édition N°001."
+    },
+    "footer": {
+      "brand_desc": "Maison parisienne d'accessoires, façonnés en petites séries à partir de matières sélectionnées avec exigence.",
+      "shop_heading": "Boutique",
+      "house_heading": "Maison",
+      "our_story": "Notre histoire",
+      "contact_heading": "Contact",
+      "copyright": "© {{ year }} SAINT. Tous droits réservés.",
+      "location": "Paris, France"
+    },
+    "cart_js": {
+      "added": "Ajouté !"
+    }
+  },
+  "password": {
+    "placeholder": "Mot de passe",
+    "submit": "Entrer",
+    "error": "Mot de passe incorrect. Réessayez."
+  },
+  "index": {
+    "hero": {
+      "kicker": "Maison parisienne. Pièce inaugurale.",
+      "title_l1": "Le motif",
+      "title_em": "qui dure.",
+      "sub": "Maille noire dense, motif Uroko ton sur ton. Le bonnet SAINT ouvre la maison, une pièce à la fois.",
+      "cta_discover": "Découvrir la pièce",
+      "cta_story": "Notre histoire",
+      "edition": "Petite série"
+    },
+    "strip": {
+      "wool": "Laine mérinos",
+      "acrylic": "Acrylique haute ténacité",
+      "embroidery": "Broderie fil plat",
+      "medallion": "Médaillon laiton",
+      "finish": "Confection soignée"
+    },
+    "story": {
+      "title_l1": "L’Histoire",
+      "title_l2": "de SAINT",
+      "p1": "SAINT est née d'une intention claire : prendre le temps de concevoir des pièces qui ont du sens, affranchies de l'accélération constante des tendances. Nous envisageons les accessoires non comme des compléments, mais comme des objets d'expression à part entière.",
+      "p2": "Inspirée par les lignes épurées du design contemporain et la rigueur de l'esthétique japonaise, notre approche privilégie le relief de la matière, la précision de la coupe et l'exigence du détail. Du galbe de la maille jusqu'au médaillon gravé, chaque élément est pensé pour traverser le temps et s'intégrer naturellement au vestiaire quotidien.",
+      "p3": "Créer avec intention, construire avec patience, donner de l'importance à ce qui dure."
+    },
+    "editorial": {
+      "alt": "SAINT Origine, maison parisienne"
+    },
+    "lookbook": {
+      "aria": "Lookbook SAINT",
+      "view": "Vue"
+    },
+    "feature": {
+      "preorder": "Précommande exclusive",
+      "soldout": "Rupture de stock"
+    },
+    "uroko": {
+      "label": "Le motif",
+      "title": "Uroko, l'écaille qui protège",
+      "p1": "Dans le textile japonais traditionnel, le motif Uroko habillait armures et kimonos comme un symbole de protection et de renouveau. SAINT le retranscrit à même la maille, ton sur ton, pour qu'il ne se révèle qu'au regard qui s'attarde.",
+      "p2": "Ce motif puise aussi dans le seigaiha, la vague japonaise ancestrale symbole de calme et de bonne fortune, et dans la forme de l'éventail SAINT, que l'on retrouve gravé sur chaque médaillon."
+    },
+    "turntable": {
+      "label": "À 360°",
+      "title_l1": "La pièce",
+      "title_l2": "en mouvement",
+      "p": "Une rotation complète du bonnet Éventail, filmée à 360°.",
+      "caption": "SAINT — Édition Éventail"
+    },
+    "manifesto": {
+      "l1": "Créer avec intention.",
+      "l2": "Construire avec patience.",
+      "l3": "Donner de l'importance à ce qui dure."
+    },
+    "materials": {
+      "title_l1": "Trois matières,",
+      "title_l2": "aucune concession",
+      "intro": "Un nombre volontairement restreint de fibres, sélectionnées pour leur tenue dans le temps et non pour leur coût.",
+      "mat1_alt": "Laine mérinos",
+      "mat1_title": "Laine mérinos 18 microns",
+      "mat1_desc": "Légère, thermorégulatrice, sélectionnée pour sa tenue dans le temps. Fibre principale du bonnet Éventail.",
+      "mat2_alt": "Acrylique haute ténacité",
+      "mat2_title": "Acrylique haute ténacité",
+      "mat2_desc": "Renforce la maille sans l'alourdir. Garantit la forme après des dizaines de lavages.",
+      "mat3_alt": "Laiton brut gravé",
+      "mat3_title": "Laiton brut gravé",
+      "mat3_desc": "Médaillon signé SAINT, pressé et gravé au laser. Patine naturellement avec l'usage."
+    },
+    "cta": {
+      "title_l1": "Avant chaque sortie,",
+      "title_em_l1": "soyez le premier",
+      "title_em_l2": "informé.",
+      "sub": "Chaque série est pensée comme une édition à part, façonnée avec le temps qu'il faut.",
+      "success": "Merci, vous êtes bien inscrit·e !",
+      "error_default": "Une erreur est survenue, réessayez.",
+      "email_placeholder": "Votre adresse email",
+      "submit": "S'inscrire",
+      "note": "Sans spam. Désabonnement en un clic."
+    }
+  },
+  "product": {
+    "back_to_collection": "Collection",
+    "sub_default": "Maille noire, motif Uroko",
+    "wishlist_aria": "Ajouter aux favoris",
+    "reference_label": "Référence",
+    "express": {
+      "preorder": "Précommande exclusive",
+      "secure_payment": "Paiement sécurisé"
+    },
+    "delivery_estimate": "Expédition estimée sous 4 à 6 semaines",
+    "tabs": {
+      "description": "Description",
+      "composition": "Composition",
+      "shipping": "Livraison & retours",
+      "contact": "Contact"
+    },
+    "spec_tiles": {
+      "weight_label": "Grammage",
+      "making_l1": "Confection",
+      "making_l2": "soignée",
+      "making_label": "Façonnage",
+      "medallion_l1": "Laiton",
+      "medallion_l2": "gravé",
+      "medallion_label": "Médaillon"
+    },
+    "spec_rows": {
+      "composition_label": "Composition",
+      "composition_val": "70% laine mérinos, 30% acrylique",
+      "care_label": "Entretien",
+      "care_val": "Lavage main, eau froide",
+      "size_label": "Taille",
+      "size_val": "Unique, réglable",
+      "medallion_label": "Médaillon",
+      "medallion_val": "Laiton brut, gravure laser",
+      "packaging_label": "Emballage",
+      "packaging_val": "Boîte carton recyclé sans plastique"
+    },
+    "shipping_panel": {
+      "p1": "Précommande exclusive. Expédition sous 4 à 6 semaines, le temps d'un façonnage soigné et sans compromis.",
+      "p2": "Retours gratuits sous 30 jours."
+    },
+    "contact_panel": {
+      "prefix": "Une question sur cette pièce&nbsp;? Écrivez-nous à"
+    }
+  },
+  "collection": {
+    "eyebrow": "Collection",
+    "title": "Toutes les silhouettes",
+    "subtitle": "Peu de pièces sont façonnées à chaque saison."
+  },
+  "cart": {
+    "eyebrow": "Panier",
+    "title": "Votre sélection",
+    "empty_text": "Votre panier est vide.",
+    "view_collection": "Voir la collection",
+    "remove": "Retirer",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "shipping_value": "Offerte",
+    "total": "Total",
+    "checkout": "Passer commande"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions fréquentes",
+    "q1": "Comment sont fabriquées les pièces SAINT ?",
+    "a1": "Chaque pièce est façonnée avec un soin particulier, en petites séries, à partir de matières sélectionnées pour leur tenue dans le temps.",
+    "q2": "Les éditions sont-elles vraiment limitées ?",
+    "a2": "Oui. Chaque série est produite en quantité volontairement restreinte, pour préserver son caractère d'exception.",
+    "q3": "Quels sont les délais d'expédition ?",
+    "a3": "Chaque précommande est expédiée sous 4 à 6 semaines, le temps nécessaire à un façonnage soigné et sans compromis.",
+    "q4": "Puis-je retourner un article ?",
+    "a4": "Vous disposez de 30 jours à réception pour retourner un article non porté, dans son emballage d'origine.",
+    "q5": "Comment entretenir mon bonnet ?",
+    "a5": "Un nettoyage à la main, à l'eau froide et sans essorage, préserve la forme et la matière. Évitez le lave-linge et le sèche-linge."
+  }
+}

@@ -28,41 +28,61 @@
   <a href="{{ routes.root_url }}" class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">origine</span></a>
   <div class="navmenu">
     <nav><ul>
-      <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}>Accueil</a></li>
-      <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}>Collection</a></li>
-      <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}>FAQ</a></li>
-      <li><a href="{{ routes.root_url }}#contact">Contact</a></li>
+      <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}>{{ 'general.nav.home' | t }}</a></li>
+      <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}>{{ 'general.nav.collection' | t }}</a></li>
+      <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}>{{ 'general.nav.faq' | t }}</a></li>
+      <li><a href="{{ routes.root_url }}#contact">{{ 'general.nav.contact' | t }}</a></li>
     </ul></nav>
     {% if shop.customer_accounts_enabled %}
       {% if customer %}
-        <a class="account-link" href="{{ routes.account_url }}">Mon compte</a>
+        <a class="account-link" href="{{ routes.account_url }}">{{ 'general.nav.account' | t }}</a>
       {% else %}
-        <a class="account-link" href="{{ routes.account_login_url }}">Connexion</a>
+        <a class="account-link" href="{{ routes.account_login_url }}">{{ 'general.nav.login' | t }}</a>
       {% endif %}
     {% endif %}
-    <a class="bag" href="{{ routes.cart_url }}">Panier <span id="cart-count">{{ cart.item_count }}</span></a>
+    {% if localization.available_languages.size > 1 %}
+      {% form 'localization', id: 'lang-form-desktop' %}
+        <div class="lang-switch">
+          {% for language in localization.available_languages %}
+            <button type="submit" name="locale_code" value="{{ language.iso_code }}" class="lang-btn{% if language.iso_code == localization.language.iso_code %} active{% endif %}">{{ language.iso_code }}</button>
+          {% endfor %}
+        </div>
+      {% endform %}
+    {% endif %}
+    <a class="bag" href="{{ routes.cart_url }}">{{ 'general.nav.cart' | t }} <span id="cart-count">{{ cart.item_count }}</span></a>
   </div>
-  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+  <button class="burger" id="burger" aria-label="{{ 'general.nav.open_menu' | t }}" aria-expanded="false" aria-controls="mobile-nav">
     <span></span><span></span>
   </button>
 </header>
 
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
   <nav><ul>
-    <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}><span>Accueil</span></a></li>
-    <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}><span>Collection</span></a></li>
-    <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}><span>FAQ</span></a></li>
-    <li><a href="{{ routes.root_url }}#contact"><span>Contact</span></a></li>
-    <li><a href="{{ routes.cart_url }}"><span>Panier ({{ cart.item_count }})</span></a></li>
+    <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}><span>{{ 'general.nav.home' | t }}</span></a></li>
+    <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}><span>{{ 'general.nav.collection' | t }}</span></a></li>
+    <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}><span>{{ 'general.nav.faq' | t }}</span></a></li>
+    <li><a href="{{ routes.root_url }}#contact"><span>{{ 'general.nav.contact' | t }}</span></a></li>
+    <li><a href="{{ routes.cart_url }}"><span>{{ 'general.nav.cart' | t }} ({{ cart.item_count }})</span></a></li>
     {% if shop.customer_accounts_enabled %}
       {% if customer %}
-        <li><a href="{{ routes.account_url }}"><span>Mon compte</span></a></li>
+        <li><a href="{{ routes.account_url }}"><span>{{ 'general.nav.account' | t }}</span></a></li>
       {% else %}
-        <li><a href="{{ routes.account_login_url }}"><span>Connexion</span></a></li>
+        <li><a href="{{ routes.account_login_url }}"><span>{{ 'general.nav.login' | t }}</span></a></li>
       {% endif %}
     {% endif %}
+    {% if localization.available_languages.size > 1 %}
+      <li>
+        {% form 'localization', id: 'lang-form-mobile' %}
+          <div class="lang-switch lang-switch-mobile">
+            {% for language in localization.available_languages %}
+              <button type="submit" name="locale_code" value="{{ language.iso_code }}" class="lang-btn{% if language.iso_code == localization.language.iso_code %} active{% endif %}">{{ language.iso_code }}</button>
+            {% endfor %}
+          </div>
+        {% endform %}
+      </li>
+    {% endif %}
   </ul></nav>
-  <p class="mobile-nav-foot">Maison parisienne. &Eacute;dition N&deg;001.</p>
+  <p class="mobile-nav-foot">{{ 'general.mobile_nav.footer' | t }}</p>
 </div>
 
 <main id="site-main">
@@ -74,23 +94,23 @@
     <div class="foot-top">
       <div class="foot-brand">
         <a href="{{ routes.root_url }}" class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">origine</span></a>
-        <p>Maison parisienne d'accessoires, fa&ccedil;onn&eacute;s en petites s&eacute;ries &agrave; partir de mati&egrave;res s&eacute;lectionn&eacute;es avec exigence.</p>
+        <p>{{ 'general.footer.brand_desc' | t }}</p>
       </div>
       <div class="foot-col">
-        <h5>Boutique</h5>
+        <h5>{{ 'general.footer.shop_heading' | t }}</h5>
         <ul>
-          <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}">Collection</a></li>
+          <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}">{{ 'general.nav.collection' | t }}</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h5>Maison</h5>
+        <h5>{{ 'general.footer.house_heading' | t }}</h5>
         <ul>
-          <li><a href="{{ routes.root_url }}#maison">Notre histoire</a></li>
-          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="{{ routes.root_url }}#maison">{{ 'general.footer.our_story' | t }}</a></li>
+          <li><a href="/pages/faq">{{ 'general.nav.faq' | t }}</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h5>Contact</h5>
+        <h5>{{ 'general.footer.contact_heading' | t }}</h5>
         <ul>
           <li><a href="mailto:saintorigin26@gmail.com">saintorigin26@gmail.com</a></li>
           <li>
@@ -103,12 +123,14 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; {{ 'now' | date: '%Y' }} SAINT. Tous droits r&eacute;serv&eacute;s.</span>
-      <span>Paris, France</span>
+      {% assign current_year = 'now' | date: '%Y' %}
+      <span>{{ 'general.footer.copyright' | t: year: current_year }}</span>
+      <span>{{ 'general.footer.location' | t }}</span>
     </div>
   </div>
 </footer>
 
+<script>window.SAINT_I18N = { added: {{ 'general.cart_js.added' | t | json }} };</script>
 {{ 'saint.js' | asset_url | script_tag }}
 </body>
 </html>

@@ -1,11 +1,11 @@
 <div class="wrap subhead">
-  <p class="eyebrow">Collection</p>
-  <h1>Toutes les silhouettes</h1>
+  <p class="eyebrow">{{ 'collection.eyebrow' | t }}</p>
+  <h1>{{ 'collection.title' | t }}</h1>
 </div>
 <section class="collection wrap">
   <div class="coll-head">
     <h2>{{ collection.title }}</h2>
-    <p>Peu de pi&egrave;ces sont fa&ccedil;onn&eacute;es &agrave; chaque saison.</p>
+    <p>{{ 'collection.subtitle' | t }}</p>
   </div>
   <div class="grid">
     {% for product in collection.products %}

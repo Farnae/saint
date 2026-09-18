@@ -1,5 +1,5 @@
 <div class="wrap" style="padding-top:160px;">
-  <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" class="back-link">&larr; Collection</a>
+  <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" class="back-link">&larr; {{ 'product.back_to_collection' | t }}</a>
   <div class="produit-layout">
     <div class="produit-visual">
       {% for image in product.images %}
@@ -10,13 +10,13 @@
       <div class="p-head">
         <div>
           <h1 class="p-name">{{ product.title }}</h1>
-          <p class="p-sub">{{ product.type | default: "Maille noire, motif Uroko" }}</p>
+          <p class="p-sub">{% if product.type != blank %}{{ product.type }}{% else %}{{ 'product.sub_default' | t }}{% endif %}</p>
         </div>
-        <button class="p-wish" type="button" aria-label="Ajouter aux favoris" onclick="this.classList.toggle('active')">
+        <button class="p-wish" type="button" aria-label="{{ 'product.wishlist_aria' | t }}" onclick="this.classList.toggle('active')">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2 4.5 5.5 4c2-.3 3.8.6 5 2.2C11.7 4.6 13.5 3.7 15.5 4c3.5.5 5 4 3.5 7.7-2.5 4.7-10 9.3-10 9.3z"/></svg>
         </button>
       </div>
-      <p class="p-ref">R&eacute;f&eacute;rence&nbsp;: {{ product.selected_or_first_available_variant.sku | default: product.handle | upcase }}</p>
+      <p class="p-ref">{{ 'product.reference_label' | t }}&nbsp;: {{ product.selected_or_first_available_variant.sku | default: product.handle | upcase }}</p>
 
       {% form 'product', product %}
         {% unless product.has_only_default_variant %}
@@ -30,49 +30,49 @@
         {% endunless %}
         <input type="hidden" name="quantity" value="1">
         <button type="submit" class="btn-buy-bar" {% unless product.available %}disabled{% endunless %}>
-          <span>{% if product.available %}Pr&eacute;commander{% else %}Rupture de stock{% endif %}</span>
+          <span>{% if product.available %}{{ 'index.feature.preorder' | t }}{% else %}{{ 'index.feature.soldout' | t }}{% endif %}</span>
           <span class="p-price">{{ product.price | money }}</span>
         </button>
       {% endform %}
 
       <div class="p-express">
-        <span>Pr&eacute;commande exclusive</span><span class="p-express-sep">&middot;</span><span>Paiement s&eacute;curis&eacute;</span>
+        <span>{{ 'product.express.preorder' | t }}</span><span class="p-express-sep">&middot;</span><span>{{ 'product.express.secure_payment' | t }}</span>
       </div>
-      <p class="p-delivery">Exp&eacute;dition estim&eacute;e sous 4 &agrave; 6 semaines</p>
+      <p class="p-delivery">{{ 'product.delivery_estimate' | t }}</p>
 
       <div class="p-tabs">
         <div class="p-tabs-nav">
-          <button class="p-tab-btn active" data-tab="desc">Description</button>
-          <button class="p-tab-btn" data-tab="specs">Composition</button>
-          <button class="p-tab-btn" data-tab="ship">Livraison &amp; retours</button>
-          <button class="p-tab-btn" data-tab="contact">Contact</button>
+          <button class="p-tab-btn active" data-tab="desc">{{ 'product.tabs.description' | t }}</button>
+          <button class="p-tab-btn" data-tab="specs">{{ 'product.tabs.composition' | t }}</button>
+          <button class="p-tab-btn" data-tab="ship">{{ 'product.tabs.shipping' | t }}</button>
+          <button class="p-tab-btn" data-tab="contact">{{ 'product.tabs.contact' | t }}</button>
         </div>
         <div class="p-tab-panel active" data-panel="desc">
           <div class="p-desc">{{ product.description }}</div>
         </div>
         <div class="p-tab-panel" data-panel="specs">
           <div class="spec-tiles">
-            <div class="spec-tile"><span class="spec-tile-val">280<small style="font-size:.6em">g</small></span><span class="spec-tile-lbl">Grammage</span></div>
-            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">Confection<br>soign&eacute;e</span><span class="spec-tile-lbl">Fa&ccedil;onnage</span></div>
-            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">Laiton<br>grav&eacute;</span><span class="spec-tile-lbl">M&eacute;daillon</span></div>
+            <div class="spec-tile"><span class="spec-tile-val">280<small style="font-size:.6em">g</small></span><span class="spec-tile-lbl">{{ 'product.spec_tiles.weight_label' | t }}</span></div>
+            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">{{ 'product.spec_tiles.making_l1' | t }}<br>{{ 'product.spec_tiles.making_l2' | t }}</span><span class="spec-tile-lbl">{{ 'product.spec_tiles.making_label' | t }}</span></div>
+            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">{{ 'product.spec_tiles.medallion_l1' | t }}<br>{{ 'product.spec_tiles.medallion_l2' | t }}</span><span class="spec-tile-lbl">{{ 'product.spec_tiles.medallion_label' | t }}</span></div>
           </div>
           <div class="spec-rows">
             {% for pt in product.metafields.specs %}
               <div class="spec-row"><span class="spec-key">{{ pt.key }}</span><span class="spec-val">{{ pt.value }}</span></div>
             {% else %}
-              <div class="spec-row"><span class="spec-key">Composition</span><span class="spec-val">70% laine m&eacute;rinos, 30% acrylique</span></div>
-              <div class="spec-row"><span class="spec-key">Entretien</span><span class="spec-val">Lavage main, eau froide</span></div>
-              <div class="spec-row"><span class="spec-key">Taille</span><span class="spec-val">Unique, r&eacute;glable</span></div>
-              <div class="spec-row"><span class="spec-key">M&eacute;daillon</span><span class="spec-val">Laiton brut, gravure laser</span></div>
-              <div class="spec-row"><span class="spec-key">Emballage</span><span class="spec-val">Bo&icirc;te carton recycl&eacute; sans plastique</span></div>
+              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.composition_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.composition_val' | t }}</span></div>
+              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.care_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.care_val' | t }}</span></div>
+              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.size_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.size_val' | t }}</span></div>
+              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.medallion_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.medallion_val' | t }}</span></div>
+              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.packaging_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.packaging_val' | t }}</span></div>
             {% endfor %}
           </div>
         </div>
         <div class="p-tab-panel" data-panel="ship">
-          <p>Pr&eacute;commande exclusive. Exp&eacute;dition sous 4 &agrave; 6 semaines, le temps d&rsquo;un fa&ccedil;onnage soign&eacute; et sans compromis.<br>Retours gratuits sous 30 jours.</p>
+          <p>{{ 'product.shipping_panel.p1' | t }}<br>{{ 'product.shipping_panel.p2' | t }}</p>
         </div>
         <div class="p-tab-panel" data-panel="contact">
-          <p>Une question sur cette pi&egrave;ce&nbsp;? &Eacute;crivez-nous &agrave; <a href="mailto:saintorigin26@gmail.com" style="color:var(--green);border-bottom:1px solid var(--line-m);">saintorigin26@gmail.com</a>.</p>
+          <p>{{ 'product.contact_panel.prefix' | t }} <a href="mailto:saintorigin26@gmail.com" style="color:var(--green);border-bottom:1px solid var(--line-m);">saintorigin26@gmail.com</a>.</p>
         </div>
       </div>
     </div>

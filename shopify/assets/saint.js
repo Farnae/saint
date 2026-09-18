@@ -272,7 +272,7 @@ document.addEventListener('submit',function(e){
     if(btn){
       const span=btn.querySelector('span')||btn;
       const original=span.textContent;
-      span.textContent='Ajoute !';
+      span.textContent=(window.SAINT_I18N && window.SAINT_I18N.added) || 'Ajouté !';
       btn.classList.add('added');
       setTimeout(()=>{span.textContent=original;btn.classList.remove('added');},1800);
     }

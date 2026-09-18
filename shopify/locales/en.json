@@ -1,0 +1,189 @@
+{
+  "general": {
+    "nav": {
+      "home": "Home",
+      "collection": "Collection",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "cart": "Cart",
+      "account": "My account",
+      "login": "Log in",
+      "open_menu": "Open menu"
+    },
+    "mobile_nav": {
+      "footer": "Parisian house. Edition No.001."
+    },
+    "footer": {
+      "brand_desc": "A Parisian accessories house, crafted in small batches from materials selected with rigour.",
+      "shop_heading": "Shop",
+      "house_heading": "House",
+      "our_story": "Our story",
+      "contact_heading": "Contact",
+      "copyright": "© {{ year }} SAINT. All rights reserved.",
+      "location": "Paris, France"
+    },
+    "cart_js": {
+      "added": "Added!"
+    }
+  },
+  "password": {
+    "placeholder": "Password",
+    "submit": "Enter",
+    "error": "Incorrect password. Please try again."
+  },
+  "index": {
+    "hero": {
+      "kicker": "Parisian house. Inaugural piece.",
+      "title_l1": "The pattern",
+      "title_em": "that lasts.",
+      "sub": "Dense black knit, tonal Uroko pattern. The SAINT beanie opens the house, one piece at a time.",
+      "cta_discover": "Discover the piece",
+      "cta_story": "Our story",
+      "edition": "Limited run"
+    },
+    "strip": {
+      "wool": "Merino wool",
+      "acrylic": "High-tenacity acrylic",
+      "embroidery": "Flat-stitch embroidery",
+      "medallion": "Brass medallion",
+      "finish": "Careful craftsmanship"
+    },
+    "story": {
+      "title_l1": "The Story",
+      "title_l2": "of SAINT",
+      "p1": "SAINT was born of a clear intention: to take the time to design pieces that mean something, free from the constant acceleration of trends. We see accessories not as add-ons, but as objects of expression in their own right.",
+      "p2": "Inspired by the clean lines of contemporary design and the rigour of Japanese aesthetics, our approach favours the relief of the material, the precision of the cut and an uncompromising attention to detail. From the curve of the knit to the engraved medallion, every element is designed to stand the test of time and blend naturally into everyday dress.",
+      "p3": "Create with intention, build with patience, give weight to what lasts."
+    },
+    "editorial": {
+      "alt": "SAINT Origine, Parisian house"
+    },
+    "lookbook": {
+      "aria": "SAINT Lookbook",
+      "view": "View"
+    },
+    "feature": {
+      "preorder": "Exclusive pre-order",
+      "soldout": "Sold out"
+    },
+    "uroko": {
+      "label": "The pattern",
+      "title": "Uroko, the scale that protects",
+      "p1": "In traditional Japanese textiles, the Uroko pattern dressed armour and kimonos as a symbol of protection and renewal. SAINT translates it directly into the knit, tone on tone, so it only reveals itself to a lingering eye.",
+      "p2": "The pattern also draws on seigaiha, the ancestral Japanese wave motif symbolising calm and good fortune, and on the shape of the SAINT fan, found engraved on every medallion."
+    },
+    "turntable": {
+      "label": "In 360°",
+      "title_l1": "The piece",
+      "title_l2": "in motion",
+      "p": "A full rotation of the Éventail beanie, filmed in 360°.",
+      "caption": "SAINT — Éventail Edition"
+    },
+    "manifesto": {
+      "l1": "Create with intention.",
+      "l2": "Build with patience.",
+      "l3": "Give weight to what lasts."
+    },
+    "materials": {
+      "title_l1": "Three materials,",
+      "title_l2": "no compromise",
+      "intro": "A deliberately limited number of fibres, chosen for how they hold up over time rather than for their cost.",
+      "mat1_alt": "Merino wool",
+      "mat1_title": "18-micron merino wool",
+      "mat1_desc": "Light, thermoregulating, chosen for how it holds up over time. The Éventail beanie's main fibre.",
+      "mat2_alt": "High-tenacity acrylic",
+      "mat2_title": "High-tenacity acrylic",
+      "mat2_desc": "Reinforces the knit without weighing it down. Keeps its shape after dozens of washes.",
+      "mat3_alt": "Engraved raw brass",
+      "mat3_title": "Engraved raw brass",
+      "mat3_desc": "SAINT-signed medallion, pressed and laser-engraved. Develops a natural patina with wear."
+    },
+    "cta": {
+      "title_l1": "Before every outing,",
+      "title_em_l1": "be the first",
+      "title_em_l2": "to know.",
+      "sub": "Every series is designed as its own edition, crafted with the time it deserves.",
+      "success": "Thank you, you're now subscribed!",
+      "error_default": "Something went wrong, please try again.",
+      "email_placeholder": "Your email address",
+      "submit": "Subscribe",
+      "note": "No spam. Unsubscribe in one click."
+    }
+  },
+  "product": {
+    "back_to_collection": "Collection",
+    "sub_default": "Black knit, Uroko pattern",
+    "wishlist_aria": "Add to wishlist",
+    "reference_label": "Reference",
+    "express": {
+      "preorder": "Exclusive pre-order",
+      "secure_payment": "Secure payment"
+    },
+    "delivery_estimate": "Estimated shipping in 4 to 6 weeks",
+    "tabs": {
+      "description": "Description",
+      "composition": "Composition",
+      "shipping": "Shipping & returns",
+      "contact": "Contact"
+    },
+    "spec_tiles": {
+      "weight_label": "Weight",
+      "making_l1": "Careful",
+      "making_l2": "craftsmanship",
+      "making_label": "Craftsmanship",
+      "medallion_l1": "Engraved",
+      "medallion_l2": "brass",
+      "medallion_label": "Medallion"
+    },
+    "spec_rows": {
+      "composition_label": "Composition",
+      "composition_val": "70% merino wool, 30% acrylic",
+      "care_label": "Care",
+      "care_val": "Hand wash, cold water",
+      "size_label": "Size",
+      "size_val": "One size, adjustable",
+      "medallion_label": "Medallion",
+      "medallion_val": "Raw brass, laser engraving",
+      "packaging_label": "Packaging",
+      "packaging_val": "Recycled cardboard box, plastic-free"
+    },
+    "shipping_panel": {
+      "p1": "Exclusive pre-order. Shipped within 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
+      "p2": "Free returns within 30 days."
+    },
+    "contact_panel": {
+      "prefix": "Have a question about this piece? Write to us at"
+    }
+  },
+  "collection": {
+    "eyebrow": "Collection",
+    "title": "All the silhouettes",
+    "subtitle": "Few pieces are crafted each season."
+  },
+  "cart": {
+    "eyebrow": "Cart",
+    "title": "Your selection",
+    "empty_text": "Your cart is empty.",
+    "view_collection": "View the collection",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shipping_value": "Free",
+    "total": "Total",
+    "checkout": "Checkout"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "q1": "How are SAINT pieces made?",
+    "a1": "Each piece is crafted with particular care, in small series, from materials chosen for how they hold up over time.",
+    "q2": "Are the editions really limited?",
+    "a2": "Yes. Each series is produced in a deliberately restricted quantity, to preserve its exceptional character.",
+    "q3": "What are the shipping times?",
+    "a3": "Each pre-order ships within 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
+    "q4": "Can I return an item?",
+    "a4": "You have 30 days from receipt to return an unworn item in its original packaging.",
+    "q5": "How do I care for my beanie?",
+    "a5": "Hand washing in cold water, without wringing, preserves the shape and the material. Avoid the washing machine and the tumble dryer."
+  }
+}
