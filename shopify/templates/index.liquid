@@ -1,11 +1,13 @@
 {%- comment -%}
-  IMPORTANT : ceci doit correspondre exactement au HANDLE (URL) de ton
-  produit dans Shopify. Va dans Produits > ton bonnet > sous le titre,
-  clique sur "Modifier le lien du site web" et mets exactement
-  "saint-eventail" (ou change la valeur ci-dessous pour qu'elle
-  corresponde &agrave; ce que tu choisis).
+  Cherche d'abord le produit sous son nouveau lien "bonnet-saint-eventail".
+  S'il n'existe pas encore (produit pas encore renomm&eacute; dans l'admin),
+  retombe automatiquement sur l'ancien lien "bonnet-saint-uroko" pour que
+  la page d'accueil ne casse jamais, m&ecirc;me pendant la transition.
+  Une fois le produit renomm&eacute; dans Shopify (Produits > ton bonnet >
+  sous le titre > "Modifier le lien du site web" > bonnet-saint-eventail),
+  tout se met &agrave; jour tout seul, rien &agrave; faire ici.
 {%- endcomment -%}
-{% assign product = all_products['saint-eventail'] %}
+{% assign product = all_products['bonnet-saint-eventail'] | default: all_products['bonnet-saint-uroko'] %}
 
 <section class="hero">
   <div class="hero-copy">

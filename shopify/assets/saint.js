@@ -1,10 +1,11 @@
 const prefRedGlobal=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-/* ===== ALWAYS START AT THE TOP (no scroll position kept on refresh) ===== */
+/* ===== START AT THE TOP on a plain load/refresh, but respect real #anchors ===== */
 if('scrollRestoration' in history){ history.scrollRestoration='manual'; }
-window.scrollTo(0,0);
-window.addEventListener('load',()=>window.scrollTo(0,0));
-window.addEventListener('pageshow',()=>window.scrollTo(0,0));
+function resetScrollUnlessAnchor(){ if(!location.hash) window.scrollTo(0,0); }
+resetScrollUnlessAnchor();
+window.addEventListener('load',resetScrollUnlessAnchor);
+window.addEventListener('pageshow',resetScrollUnlessAnchor);
 
 if(window.gsap && window.ScrollTrigger){
   gsap.registerPlugin(ScrollTrigger);
@@ -83,7 +84,7 @@ function runScramble(){
 }
 
 /* ===== CURTAIN ===== */
-const prefRed=prefRedGlobal;
+const prefRed=prefRedGlobal || !!location.hash;
 const curtain=document.getElementById('curtain');
 if(curtain){
   document.documentElement.style.overflow='hidden';
