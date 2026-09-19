@@ -1,11 +1,10 @@
 {%- comment -%}
-  Ceci doit correspondre exactement au HANDLE (URL) de ta casquette dans
-  Shopify une fois le produit cr&eacute;&eacute; (Produits > Ajouter un produit,
-  handle "casquette-saint-eventail"). Tant que ce produit n'existe pas,
-  le prix/lien d'achat resteront vides mais le reste de la page (photos,
-  textes) s'affiche normalement : rien ne casse.
+  Handle r&eacute;el du produit dans Shopify (Produits > Casquette SAINT
+  EVENTAIL > section R&eacute;f&eacute;rencement Google en bas de page).
+  Si tu changes ce handle plus tard dans l'admin, mets-le &agrave; jour ici
+  aussi &mdash; Shopify ne les synchronise pas automatiquement entre eux.
 {%- endcomment -%}
-{% assign product = all_products['casquette-saint-eventail'] %}
+{% assign product = all_products['casquette-saint-beige'] %}
 {% assign cap_images = "saint-cap-front.jpg,saint-cap-side.jpg,saint-cap-texture.jpg,saint-cap-interior.jpg,saint-cap-outdoor.jpg" | split: "," %}
 
 <section class="hero">

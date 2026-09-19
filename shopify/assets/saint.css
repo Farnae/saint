@@ -452,14 +452,16 @@ footer{background:var(--green);padding:80px 0 52px;}
 /* ============ RESPONSIVE ============ */
 @media(max-width:960px){
   .navmenu{display:none;}
-  header{padding:20px 24px;}
-  header.sc{padding:14px 24px;}
-  .wrap{padding:0 28px;}
+  header{padding:20px 28px;}
+  header.sc{padding:14px 28px;}
+  .wrap{padding:0 32px;}
   .hero{grid-template-columns:1fr;}
-  .hero-copy{padding:140px 28px 60px;}
+  .hero-copy{padding:140px 32px 60px;}
   .hero-visual{min-height:60vw;}
   .hero-sub,.story-right p,.feature-desc,.uroko-copy p,.mat-intro,.mat-copy p,.cta-sub,.p-desc,.faq-a p{font-size:15px;line-height:1.75;}
   .mat-copy p{font-size:14px;}
+  .mobile-nav{padding:48px 32px;}
+  .mobile-nav-foot{left:32px;}
   .story{grid-template-columns:1fr;gap:44px;padding:100px 0 80px;}
   .stats-band{grid-template-columns:1fr;gap:0;}
   .stat+.stat{border-left:none;border-top:1px solid var(--line);}
