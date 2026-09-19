@@ -36,23 +36,23 @@
       "kicker": "Parisian house. Inaugural piece.",
       "title_l1": "The pattern",
       "title_em": "that lasts.",
-      "sub": "Dense black knit, tonal Uroko pattern. The SAINT beanie opens the house, one piece at a time.",
+      "sub": "Jacquard canvas with the Uroko pattern, full-grain leather brim and brass buckle. The SAINT cap opens the house, one piece at a time.",
       "cta_discover": "Discover the piece",
       "cta_story": "Our story",
       "edition": "Limited run"
     },
     "strip": {
-      "wool": "Merino wool",
-      "acrylic": "High-tenacity acrylic",
+      "wool": "Jacquard canvas",
+      "acrylic": "Full-grain leather",
       "embroidery": "Flat-stitch embroidery",
-      "medallion": "Brass medallion",
+      "medallion": "Brass buckle",
       "finish": "Careful craftsmanship"
     },
     "story": {
       "title_l1": "The Story",
       "title_l2": "of SAINT",
       "p1": "SAINT was born of a clear intention: to take the time to design pieces that mean something, free from the constant acceleration of trends. We see accessories not as add-ons, but as objects of expression in their own right.",
-      "p2": "Inspired by the clean lines of contemporary design and the rigour of Japanese aesthetics, our approach favours the relief of the material, the precision of the cut and an uncompromising attention to detail. From the curve of the knit to the engraved medallion, every element is designed to stand the test of time and blend naturally into everyday dress.",
+      "p2": "Inspired by the clean lines of contemporary design and the rigour of Japanese aesthetics, our approach favours the relief of the material, the precision of the cut and an uncompromising attention to detail. From the jacquard weave to the brass buckle, every element is designed to stand the test of time and blend naturally into everyday dress.",
       "p3": "Create with intention, build with patience, give weight to what lasts."
     },
     "editorial": {
@@ -69,14 +69,14 @@
     "uroko": {
       "label": "The pattern",
       "title": "Uroko, the scale that protects",
-      "p1": "In traditional Japanese textiles, the Uroko pattern dressed armour and kimonos as a symbol of protection and renewal. SAINT translates it directly into the knit, tone on tone, so it only reveals itself to a lingering eye.",
+      "p1": "In traditional Japanese textiles, the Uroko pattern dressed armour and kimonos as a symbol of protection and renewal. SAINT translates it into woven jacquard, tone on tone, straight into the cap's canvas, so it only reveals itself to a lingering eye.",
       "p2": "The pattern also draws on seigaiha, the ancestral Japanese wave motif symbolising calm and good fortune, and on the shape of the SAINT fan, found engraved on every medallion."
     },
     "turntable": {
-      "label": "In 360°",
-      "title_l1": "The piece",
-      "title_l2": "in motion",
-      "p": "A full rotation of the Éventail beanie, filmed in 360°.",
+      "label": "The detail",
+      "title_l1": "The SAINT",
+      "title_l2": "signature",
+      "p": "The raw brass buckle, adjustable on full-grain leather, signs every Éventail cap.",
       "caption": "SAINT — Éventail Edition"
     },
     "manifesto": {
@@ -88,15 +88,15 @@
       "title_l1": "Three materials,",
       "title_l2": "no compromise",
       "intro": "A deliberately limited number of fibres, chosen for how they hold up over time rather than for their cost.",
-      "mat1_alt": "Merino wool",
-      "mat1_title": "18-micron merino wool",
-      "mat1_desc": "Light, thermoregulating, chosen for how it holds up over time. The Éventail beanie's main fibre.",
-      "mat2_alt": "High-tenacity acrylic",
-      "mat2_title": "High-tenacity acrylic",
-      "mat2_desc": "Reinforces the knit without weighing it down. Keeps its shape after dozens of washes.",
-      "mat3_alt": "Engraved raw brass",
-      "mat3_title": "Engraved raw brass",
-      "mat3_desc": "SAINT-signed medallion, pressed and laser-engraved. Develops a natural patina with wear."
+      "mat1_alt": "Jacquard canvas with the Uroko pattern",
+      "mat1_title": "Uroko jacquard canvas",
+      "mat1_desc": "Woven tone on tone, the Éventail cap's main canvas reveals the scale pattern to a lingering eye.",
+      "mat2_alt": "Full-grain leather",
+      "mat2_title": "Full-grain leather",
+      "mat2_desc": "Brim and strap in full-grain leather, chosen for its suppleness and the natural patina it develops with wear.",
+      "mat3_alt": "Raw brass buckle",
+      "mat3_title": "Raw brass buckle",
+      "mat3_desc": "SAINT-signed adjuster buckle, in raw brass. Develops a natural patina with wear."
     },
     "cta": {
       "title_l1": "Before every outing,",
@@ -112,7 +112,7 @@
   },
   "product": {
     "back_to_collection": "Collection",
-    "sub_default": "Black knit, Uroko pattern",
+    "sub_default": "Jacquard canvas, Uroko pattern",
     "wishlist_aria": "Add to wishlist",
     "reference_label": "Reference",
     "express": {
@@ -127,23 +127,25 @@
       "contact": "Contact"
     },
     "spec_tiles": {
-      "weight_label": "Weight",
-      "making_l1": "Careful",
-      "making_l2": "craftsmanship",
-      "making_label": "Craftsmanship",
-      "medallion_l1": "Engraved",
-      "medallion_l2": "brass",
-      "medallion_label": "Medallion"
+      "tile1_l1": "Jacquard",
+      "tile1_l2": "canvas",
+      "tile1_label": "Material",
+      "tile2_l1": "Full-grain",
+      "tile2_l2": "leather",
+      "tile2_label": "Brim",
+      "tile3_l1": "Raw",
+      "tile3_l2": "brass",
+      "tile3_label": "Buckle"
     },
     "spec_rows": {
       "composition_label": "Composition",
-      "composition_val": "70% merino wool, 30% acrylic",
+      "composition_val": "Cotton jacquard canvas, full-grain leather brim",
       "care_label": "Care",
-      "care_val": "Hand wash, cold water",
+      "care_val": "Dry clean recommended, soft cloth for the leather",
       "size_label": "Size",
-      "size_val": "One size, adjustable",
-      "medallion_label": "Medallion",
-      "medallion_val": "Raw brass, laser engraving",
+      "size_val": "One size, adjustable (brass buckle)",
+      "medallion_label": "Buckle",
+      "medallion_val": "Raw brass, adjusts on leather",
       "packaging_label": "Packaging",
       "packaging_val": "Recycled cardboard box, plastic-free"
     },
@@ -183,7 +185,7 @@
     "a3": "Each pre-order ships within 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
     "q4": "Can I return an item?",
     "a4": "You have 30 days from receipt to return an unworn item in its original packaging.",
-    "q5": "How do I care for my beanie?",
-    "a5": "Hand washing in cold water, without wringing, preserves the shape and the material. Avoid the washing machine and the tumble dryer."
+    "q5": "How do I care for my cap?",
+    "a5": "Dry cleaning is recommended for the jacquard canvas. A soft cloth is enough for the leather brim. Avoid the washing machine and prolonged sun exposure."
   }
 }

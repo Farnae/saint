@@ -36,23 +36,23 @@
       "kicker": "Maison parisienne. Pièce inaugurale.",
       "title_l1": "Le motif",
       "title_em": "qui dure.",
-      "sub": "Maille noire dense, motif Uroko ton sur ton. Le bonnet SAINT ouvre la maison, une pièce à la fois.",
+      "sub": "Toile jacquard motif Uroko, visière en cuir pleine fleur et boucle laiton. La casquette SAINT ouvre la maison, une pièce à la fois.",
       "cta_discover": "Découvrir la pièce",
       "cta_story": "Notre histoire",
       "edition": "Petite série"
     },
     "strip": {
-      "wool": "Laine mérinos",
-      "acrylic": "Acrylique haute ténacité",
+      "wool": "Toile jacquard",
+      "acrylic": "Cuir pleine fleur",
       "embroidery": "Broderie fil plat",
-      "medallion": "Médaillon laiton",
+      "medallion": "Boucle laiton",
       "finish": "Confection soignée"
     },
     "story": {
       "title_l1": "L’Histoire",
       "title_l2": "de SAINT",
       "p1": "SAINT est née d'une intention claire : prendre le temps de concevoir des pièces qui ont du sens, affranchies de l'accélération constante des tendances. Nous envisageons les accessoires non comme des compléments, mais comme des objets d'expression à part entière.",
-      "p2": "Inspirée par les lignes épurées du design contemporain et la rigueur de l'esthétique japonaise, notre approche privilégie le relief de la matière, la précision de la coupe et l'exigence du détail. Du galbe de la maille jusqu'au médaillon gravé, chaque élément est pensé pour traverser le temps et s'intégrer naturellement au vestiaire quotidien.",
+      "p2": "Inspirée par les lignes épurées du design contemporain et la rigueur de l'esthétique japonaise, notre approche privilégie le relief de la matière, la précision de la coupe et l'exigence du détail. Du tissage jacquard jusqu'à la boucle laiton, chaque élément est pensé pour traverser le temps et s'intégrer naturellement au vestiaire quotidien.",
       "p3": "Créer avec intention, construire avec patience, donner de l'importance à ce qui dure."
     },
     "editorial": {
@@ -69,14 +69,14 @@
     "uroko": {
       "label": "Le motif",
       "title": "Uroko, l'écaille qui protège",
-      "p1": "Dans le textile japonais traditionnel, le motif Uroko habillait armures et kimonos comme un symbole de protection et de renouveau. SAINT le retranscrit à même la maille, ton sur ton, pour qu'il ne se révèle qu'au regard qui s'attarde.",
+      "p1": "Dans le textile japonais traditionnel, le motif Uroko habillait armures et kimonos comme un symbole de protection et de renouveau. SAINT le retranscrit en jacquard tissé, ton sur ton, sur la toile de la casquette, pour qu'il ne se révèle qu'au regard qui s'attarde.",
       "p2": "Ce motif puise aussi dans le seigaiha, la vague japonaise ancestrale symbole de calme et de bonne fortune, et dans la forme de l'éventail SAINT, que l'on retrouve gravé sur chaque médaillon."
     },
     "turntable": {
-      "label": "À 360°",
-      "title_l1": "La pièce",
-      "title_l2": "en mouvement",
-      "p": "Une rotation complète du bonnet Éventail, filmée à 360°.",
+      "label": "Le détail",
+      "title_l1": "La signature",
+      "title_l2": "SAINT",
+      "p": "La boucle en laiton brut, réglable sur cuir pleine fleur, signe chaque casquette Éventail.",
       "caption": "SAINT — Édition Éventail"
     },
     "manifesto": {
@@ -88,15 +88,15 @@
       "title_l1": "Trois matières,",
       "title_l2": "aucune concession",
       "intro": "Un nombre volontairement restreint de fibres, sélectionnées pour leur tenue dans le temps et non pour leur coût.",
-      "mat1_alt": "Laine mérinos",
-      "mat1_title": "Laine mérinos 18 microns",
-      "mat1_desc": "Légère, thermorégulatrice, sélectionnée pour sa tenue dans le temps. Fibre principale du bonnet Éventail.",
-      "mat2_alt": "Acrylique haute ténacité",
-      "mat2_title": "Acrylique haute ténacité",
-      "mat2_desc": "Renforce la maille sans l'alourdir. Garantit la forme après des dizaines de lavages.",
-      "mat3_alt": "Laiton brut gravé",
-      "mat3_title": "Laiton brut gravé",
-      "mat3_desc": "Médaillon signé SAINT, pressé et gravé au laser. Patine naturellement avec l'usage."
+      "mat1_alt": "Toile jacquard motif Uroko",
+      "mat1_title": "Toile jacquard Uroko",
+      "mat1_desc": "Tissée ton sur ton, la toile principale de la casquette Éventail révèle le motif écaille au regard qui s'attarde.",
+      "mat2_alt": "Cuir pleine fleur",
+      "mat2_title": "Cuir pleine fleur",
+      "mat2_desc": "Visière et sangle en cuir pleine fleur, choisi pour sa souplesse et sa patine naturelle avec l'usage.",
+      "mat3_alt": "Boucle laiton brut",
+      "mat3_title": "Boucle laiton brut",
+      "mat3_desc": "Boucle de réglage signée SAINT, en laiton brut. Patine naturellement avec l'usage."
     },
     "cta": {
       "title_l1": "Avant chaque sortie,",
@@ -112,7 +112,7 @@
   },
   "product": {
     "back_to_collection": "Collection",
-    "sub_default": "Maille noire, motif Uroko",
+    "sub_default": "Toile jacquard, motif Uroko",
     "wishlist_aria": "Ajouter aux favoris",
     "reference_label": "Référence",
     "express": {
@@ -127,23 +127,25 @@
       "contact": "Contact"
     },
     "spec_tiles": {
-      "weight_label": "Grammage",
-      "making_l1": "Confection",
-      "making_l2": "soignée",
-      "making_label": "Façonnage",
-      "medallion_l1": "Laiton",
-      "medallion_l2": "gravé",
-      "medallion_label": "Médaillon"
+      "tile1_l1": "Toile",
+      "tile1_l2": "jacquard",
+      "tile1_label": "Matière",
+      "tile2_l1": "Cuir",
+      "tile2_l2": "pleine fleur",
+      "tile2_label": "Visière",
+      "tile3_l1": "Laiton",
+      "tile3_l2": "brut",
+      "tile3_label": "Boucle"
     },
     "spec_rows": {
       "composition_label": "Composition",
-      "composition_val": "70% laine mérinos, 30% acrylique",
+      "composition_val": "Toile jacquard coton, visière cuir pleine fleur",
       "care_label": "Entretien",
-      "care_val": "Lavage main, eau froide",
+      "care_val": "Nettoyage à sec conseillé, chiffon doux pour le cuir",
       "size_label": "Taille",
-      "size_val": "Unique, réglable",
-      "medallion_label": "Médaillon",
-      "medallion_val": "Laiton brut, gravure laser",
+      "size_val": "Unique, réglable (boucle laiton)",
+      "medallion_label": "Boucle",
+      "medallion_val": "Laiton brut, réglage sur cuir",
       "packaging_label": "Emballage",
       "packaging_val": "Boîte carton recyclé sans plastique"
     },
@@ -183,7 +185,7 @@
     "a3": "Chaque précommande est expédiée sous 4 à 6 semaines, le temps nécessaire à un façonnage soigné et sans compromis.",
     "q4": "Puis-je retourner un article ?",
     "a4": "Vous disposez de 30 jours à réception pour retourner un article non porté, dans son emballage d'origine.",
-    "q5": "Comment entretenir mon bonnet ?",
-    "a5": "Un nettoyage à la main, à l'eau froide et sans essorage, préserve la forme et la matière. Évitez le lave-linge et le sèche-linge."
+    "q5": "Comment entretenir ma casquette ?",
+    "a5": "Un nettoyage à sec est conseillé pour la toile jacquard. Pour le cuir de la visière, un chiffon doux suffit. Évitez le lave-linge et l'exposition prolongée au soleil."
   }
 }
