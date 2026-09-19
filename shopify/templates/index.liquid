@@ -13,7 +13,7 @@
     <h1>{{ 'index.hero.title_l1' | t }}<br><em>{{ 'index.hero.title_em' | t }}</em></h1>
     <p class="hero-sub fade-up d3">{{ 'index.hero.sub' | t }}</p>
     <div class="hero-actions fade-up d4">
-      <a class="btn-primary" href="{{ product.url }}"><div class="btn-fill"></div><span>{{ 'index.hero.cta_discover' | t }}</span></a>
+      <a class="btn-primary" href="{{ product.url | default: routes.all_products_collection_url | default: '/collections/all' }}"><div class="btn-fill"></div><span>{{ 'index.hero.cta_discover' | t }}</span></a>
       <a href="#maison" class="btn-ghost">{{ 'index.hero.cta_story' | t }}</a>
     </div>
     <p class="hero-edition fade-up d5">{{ 'index.hero.edition' | t }}</p>
@@ -84,7 +84,7 @@
       <span class="fmeta-txt">{{ 'index.hero.edition' | t }}</span>
     </div>
     <div class="float-badge">{% if product.available %}{{ 'index.feature.preorder' | t }}{% else %}{{ 'index.feature.soldout' | t }}{% endif %}</div>
-    <a class="btn-primary" href="{{ product.url }}"><div class="btn-fill"></div><span>{{ 'index.hero.cta_discover' | t }}</span></a>
+    <a class="btn-primary" href="{{ product.url | default: routes.all_products_collection_url | default: '/collections/all' }}"><div class="btn-fill"></div><span>{{ 'index.hero.cta_discover' | t }}</span></a>
   </div>
 </section>
 
