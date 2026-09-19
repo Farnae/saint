@@ -1,4 +1,4 @@
-<div class="wrap" style="padding-top:160px;">
+<div class="wrap produit-wrap">
   <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" class="back-link">&larr; {{ 'product.back_to_collection' | t }}</a>
   <div class="produit-layout">
     <div class="produit-visual">
@@ -30,6 +30,10 @@
         {% endunless %}
         <input type="hidden" name="quantity" value="1">
         <button type="submit" class="btn-buy-bar" {% unless product.available %}disabled{% endunless %}>
+          <span>{% if product.available %}{{ 'index.feature.preorder' | t }}{% else %}{{ 'index.feature.soldout' | t }}{% endif %}</span>
+          <span class="p-price">{{ product.price | money }}</span>
+        </button>
+        <button type="submit" class="btn-buy-bar mobile-cta-bar" {% unless product.available %}disabled{% endunless %}>
           <span>{% if product.available %}{{ 'index.feature.preorder' | t }}{% else %}{{ 'index.feature.soldout' | t }}{% endif %}</span>
           <span class="p-price">{{ product.price | money }}</span>
         </button>
