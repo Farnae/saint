@@ -378,7 +378,7 @@ footer{background:var(--green);padding:80px 0 52px;}
 .p-sub{font-size:15px;color:var(--ink-dim);}
 .p-price{font-family:'Jost',sans-serif;font-size:17px;}
 .p-desc{font-size:17px;line-height:1.88;color:var(--ink-dim);max-width:480px;}
-.produit-info{padding-top:40px;position:sticky;top:140px;align-self:start;}
+.produit-info{padding-top:40px;position:sticky;top:140px;align-self:start;min-width:0;}
 @media(max-width:960px){.produit-info{position:static;}}
 
 /* ============ PRODUIT: style Dior ============ */
