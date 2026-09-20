@@ -43,18 +43,20 @@
         <span>{{ 'product.express.preorder' | t }}</span><span class="p-express-sep">&middot;</span><span>{{ 'product.express.secure_payment' | t }}</span>
       </div>
       <p class="p-delivery">{{ 'product.delivery_estimate' | t }}</p>
+      <p class="p-delivery p-freeship">{{ 'general.freeship_note' | t }}</p>
 
       <div class="p-tabs">
         <div class="p-tabs-nav">
           <button class="p-tab-btn active" data-tab="desc">{{ 'product.tabs.description' | t }}</button>
-          <button class="p-tab-btn" data-tab="specs">{{ 'product.tabs.composition' | t }}</button>
+          <button class="p-tab-btn" data-tab="fit">{{ 'product.tabs.fit' | t }}</button>
+          <button class="p-tab-btn" data-tab="care">{{ 'product.tabs.care' | t }}</button>
           <button class="p-tab-btn" data-tab="ship">{{ 'product.tabs.shipping' | t }}</button>
           <button class="p-tab-btn" data-tab="contact">{{ 'product.tabs.contact' | t }}</button>
         </div>
         <div class="p-tab-panel active" data-panel="desc">
           <div class="p-desc">{{ product.description }}</div>
         </div>
-        <div class="p-tab-panel" data-panel="specs">
+        <div class="p-tab-panel" data-panel="fit">
           <div class="spec-tiles">
             <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">{{ 'product.spec_tiles.tile1_l1' | t }}<br>{{ 'product.spec_tiles.tile1_l2' | t }}</span><span class="spec-tile-lbl">{{ 'product.spec_tiles.tile1_label' | t }}</span></div>
             <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">{{ 'product.spec_tiles.tile2_l1' | t }}<br>{{ 'product.spec_tiles.tile2_l2' | t }}</span><span class="spec-tile-lbl">{{ 'product.spec_tiles.tile2_label' | t }}</span></div>
@@ -64,16 +66,31 @@
             {% for pt in product.metafields.specs %}
               <div class="spec-row"><span class="spec-key">{{ pt.key }}</span><span class="spec-val">{{ pt.value }}</span></div>
             {% else %}
-              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.composition_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.composition_val' | t }}</span></div>
-              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.care_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.care_val' | t }}</span></div>
+              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.pattern_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.pattern_val' | t }}</span></div>
               <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.size_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.size_val' | t }}</span></div>
-              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.medallion_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.medallion_val' | t }}</span></div>
+              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.closure_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.closure_val' | t }}</span></div>
               <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.packaging_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.packaging_val' | t }}</span></div>
             {% endfor %}
           </div>
+          <p class="p-fit-copy">{{ 'product.fit_panel.p1' | t }}</p>
+          <p class="p-fit-copy">{{ 'product.fit_panel.p2' | t }}</p>
+        </div>
+        <div class="p-tab-panel" data-panel="care">
+          <p class="p-care-intro">{{ 'product.care_panel.intro' | t }}</p>
+          <ul class="p-care-list">
+            <li>{{ 'product.care_panel.item1' | t }}</li>
+            <li>{{ 'product.care_panel.item2' | t }}</li>
+            <li>{{ 'product.care_panel.item3' | t }}</li>
+            <li>{{ 'product.care_panel.item4' | t }}</li>
+          </ul>
         </div>
         <div class="p-tab-panel" data-panel="ship">
-          <p>{{ 'product.shipping_panel.p1' | t }}<br>{{ 'product.shipping_panel.p2' | t }}</p>
+          <p>{{ 'product.shipping_panel.p1' | t }}</p>
+          <p class="p-freeship-note">{{ 'general.freeship_note' | t }}</p>
+          <h4 class="p-returns-title">{{ 'product.shipping_panel.returns_title' | t }}</h4>
+          <p>{{ 'product.shipping_panel.returns_p1' | t }}</p>
+          <p>{{ 'product.shipping_panel.returns_p2' | t }}</p>
+          <p>{{ 'product.shipping_panel.returns_p3' | t }}</p>
         </div>
         <div class="p-tab-panel" data-panel="contact">
           <p>{{ 'product.contact_panel.prefix' | t }} <a href="mailto:saintorigin26@gmail.com" style="color:var(--green);border-bottom:1px solid var(--line-m);">saintorigin26@gmail.com</a>.</p>

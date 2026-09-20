@@ -77,7 +77,7 @@
   </div>
   <div class="feature-copy">
     <h2 data-split>{{ product.title | default: "Casquette SAINT &Eacute;ventail" }}</h2>
-    <p class="feature-desc">{% assign feature_desc = product.description | strip_html | truncate: 180 %}{{ feature_desc | default: "Toile jacquard motif Uroko, visi&egrave;re en cuir pleine fleur, boucle de r&eacute;glage en laiton brut. Une pi&egrave;ce faite pour durer." }}</p>
+    <p class="feature-desc">{% assign feature_desc = product.description | strip_html | truncate: 180 %}{{ feature_desc | default: "Toile jacquard motif Uroko, structure souple et d&eacute;structur&eacute;e qui &eacute;pouse naturellement la forme du cr&acirc;ne. Une pi&egrave;ce faite pour durer." }}</p>
     <div class="feature-meta">
       <span class="feature-price">{{ product.price | money }}</span>
       <span class="fsep"></span>
@@ -139,25 +139,8 @@
   <div class="mat-row wrap reveal">
     <div class="mat-visual"><img src="{{ 'saint-cap-texture.jpg' | asset_url }}" alt="{{ 'index.materials.mat1_alt' | t }}" loading="lazy"></div>
     <div class="mat-copy">
-      <span class="mat-tile-num">01</span>
       <h4>{{ 'index.materials.mat1_title' | t }}</h4>
       <p>{{ 'index.materials.mat1_desc' | t }}</p>
-    </div>
-  </div>
-  <div class="mat-row mat-row-rev wrap reveal">
-    <div class="mat-visual"><img src="{{ 'saint-cap-interior.jpg' | asset_url }}" alt="{{ 'index.materials.mat2_alt' | t }}" loading="lazy"></div>
-    <div class="mat-copy">
-      <span class="mat-tile-num">02</span>
-      <h4>{{ 'index.materials.mat2_title' | t }}</h4>
-      <p>{{ 'index.materials.mat2_desc' | t }}</p>
-    </div>
-  </div>
-  <div class="mat-row wrap reveal">
-    <div class="mat-visual"><img src="{{ 'saint-cap-side.jpg' | asset_url }}" alt="{{ 'index.materials.mat3_alt' | t }}" loading="lazy"></div>
-    <div class="mat-copy">
-      <span class="mat-tile-num">03</span>
-      <h4>{{ 'index.materials.mat3_title' | t }}</h4>
-      <p>{{ 'index.materials.mat3_desc' | t }}</p>
     </div>
   </div>
 </section>

@@ -24,7 +24,8 @@
     },
     "cart_js": {
       "added": "Ajouté !"
-    }
+    },
+    "freeship_note": "Livraison offerte dès 150 € d'achat."
   },
   "password": {
     "placeholder": "Mot de passe",
@@ -36,23 +37,23 @@
       "kicker": "Maison parisienne. Pièce inaugurale.",
       "title_l1": "Le motif",
       "title_em": "qui dure.",
-      "sub": "Toile jacquard motif Uroko, visière en cuir pleine fleur et boucle laiton. La casquette SAINT ouvre la maison, une pièce à la fois.",
+      "sub": "Toile jacquard motif Uroko, structure souple qui épouse la forme du crâne. La casquette SAINT ouvre la maison, une pièce à la fois.",
       "cta_discover": "Découvrir la pièce",
       "cta_story": "Notre histoire",
       "edition": "Petite série"
     },
     "strip": {
       "wool": "Toile jacquard",
-      "acrylic": "Cuir pleine fleur",
+      "acrylic": "Motif Uroko tissé",
       "embroidery": "Broderie fil plat",
-      "medallion": "Boucle laiton",
+      "medallion": "Sangle ajustable",
       "finish": "Confection soignée"
     },
     "story": {
       "title_l1": "L’Histoire",
       "title_l2": "de SAINT",
       "p1": "SAINT est née d'une intention claire : prendre le temps de concevoir des pièces qui ont du sens, affranchies de l'accélération constante des tendances. Nous envisageons les accessoires non comme des compléments, mais comme des objets d'expression à part entière.",
-      "p2": "Inspirée par les lignes épurées du design contemporain et la rigueur de l'esthétique japonaise, notre approche privilégie le relief de la matière, la précision de la coupe et l'exigence du détail. Du tissage jacquard jusqu'à la boucle laiton, chaque élément est pensé pour traverser le temps et s'intégrer naturellement au vestiaire quotidien.",
+      "p2": "Inspirée par les lignes épurées du design contemporain et la rigueur de l'esthétique japonaise, notre approche privilégie le relief de la matière, la précision de la coupe et l'exigence du détail. Du tissage jacquard jusqu'à la sangle de réglage, chaque élément est pensé pour traverser le temps et s'intégrer naturellement au vestiaire quotidien.",
       "p3": "Créer avec intention, construire avec patience, donner de l'importance à ce qui dure."
     },
     "editorial": {
@@ -76,7 +77,7 @@
       "label": "Le détail",
       "title_l1": "La signature",
       "title_l2": "SAINT",
-      "p": "La boucle en laiton brut, réglable sur cuir pleine fleur, signe chaque casquette Éventail.",
+      "p": "La sangle de réglage arrière, montée à un angle précis pour un maintien net et sans pli, signe chaque casquette Éventail.",
       "caption": "SAINT — Édition Éventail"
     },
     "manifesto": {
@@ -85,18 +86,12 @@
       "l3": "Donner de l'importance à ce qui dure."
     },
     "materials": {
-      "title_l1": "Trois matières,",
-      "title_l2": "aucune concession",
-      "intro": "Un nombre volontairement restreint de fibres, sélectionnées pour leur tenue dans le temps et non pour leur coût.",
+      "title_l1": "Le jacquard,",
+      "title_l2": "notre signature",
+      "intro": "Un tissage ton sur ton, pensé pour révéler le motif Uroko au regard qui s'attarde et pour traverser le temps.",
       "mat1_alt": "Toile jacquard motif Uroko",
       "mat1_title": "Toile jacquard Uroko",
-      "mat1_desc": "Tissée ton sur ton, la toile principale de la casquette Éventail révèle le motif écaille au regard qui s'attarde.",
-      "mat2_alt": "Cuir pleine fleur",
-      "mat2_title": "Cuir pleine fleur",
-      "mat2_desc": "Visière et sangle en cuir pleine fleur, choisi pour sa souplesse et sa patine naturelle avec l'usage.",
-      "mat3_alt": "Boucle laiton brut",
-      "mat3_title": "Boucle laiton brut",
-      "mat3_desc": "Boucle de réglage signée SAINT, en laiton brut. Patine naturellement avec l'usage."
+      "mat1_desc": "Tissée ton sur ton, la toile principale de la casquette Éventail révèle le motif écaille au regard qui s'attarde."
     },
     "cta": {
       "title_l1": "Avant chaque sortie,",
@@ -119,39 +114,54 @@
       "preorder": "Précommande exclusive",
       "secure_payment": "Paiement sécurisé"
     },
-    "delivery_estimate": "Expédition estimée sous 4 à 6 semaines",
+    "delivery_estimate": "Actuellement en précommande / confection — expédition estimée sous 4 à 6 semaines",
     "tabs": {
       "description": "Description",
-      "composition": "Composition",
+      "fit": "Coupe & taille",
+      "care": "Entretien",
       "shipping": "Livraison & retours",
       "contact": "Contact"
     },
     "spec_tiles": {
-      "tile1_l1": "Toile",
-      "tile1_l2": "jacquard",
-      "tile1_label": "Matière",
-      "tile2_l1": "Cuir",
-      "tile2_l2": "pleine fleur",
-      "tile2_label": "Visière",
-      "tile3_l1": "Laiton",
-      "tile3_l2": "brut",
-      "tile3_label": "Boucle"
+      "tile1_l1": "Jacquard",
+      "tile1_l2": "Uroko",
+      "tile1_label": "Motif",
+      "tile2_l1": "56 cm",
+      "tile2_l2": "Taille unique",
+      "tile2_label": "Tour de tête",
+      "tile3_l1": "Sangle",
+      "tile3_l2": "réglable",
+      "tile3_label": "Fermeture"
     },
     "spec_rows": {
-      "composition_label": "Composition",
-      "composition_val": "Toile jacquard coton, visière cuir pleine fleur",
-      "care_label": "Entretien",
-      "care_val": "Nettoyage à sec conseillé, chiffon doux pour le cuir",
+      "pattern_label": "Motif",
+      "pattern_val": "Toile jacquard Uroko, tissée ton sur ton",
       "size_label": "Taille",
-      "size_val": "Unique, réglable (boucle laiton)",
-      "medallion_label": "Boucle",
-      "medallion_val": "Laiton brut, réglage sur cuir",
+      "size_val": "Taille unique, référence 56 cm de tour de tête, ajustable par la sangle arrière",
+      "closure_label": "Fermeture",
+      "closure_val": "Sangle de serrage arrière, montée avec un angle étudié pour un maintien net, confortable et sans pli disgracieux",
       "packaging_label": "Emballage",
       "packaging_val": "Boîte carton recyclé sans plastique"
     },
+    "fit_panel": {
+      "p1": "Une structure souple et déstructurée : la calotte, non rigide, épouse naturellement la forme du crâne sans effet bombé artificiel.",
+      "p2": "À l'arrière, la sangle de serrage est montée avec un angle spécifique, étudié pour un maintien net et confortable, sans pli disgracieux.",
+      "size_label": "Taille de référence",
+      "size_val": "56 cm de tour de tête, ajustable grâce à la sangle arrière"
+    },
+    "care_panel": {
+      "intro": "Pour préserver la toile jacquard dans le temps :",
+      "item1": "Lavage délicat à la main uniquement, à l'eau tiède ou froide.",
+      "item2": "Savon doux ou naturel, à appliquer délicatement au chiffon doux ou à la brosse à poils souples.",
+      "item3": "Jamais de machine à laver, de sèche-linge, ni d'essorage mécanique.",
+      "item4": "Séchage à plat ou sur une forme arrondie, à l'air libre et à l'abri du soleil direct, pour éviter toute décoloration."
+    },
     "shipping_panel": {
-      "p1": "Précommande exclusive. Expédition sous 4 à 6 semaines, le temps d'un façonnage soigné et sans compromis.",
-      "p2": "Retours gratuits sous 30 jours."
+      "p1": "Actuellement en précommande / confection. Expédition estimée sous 4 à 6 semaines, le temps d'un façonnage soigné et sans compromis.",
+      "returns_title": "Retours",
+      "returns_p1": "Vous disposez de 14 jours après réception pour essayer votre pièce.",
+      "returns_p2": "La procédure est simple : contactez notre service client, nous vous guidons à chaque étape.",
+      "returns_p3": "L'article doit nous revenir intact, étiquettes attachées, dans son emballage d'origine."
     },
     "contact_panel": {
       "prefix": "Une question sur cette pièce&nbsp;? Écrivez-nous à"
@@ -171,6 +181,7 @@
     "subtotal": "Sous-total",
     "shipping": "Livraison",
     "shipping_value": "Offerte",
+    "shipping_paid": "Calculée à l'étape suivante",
     "total": "Total",
     "checkout": "Passer commande"
   },
@@ -184,8 +195,8 @@
     "q3": "Quels sont les délais d'expédition ?",
     "a3": "Chaque précommande est expédiée sous 4 à 6 semaines, le temps nécessaire à un façonnage soigné et sans compromis.",
     "q4": "Puis-je retourner un article ?",
-    "a4": "Vous disposez de 30 jours à réception pour retourner un article non porté, dans son emballage d'origine.",
+    "a4": "Vous disposez de 14 jours à réception pour retourner un article intact, étiquettes attachées, dans son emballage d'origine. Contactez notre service client pour lancer la procédure.",
     "q5": "Comment entretenir ma casquette ?",
-    "a5": "Un nettoyage à sec est conseillé pour la toile jacquard. Pour le cuir de la visière, un chiffon doux suffit. Évitez le lave-linge et l'exposition prolongée au soleil."
+    "a5": "Lavage délicat à la main uniquement, à l'eau tiède ou froide, avec un savon doux. Jamais de machine à laver ni de sèche-linge. Séchage à plat ou sur une forme arrondie, à l'abri du soleil direct."
   }
 }

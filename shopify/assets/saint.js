@@ -258,11 +258,10 @@ function updateCartCountFromShopify(){
     document.querySelectorAll('#cart-count').forEach(el=>el.textContent=cart.item_count);
   });
 }
-document.addEventListener('submit',function(e){
-  const form=e.target.closest('form[action*="/cart/add"]');
-  if(!form) return;
+function handleAddToCartSubmit(e){
   e.preventDefault();
-  const btn=form.querySelector('button[type="submit"],.btn-add-cart');
+  const form=e.currentTarget;
+  const btn=e.submitter || form.querySelector('button[type="submit"]:not([disabled]),.btn-add-cart:not([disabled])');
   fetch('/cart/add.js',{
     method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
@@ -276,7 +275,10 @@ document.addEventListener('submit',function(e){
       btn.classList.add('added');
       setTimeout(()=>{span.textContent=original;btn.classList.remove('added');},1800);
     }
-  });
+  }).catch(()=>{});
+}
+document.querySelectorAll('form[action*="/cart/add"]').forEach(form=>{
+  form.addEventListener('submit',handleAddToCartSubmit);
 });
 document.addEventListener('click',function(e){
   const quickAdd=e.target.closest('[data-quick-add]');
@@ -325,7 +327,7 @@ document.querySelectorAll('.cart-line-stepper[data-line-key]').forEach(stepper=>
   });
 });
 
-/* ===== PRODUCT TABS (Description / Composition / Livraison / Contact) ===== */
+/* ===== PRODUCT TABS (Description / Coupe & taille / Entretien / Livraison / Contact) ===== */
 document.querySelectorAll('.p-tabs-nav').forEach(nav=>{
   const tabs=nav.closest('.p-tabs');
   nav.querySelectorAll('.p-tab-btn').forEach(btn=>{

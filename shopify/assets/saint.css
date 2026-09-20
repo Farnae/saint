@@ -370,7 +370,8 @@ footer{background:var(--green);padding:80px 0 52px;}
 
 .p-express{display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--line-m);padding:14px;font-size:11px;color:var(--stone);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px;}
 .p-express-sep{opacity:.5;}
-.p-delivery{font-size:12px;color:var(--stone);margin-bottom:44px;}
+.p-delivery{font-size:12px;color:var(--stone);margin-bottom:8px;}
+.p-delivery.p-freeship{color:var(--green);font-weight:500;margin-bottom:44px;}
 
 .p-tabs-nav{display:flex;gap:28px;border-bottom:1px solid var(--line);margin-bottom:28px;flex-wrap:wrap;}
 .p-tab-btn{background:none;border:none;padding:0 0 14px;font-size:12px;letter-spacing:.03em;color:var(--stone);cursor:pointer;position:relative;transition:color .3s;}
@@ -380,6 +381,14 @@ footer{background:var(--green);padding:80px 0 52px;}
 .p-tab-panel{display:none;}
 .p-tab-panel.active{display:block;}
 .spec-rows{border-top:1px solid var(--line);}
+.p-fit-copy{font-size:16px;line-height:1.8;color:var(--ink-dim);max-width:460px;margin-top:24px;}
+.p-fit-copy+.p-fit-copy{margin-top:14px;}
+.p-care-intro{font-size:15px;color:var(--stone);margin-bottom:18px;}
+.p-care-list{list-style:none;display:flex;flex-direction:column;gap:14px;max-width:460px;}
+.p-care-list li{position:relative;padding-left:20px;font-size:15px;line-height:1.7;color:var(--ink-dim);}
+.p-care-list li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--champagne);}
+.p-freeship-note{font-size:13px;color:var(--green);font-weight:500;margin:14px 0 24px;}
+.p-returns-title{font-family:'Jost',sans-serif;font-size:16px;font-weight:500;margin:8px 0 12px;color:var(--ink);}
 
 /* stock bar */
 .stock-bar{margin-bottom:32px;}
@@ -436,6 +445,7 @@ footer{background:var(--green);padding:80px 0 52px;}
 .panier-summary-box{width:100%;max-width:340px;}
 .sum-row{display:flex;justify-content:space-between;font-size:15px;padding:14px 0;color:var(--stone);}
 .sum-row.total{font-family:'Jost',sans-serif;font-size:28px;color:var(--ink);border-top:1px solid var(--line);margin-top:8px;padding-top:20px;}
+.cart-freeship-note{font-size:12px;color:var(--green);font-weight:500;margin-top:-6px;padding-bottom:8px;text-align:right;}
 .empty-cart{padding:120px 0;text-align:center;color:var(--stone);font-size:16px;line-height:1.8;}
 .empty-cart a{color:var(--green);border-bottom:1px solid rgba(6,72,41,.25);}
 

@@ -24,7 +24,8 @@
     },
     "cart_js": {
       "added": "Added!"
-    }
+    },
+    "freeship_note": "Free shipping from €150 of purchase."
   },
   "password": {
     "placeholder": "Password",
@@ -36,23 +37,23 @@
       "kicker": "Parisian house. Inaugural piece.",
       "title_l1": "The pattern",
       "title_em": "that lasts.",
-      "sub": "Jacquard canvas with the Uroko pattern, full-grain leather brim and brass buckle. The SAINT cap opens the house, one piece at a time.",
+      "sub": "Jacquard canvas with the Uroko pattern, soft structure that follows the shape of the head. The SAINT cap opens the house, one piece at a time.",
       "cta_discover": "Discover the piece",
       "cta_story": "Our story",
       "edition": "Limited run"
     },
     "strip": {
       "wool": "Jacquard canvas",
-      "acrylic": "Full-grain leather",
+      "acrylic": "Woven Uroko pattern",
       "embroidery": "Flat-stitch embroidery",
-      "medallion": "Brass buckle",
+      "medallion": "Adjustable strap",
       "finish": "Careful craftsmanship"
     },
     "story": {
       "title_l1": "The Story",
       "title_l2": "of SAINT",
       "p1": "SAINT was born of a clear intention: to take the time to design pieces that mean something, free from the constant acceleration of trends. We see accessories not as add-ons, but as objects of expression in their own right.",
-      "p2": "Inspired by the clean lines of contemporary design and the rigour of Japanese aesthetics, our approach favours the relief of the material, the precision of the cut and an uncompromising attention to detail. From the jacquard weave to the brass buckle, every element is designed to stand the test of time and blend naturally into everyday dress.",
+      "p2": "Inspired by the clean lines of contemporary design and the rigour of Japanese aesthetics, our approach favours the relief of the material, the precision of the cut and an uncompromising attention to detail. From the jacquard weave to the adjuster strap, every element is designed to stand the test of time and blend naturally into everyday dress.",
       "p3": "Create with intention, build with patience, give weight to what lasts."
     },
     "editorial": {
@@ -76,7 +77,7 @@
       "label": "The detail",
       "title_l1": "The SAINT",
       "title_l2": "signature",
-      "p": "The raw brass buckle, adjustable on full-grain leather, signs every Éventail cap.",
+      "p": "The back adjuster strap, mounted at a precise angle for a clean, wrinkle-free fit, signs every Éventail cap.",
       "caption": "SAINT — Éventail Edition"
     },
     "manifesto": {
@@ -85,18 +86,12 @@
       "l3": "Give weight to what lasts."
     },
     "materials": {
-      "title_l1": "Three materials,",
-      "title_l2": "no compromise",
-      "intro": "A deliberately limited number of fibres, chosen for how they hold up over time rather than for their cost.",
+      "title_l1": "The jacquard,",
+      "title_l2": "our signature",
+      "intro": "A tone-on-tone weave, designed to reveal the Uroko pattern to a lingering eye and to stand the test of time.",
       "mat1_alt": "Jacquard canvas with the Uroko pattern",
       "mat1_title": "Uroko jacquard canvas",
-      "mat1_desc": "Woven tone on tone, the Éventail cap's main canvas reveals the scale pattern to a lingering eye.",
-      "mat2_alt": "Full-grain leather",
-      "mat2_title": "Full-grain leather",
-      "mat2_desc": "Brim and strap in full-grain leather, chosen for its suppleness and the natural patina it develops with wear.",
-      "mat3_alt": "Raw brass buckle",
-      "mat3_title": "Raw brass buckle",
-      "mat3_desc": "SAINT-signed adjuster buckle, in raw brass. Develops a natural patina with wear."
+      "mat1_desc": "Woven tone on tone, the Éventail cap's main canvas reveals the scale pattern to a lingering eye."
     },
     "cta": {
       "title_l1": "Before every outing,",
@@ -119,39 +114,54 @@
       "preorder": "Exclusive pre-order",
       "secure_payment": "Secure payment"
     },
-    "delivery_estimate": "Estimated shipping in 4 to 6 weeks",
+    "delivery_estimate": "Currently on pre-order / in the making — estimated shipping in 4 to 6 weeks",
     "tabs": {
       "description": "Description",
-      "composition": "Composition",
+      "fit": "Fit & sizing",
+      "care": "Care",
       "shipping": "Shipping & returns",
       "contact": "Contact"
     },
     "spec_tiles": {
       "tile1_l1": "Jacquard",
-      "tile1_l2": "canvas",
-      "tile1_label": "Material",
-      "tile2_l1": "Full-grain",
-      "tile2_l2": "leather",
-      "tile2_label": "Brim",
-      "tile3_l1": "Raw",
-      "tile3_l2": "brass",
-      "tile3_label": "Buckle"
+      "tile1_l2": "Uroko",
+      "tile1_label": "Pattern",
+      "tile2_l1": "56 cm",
+      "tile2_l2": "One size",
+      "tile2_label": "Head size",
+      "tile3_l1": "Strap",
+      "tile3_l2": "adjustable",
+      "tile3_label": "Closure"
     },
     "spec_rows": {
-      "composition_label": "Composition",
-      "composition_val": "Cotton jacquard canvas, full-grain leather brim",
-      "care_label": "Care",
-      "care_val": "Dry clean recommended, soft cloth for the leather",
+      "pattern_label": "Pattern",
+      "pattern_val": "Uroko jacquard canvas, woven tone on tone",
       "size_label": "Size",
-      "size_val": "One size, adjustable (brass buckle)",
-      "medallion_label": "Buckle",
-      "medallion_val": "Raw brass, adjusts on leather",
+      "size_val": "One size, 56 cm head-size reference, adjustable via the back strap",
+      "closure_label": "Closure",
+      "closure_val": "Back adjuster strap, mounted at a studied angle for a clean, comfortable, wrinkle-free fit",
       "packaging_label": "Packaging",
       "packaging_val": "Recycled cardboard box, plastic-free"
     },
+    "fit_panel": {
+      "p1": "A soft, unstructured build: the non-rigid crown naturally follows the shape of the head, with no artificial domed effect.",
+      "p2": "At the back, the adjuster strap is mounted at a specific angle, designed for a clean, comfortable fit with no unsightly folding.",
+      "size_label": "Reference size",
+      "size_val": "56 cm head circumference, adjustable via the back strap"
+    },
+    "care_panel": {
+      "intro": "To preserve the jacquard canvas over time:",
+      "item1": "Hand wash only, gently, in lukewarm or cold water.",
+      "item2": "Mild or natural soap, applied gently with a soft cloth or a soft-bristle brush.",
+      "item3": "Never machine wash, tumble dry, or wring mechanically.",
+      "item4": "Dry flat or over a rounded form, in open air, away from direct sunlight to avoid any discolouration."
+    },
     "shipping_panel": {
-      "p1": "Exclusive pre-order. Shipped within 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
-      "p2": "Free returns within 30 days."
+      "p1": "Currently on pre-order / in the making. Estimated shipping in 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
+      "returns_title": "Returns",
+      "returns_p1": "You have 14 days after receipt to try your piece.",
+      "returns_p2": "The process is simple: contact our customer service and we'll guide you through every step.",
+      "returns_p3": "The item must come back to us intact, tags attached, in its original packaging."
     },
     "contact_panel": {
       "prefix": "Have a question about this piece? Write to us at"
@@ -171,6 +181,7 @@
     "subtotal": "Subtotal",
     "shipping": "Shipping",
     "shipping_value": "Free",
+    "shipping_paid": "Calculated at checkout",
     "total": "Total",
     "checkout": "Checkout"
   },
@@ -184,8 +195,8 @@
     "q3": "What are the shipping times?",
     "a3": "Each pre-order ships within 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
     "q4": "Can I return an item?",
-    "a4": "You have 30 days from receipt to return an unworn item in its original packaging.",
+    "a4": "You have 14 days from receipt to return an intact item, tags attached, in its original packaging. Contact our customer service to start the process.",
     "q5": "How do I care for my cap?",
-    "a5": "Dry cleaning is recommended for the jacquard canvas. A soft cloth is enough for the leather brim. Avoid the washing machine and prolonged sun exposure."
+    "a5": "Hand wash only, gently, in lukewarm or cold water, with a mild soap. Never machine wash or tumble dry. Dry flat or over a rounded form, away from direct sunlight."
   }
 }

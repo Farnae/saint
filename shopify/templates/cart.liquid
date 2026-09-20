@@ -24,8 +24,12 @@
       </div>
       <div class="panier-summary">
         <div class="panier-summary-box">
+          {% assign free_ship_threshold = 15000 %}
           <div class="sum-row"><span>{{ 'cart.subtotal' | t }}</span><span>{{ cart.total_price | money }}</span></div>
-          <div class="sum-row"><span>{{ 'cart.shipping' | t }}</span><span>{{ 'cart.shipping_value' | t }}</span></div>
+          <div class="sum-row"><span>{{ 'cart.shipping' | t }}</span><span>{% if cart.total_price >= free_ship_threshold %}{{ 'cart.shipping_value' | t }}{% else %}{{ 'cart.shipping_paid' | t }}{% endif %}</span></div>
+          {% unless cart.total_price >= free_ship_threshold %}
+            <p class="cart-freeship-note">{{ 'general.freeship_note' | t }}</p>
+          {% endunless %}
           <div class="sum-row total"><span>{{ 'cart.total' | t }}</span><span>{{ cart.total_price | money }}</span></div>
           <button type="submit" name="checkout" class="btn-add-cart" style="width:100%;margin-top:24px;text-align:center;"><span>{{ 'cart.checkout' | t }}</span></button>
         </div>
