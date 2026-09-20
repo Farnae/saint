@@ -1,11 +1,10 @@
 {%- comment -%}
-  Handle r&eacute;el du produit dans Shopify (Produits > Casquette SAINT
-  EVENTAIL > section R&eacute;f&eacute;rencement Google en bas de page).
-  Si tu changes ce handle plus tard dans l'admin, mets-le &agrave; jour ici
-  aussi &mdash; Shopify ne les synchronise pas automatiquement entre eux.
+  On prend le premier produit publi&eacute; de la boutique plut&ocirc;t qu'un
+  handle en dur : &ccedil;a survit &agrave; un changement de nom/handle dans
+  l'admin sans casser les liens "D&eacute;couvrir la pi&egrave;ce".
 {%- endcomment -%}
-{% assign product = all_products['casquette-saint-beige'] %}
-{% assign cap_images = "saint-cap-front.jpg,saint-cap-side.jpg,saint-cap-texture.jpg,saint-cap-interior.jpg,saint-cap-outdoor.jpg" | split: "," %}
+{% assign product = collections.all.products.first %}
+{% assign cap_images = "saint-cap-front.webp,saint-cap-side.webp,saint-cap-texture.webp,saint-cap-interior.webp,saint-cap-outdoor.webp" | split: "," %}
 
 <section class="hero">
   <div class="hero-copy">
@@ -19,7 +18,7 @@
     <p class="hero-edition fade-up d5">{{ 'index.hero.edition' | t }}</p>
   </div>
   <div class="hero-visual">
-    <div class="hpf"><img id="hero-cap" class="cap-hero" src="{{ 'saint-cap-model.jpg' | asset_url }}" alt="Casquette SAINT &Eacute;ventail"></div>
+    <div class="hpf"><img id="hero-cap" class="cap-hero" src="{{ 'saint-cap-model.webp' | asset_url }}" alt="Casquette SAINT &Eacute;ventail"></div>
   </div>
 </section>
 
@@ -45,7 +44,7 @@
 </section>
 
 <div class="editorial-break" id="editorial-break">
-  <img src="{{ 'saint-lifestyle-cap-banner.jpg' | asset_url }}" alt="{{ 'index.editorial.alt' | t }}" loading="eager" fetchpriority="high">
+  <img src="{{ 'saint-lifestyle-cap-banner.webp' | asset_url }}" alt="{{ 'index.editorial.alt' | t }}" loading="eager" fetchpriority="high">
 </div>
 
 <div class="lookbook-wrap reveal" aria-label="{{ 'index.lookbook.aria' | t }}">
@@ -118,7 +117,7 @@
     <p>{{ 'index.turntable.p' | t }}</p>
   </div>
   <div class="turntable-wrap">
-    <img class="turntable-media" src="{{ 'saint-cap-outdoor.jpg' | asset_url }}" alt="D&eacute;tail casquette SAINT &Eacute;ventail" loading="lazy">
+    <img class="turntable-media" src="{{ 'saint-cap-outdoor.webp' | asset_url }}" alt="D&eacute;tail casquette SAINT &Eacute;ventail" loading="lazy">
     <div class="turntable-caption">{{ 'index.turntable.caption' | t }}</div>
   </div>
 </section>
@@ -137,7 +136,7 @@
     </div>
   </div>
   <div class="mat-row wrap reveal">
-    <div class="mat-visual"><img src="{{ 'saint-cap-texture.jpg' | asset_url }}" alt="{{ 'index.materials.mat1_alt' | t }}" loading="lazy"></div>
+    <div class="mat-visual"><img src="{{ 'saint-cap-texture.webp' | asset_url }}" alt="{{ 'index.materials.mat1_alt' | t }}" loading="lazy"></div>
     <div class="mat-copy">
       <h4>{{ 'index.materials.mat1_title' | t }}</h4>
       <p>{{ 'index.materials.mat1_desc' | t }}</p>

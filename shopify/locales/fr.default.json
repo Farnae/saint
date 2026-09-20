@@ -109,6 +109,8 @@
     "back_to_collection": "Collection",
     "sub_default": "Toile jacquard, motif Uroko",
     "wishlist_aria": "Ajouter aux favoris",
+    "add_to_cart": "Ajouter au panier",
+    "pay_in_installments": "Paiement en 3x sans frais",
     "reference_label": "Référence",
     "express": {
       "preorder": "Précommande exclusive",
@@ -141,7 +143,7 @@
       "closure_label": "Fermeture",
       "closure_val": "Sangle de serrage arrière, montée avec un angle étudié pour un maintien net, confortable et sans pli disgracieux",
       "packaging_label": "Emballage",
-      "packaging_val": "Boîte carton recyclé sans plastique"
+      "packaging_val": "Sac de rangement (dust bag) en coton SAINT Origine"
     },
     "fit_panel": {
       "p1": "Une structure souple et déstructurée : la calotte, non rigide, épouse naturellement la forme du crâne sans effet bombé artificiel.",
@@ -178,6 +180,7 @@
     "empty_text": "Votre panier est vide.",
     "view_collection": "Voir la collection",
     "remove": "Retirer",
+    "close_aria": "Fermer le panier",
     "subtotal": "Sous-total",
     "shipping": "Livraison",
     "shipping_value": "Offerte",

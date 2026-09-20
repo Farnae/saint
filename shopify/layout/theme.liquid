@@ -49,8 +49,12 @@
         </div>
       {% endform %}
     {% endif %}
-    <a class="bag" href="{{ routes.cart_url }}">{{ 'general.nav.cart' | t }} <span id="cart-count">{{ cart.item_count }}</span></a>
+    <a class="bag" href="{{ routes.cart_url }}" id="cart-drawer-trigger">{{ 'general.nav.cart' | t }} <span class="cart-count">{{ cart.item_count }}</span></a>
   </div>
+  <button class="cart-trigger-mobile" id="cart-drawer-trigger-mobile" aria-label="{{ 'general.nav.cart' | t }}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+    <span class="cart-count">{{ cart.item_count }}</span>
+  </button>
   <button class="burger" id="burger" aria-label="{{ 'general.nav.open_menu' | t }}" aria-expanded="false" aria-controls="mobile-nav">
     <span></span><span></span>
   </button>
@@ -130,7 +134,29 @@
   </div>
 </footer>
 
-<script>window.SAINT_I18N = { added: {{ 'general.cart_js.added' | t | json }} };</script>
+<div class="cart-drawer-backdrop" id="cart-drawer-backdrop"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+  <div class="cart-drawer-head">
+    <h3>{{ 'cart.title' | t }}</h3>
+    <button class="cart-drawer-close" id="cart-drawer-close" aria-label="{{ 'cart.close_aria' | t }}">&times;</button>
+  </div>
+  <div class="cart-drawer-body" id="cart-drawer-body"></div>
+  <div class="cart-drawer-foot" id="cart-drawer-foot"></div>
+</aside>
+
+<script>
+window.SAINT_I18N = {
+  added: {{ 'general.cart_js.added' | t | json }},
+  cartEmpty: {{ 'cart.empty_text' | t | json }},
+  freeship: {{ 'general.freeship_note' | t | json }},
+  freeShipThreshold: 15000,
+  subtotal: {{ 'cart.subtotal' | t | json }},
+  total: {{ 'cart.total' | t | json }},
+  checkout: {{ 'cart.checkout' | t | json }},
+  checkoutUrl: {{ '/checkout' | json }},
+  remove: {{ 'cart.remove' | t | json }}
+};
+</script>
 {{ 'saint.js' | asset_url | script_tag }}
 </body>
 </html>

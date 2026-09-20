@@ -3,7 +3,7 @@
   <div class="produit-layout">
     <div class="produit-visual">
       {% for image in product.images %}
-        <div class="produit-photo"><img src="{{ image | image_url: width: 1400 }}" alt="{{ product.title | escape }} &ndash; vue {{ forloop.index }}" loading="lazy"></div>
+        <div class="produit-photo"><img src="{{ image | image_url: width: 1400, format: 'webp' }}" alt="{{ product.title | escape }} &ndash; vue {{ forloop.index }}" loading="lazy"></div>
       {% endfor %}
     </div>
     <div class="produit-info">
@@ -29,14 +29,19 @@
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
         {% endunless %}
         <input type="hidden" name="quantity" value="1">
-        <button type="submit" class="btn-buy-bar" {% unless product.available %}disabled{% endunless %}>
-          <span>{% if product.available %}{{ 'index.feature.preorder' | t }}{% else %}{{ 'index.feature.soldout' | t }}{% endif %}</span>
-          <span class="p-price">{{ product.price | money }}</span>
-        </button>
-        <button type="submit" class="btn-buy-bar mobile-cta-bar" {% unless product.available %}disabled{% endunless %}>
-          <span>{% if product.available %}{{ 'index.feature.preorder' | t }}{% else %}{{ 'index.feature.soldout' | t }}{% endif %}</span>
-          <span class="p-price">{{ product.price | money }}</span>
-        </button>
+        <div class="p-buy-bar">
+          <button type="submit" class="btn-buy-bar" {% unless product.available %}disabled{% endunless %}>
+            <span>{{ 'product.add_to_cart' | t }}</span>
+            <span class="p-price">{{ product.price | money }}</span>
+          </button>
+          <p class="p-buy-status">{% if product.available %}{{ 'index.feature.preorder' | t }}{% else %}{{ 'index.feature.soldout' | t }}{% endif %}</p>
+          <div class="p-pay-badges" aria-hidden="true">
+            <span class="pay-badge" title="Apple Pay"><svg width="30" height="18" viewBox="0 0 30 18"><rect x=".5" y=".5" width="29" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1"/><text x="15" y="12" font-family="'DM Sans',sans-serif" font-size="7" text-anchor="middle" fill="currentColor">Pay</text></svg></span>
+            <span class="pay-badge" title="Visa"><svg width="30" height="18" viewBox="0 0 30 18"><rect x=".5" y=".5" width="29" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1"/><text x="15" y="12" font-family="'DM Sans',sans-serif" font-weight="700" font-size="7" text-anchor="middle" fill="currentColor">VISA</text></svg></span>
+            <span class="pay-badge" title="Mastercard"><svg width="30" height="18" viewBox="0 0 30 18"><rect x=".5" y=".5" width="29" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="12.5" cy="9" r="4.6" fill="currentColor" opacity=".55"/><circle cx="17.5" cy="9" r="4.6" fill="currentColor" opacity=".55"/></svg></span>
+            <span class="pay-badge" title="{{ 'product.pay_in_installments' | t }}"><svg width="30" height="18" viewBox="0 0 30 18"><rect x=".5" y=".5" width="29" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1"/><text x="15" y="12" font-family="'DM Sans',sans-serif" font-weight="500" font-size="7" text-anchor="middle" fill="currentColor">3x</text></svg></span>
+          </div>
+        </div>
       {% endform %}
 
       <div class="p-express">

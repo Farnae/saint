@@ -109,6 +109,8 @@
     "back_to_collection": "Collection",
     "sub_default": "Jacquard canvas, Uroko pattern",
     "wishlist_aria": "Add to wishlist",
+    "add_to_cart": "Add to cart",
+    "pay_in_installments": "Pay in 3 interest-free installments",
     "reference_label": "Reference",
     "express": {
       "preorder": "Exclusive pre-order",
@@ -141,7 +143,7 @@
       "closure_label": "Closure",
       "closure_val": "Back adjuster strap, mounted at a studied angle for a clean, comfortable, wrinkle-free fit",
       "packaging_label": "Packaging",
-      "packaging_val": "Recycled cardboard box, plastic-free"
+      "packaging_val": "SAINT Origine cotton dust bag"
     },
     "fit_panel": {
       "p1": "A soft, unstructured build: the non-rigid crown naturally follows the shape of the head, with no artificial domed effect.",
@@ -178,6 +180,7 @@
     "empty_text": "Your cart is empty.",
     "view_collection": "View the collection",
     "remove": "Remove",
+    "close_aria": "Close cart",
     "subtotal": "Subtotal",
     "shipping": "Shipping",
     "shipping_value": "Free",
