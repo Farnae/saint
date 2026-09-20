@@ -64,7 +64,7 @@
       "view": "View"
     },
     "feature": {
-      "preorder": "Exclusive pre-order",
+      "preorder": "Available",
       "soldout": "Sold out"
     },
     "uroko": {
@@ -113,10 +113,9 @@
     "pay_in_installments": "Pay in 3 interest-free installments",
     "reference_label": "Reference",
     "express": {
-      "preorder": "Exclusive pre-order",
       "secure_payment": "Secure payment"
     },
-    "delivery_estimate": "Currently on pre-order / in the making — estimated shipping in 4 to 6 weeks",
+    "delivery_estimate": "Estimated shipping in 4 to 6 weeks",
     "tabs": {
       "description": "Description",
       "fit": "Fit & sizing",
@@ -159,7 +158,7 @@
       "item4": "Dry flat or over a rounded form, in open air, away from direct sunlight to avoid any discolouration."
     },
     "shipping_panel": {
-      "p1": "Currently on pre-order / in the making. Estimated shipping in 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
+      "p1": "Estimated shipping in 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
       "returns_title": "Returns",
       "returns_p1": "You have 14 days after receipt to try your piece.",
       "returns_p2": "The process is simple: contact our customer service and we'll guide you through every step.",
@@ -196,7 +195,7 @@
     "q2": "Are the editions really limited?",
     "a2": "Yes. Each series is produced in a deliberately restricted quantity, to preserve its exceptional character.",
     "q3": "What are the shipping times?",
-    "a3": "Each pre-order ships within 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
+    "a3": "Each order ships within 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
     "q4": "Can I return an item?",
     "a4": "You have 14 days from receipt to return an intact item, tags attached, in its original packaging. Contact our customer service to start the process.",
     "q5": "How do I care for my cap?",

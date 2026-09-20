@@ -64,7 +64,7 @@
       "view": "Vue"
     },
     "feature": {
-      "preorder": "Précommande exclusive",
+      "preorder": "Disponible",
       "soldout": "Rupture de stock"
     },
     "uroko": {
@@ -113,10 +113,9 @@
     "pay_in_installments": "Paiement en 3x sans frais",
     "reference_label": "Référence",
     "express": {
-      "preorder": "Précommande exclusive",
       "secure_payment": "Paiement sécurisé"
     },
-    "delivery_estimate": "Actuellement en précommande / confection — expédition estimée sous 4 à 6 semaines",
+    "delivery_estimate": "Expédition estimée sous 4 à 6 semaines",
     "tabs": {
       "description": "Description",
       "fit": "Coupe & taille",
@@ -159,7 +158,7 @@
       "item4": "Séchage à plat ou sur une forme arrondie, à l'air libre et à l'abri du soleil direct, pour éviter toute décoloration."
     },
     "shipping_panel": {
-      "p1": "Actuellement en précommande / confection. Expédition estimée sous 4 à 6 semaines, le temps d'un façonnage soigné et sans compromis.",
+      "p1": "Expédition estimée sous 4 à 6 semaines, le temps d'un façonnage soigné et sans compromis.",
       "returns_title": "Retours",
       "returns_p1": "Vous disposez de 14 jours après réception pour essayer votre pièce.",
       "returns_p2": "La procédure est simple : contactez notre service client, nous vous guidons à chaque étape.",
@@ -196,7 +195,7 @@
     "q2": "Les éditions sont-elles vraiment limitées ?",
     "a2": "Oui. Chaque série est produite en quantité volontairement restreinte, pour préserver son caractère d'exception.",
     "q3": "Quels sont les délais d'expédition ?",
-    "a3": "Chaque précommande est expédiée sous 4 à 6 semaines, le temps nécessaire à un façonnage soigné et sans compromis.",
+    "a3": "Chaque commande est expédiée sous 4 à 6 semaines, le temps nécessaire à un façonnage soigné et sans compromis.",
     "q4": "Puis-je retourner un article ?",
     "a4": "Vous disposez de 14 jours à réception pour retourner un article intact, étiquettes attachées, dans son emballage d'origine. Contactez notre service client pour lancer la procédure.",
     "q5": "Comment entretenir ma casquette ?",
