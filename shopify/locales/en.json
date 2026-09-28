@@ -173,6 +173,17 @@
     "title": "All the silhouettes",
     "subtitle": "Few pieces are crafted each season."
   },
+  "policy": {
+    "eyebrow": "Legal"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "intro": "A question, a special request, or help with an order? Write to us — we answer every message personally.",
+    "email_label": "Email",
+    "instagram_label": "Instagram",
+    "address_label": "Address"
+  },
   "cart": {
     "eyebrow": "Cart",
     "title": "Your selection",

@@ -173,6 +173,17 @@
     "title": "Toutes les silhouettes",
     "subtitle": "Peu de pièces sont façonnées à chaque saison."
   },
+  "policy": {
+    "eyebrow": "Informations légales"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Nous contacter",
+    "intro": "Une question, une envie particulière ou besoin d'aide sur une commande&nbsp;? Écrivez-nous, nous répondons personnellement à chaque message.",
+    "email_label": "Email",
+    "instagram_label": "Instagram",
+    "address_label": "Adresse"
+  },
   "cart": {
     "eyebrow": "Panier",
     "title": "Votre sélection",

@@ -1,8 +1,20 @@
 const prefRedGlobal=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-/* ===== START AT THE TOP on a plain load/refresh, but respect real #anchors ===== */
+/* ===== START AT THE TOP on a plain load/refresh, but respect real #anchors
+   and a just-submitted newsletter form (scroll to its success/error message
+   instead of burying it off-screen at the top) ===== */
 if('scrollRestoration' in history){ history.scrollRestoration='manual'; }
-function resetScrollUnlessAnchor(){ if(!location.hash) window.scrollTo(0,0); }
+function resetScrollUnlessAnchor(){
+  if(location.hash) return;
+  const formMsg=document.querySelector('.cta-success,.cta-error');
+  if(formMsg){
+    const section=formMsg.closest('.reveal');
+    if(section) section.classList.add('is-in');
+    formMsg.scrollIntoView({block:'center'});
+    return;
+  }
+  window.scrollTo(0,0);
+}
 resetScrollUnlessAnchor();
 window.addEventListener('load',resetScrollUnlessAnchor);
 window.addEventListener('pageshow',resetScrollUnlessAnchor);

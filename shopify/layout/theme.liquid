@@ -31,7 +31,7 @@
       <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}>{{ 'general.nav.home' | t }}</a></li>
       <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}>{{ 'general.nav.collection' | t }}</a></li>
       <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}>{{ 'general.nav.faq' | t }}</a></li>
-      <li><a href="{{ routes.root_url }}#contact">{{ 'general.nav.contact' | t }}</a></li>
+      <li><a href="/pages/contact" {% if template.name == 'page.contact' %}class="current"{% endif %}>{{ 'general.nav.contact' | t }}</a></li>
     </ul></nav>
     {% if shop.customer_accounts_enabled %}
       {% if customer %}
@@ -65,7 +65,7 @@
     <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}><span>{{ 'general.nav.home' | t }}</span></a></li>
     <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}><span>{{ 'general.nav.collection' | t }}</span></a></li>
     <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}><span>{{ 'general.nav.faq' | t }}</span></a></li>
-    <li><a href="{{ routes.root_url }}#contact"><span>{{ 'general.nav.contact' | t }}</span></a></li>
+    <li><a href="/pages/contact" {% if template.name == 'page.contact' %}class="current"{% endif %}><span>{{ 'general.nav.contact' | t }}</span></a></li>
     <li><a href="{{ routes.cart_url }}"><span>{{ 'general.nav.cart' | t }} ({{ cart.item_count }})</span></a></li>
     {% if shop.customer_accounts_enabled %}
       {% if customer %}

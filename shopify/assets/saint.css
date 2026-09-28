@@ -491,6 +491,24 @@ footer{background:var(--green);padding:80px 0 52px;}
 .faq-item.open .faq-a{max-height:200px;}
 .faq-a p{font-size:16px;line-height:1.82;color:var(--ink-dim);max-width:520px;}
 
+/* ============ POLICY (refund / terms / privacy / shipping) ============ */
+.policy-page{max-width:720px;padding-bottom:180px;font-size:16px;line-height:1.85;color:var(--ink-dim);}
+.policy-page h2,.policy-page h3{font-family:'Jost',sans-serif;font-weight:500;color:var(--ink);margin:40px 0 16px;}
+.policy-page h2:first-child,.policy-page h3:first-child{margin-top:0;}
+.policy-page p{margin-bottom:20px;}
+.policy-page ul,.policy-page ol{margin:0 0 20px 22px;}
+.policy-page li{margin-bottom:8px;}
+.policy-page a{color:var(--green);border-bottom:1px solid rgba(6,72,41,.25);}
+
+/* ============ CONTACT ============ */
+.contact-page{padding-bottom:180px;}
+.contact-intro{font-size:18px;line-height:1.85;color:var(--ink-dim);max-width:480px;margin-bottom:56px;}
+.contact-rows{border-top:1px solid var(--line);max-width:520px;}
+.contact-row{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);}
+.contact-label{font-size:11px;color:var(--stone);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;}
+.contact-value{font-family:'Jost',sans-serif;font-size:17px;color:var(--ink);text-align:right;transition:color .3s;}
+a.contact-value:hover{color:var(--green);}
+
 /* ============ RESPONSIVE ============ */
 @media(max-width:960px){
   .navmenu{display:none;}
@@ -501,7 +519,9 @@ footer{background:var(--green);padding:80px 0 52px;}
   .hero-copy{padding:140px 32px 60px;}
   .hero-visual{min-height:100vw;}
   .editorial-break{aspect-ratio:4/3;}
-  .hero-sub,.story-right p,.feature-desc,.uroko-copy p,.mat-intro,.mat-copy p,.cta-sub,.p-desc,.faq-a p{font-size:15px;line-height:1.75;}
+  .hero-sub,.story-right p,.feature-desc,.uroko-copy p,.mat-intro,.mat-copy p,.cta-sub,.p-desc,.faq-a p,.contact-intro{font-size:15px;line-height:1.75;}
+  .contact-row{flex-direction:column;align-items:flex-start;gap:6px;}
+  .contact-value{text-align:left;}
   .mat-copy p{font-size:14px;}
   .mobile-nav{padding:48px 32px;}
   .mobile-nav-foot{left:32px;}
