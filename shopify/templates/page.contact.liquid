@@ -1,11 +1,41 @@
 <div class="wrap subhead"><p class="eyebrow">{{ 'contact.eyebrow' | t }}</p><h1>{{ 'contact.title' | t }}</h1></div>
 <div class="wrap contact-page">
   <p class="contact-intro">{{ 'contact.intro' | t }}</p>
+
+  {% form 'contact' %}
+    {% if form.posted_successfully? %}
+      <p class="cta-success">{{ 'contact.form_success' | t }}</p>
+    {% else %}
+      {% if form.errors %}
+        <p class="cta-error">{{ 'contact.form_error' | t }}</p>
+      {% endif %}
+      <div class="contact-form-grid">
+        <div class="field">
+          <label for="ContactFormFirstName">{{ 'contact.first_name_label' | t }}</label>
+          <input type="text" id="ContactFormFirstName" name="contact[Pr&eacute;nom]" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="ContactFormLastName">{{ 'contact.last_name_label' | t }}</label>
+          <input type="text" id="ContactFormLastName" name="contact[Nom]" autocomplete="family-name" required>
+        </div>
+        <div class="field">
+          <label for="ContactFormEmail">{{ 'contact.email_label' | t }}</label>
+          <input type="email" id="ContactFormEmail" name="contact[email]" autocomplete="email" value="{{ form.email }}" required>
+        </div>
+        <div class="field">
+          <label for="ContactFormSubject">{{ 'contact.subject_label' | t }}</label>
+          <input type="text" id="ContactFormSubject" name="contact[Sujet]" required>
+        </div>
+        <div class="field field-full">
+          <label for="ContactFormMessage">{{ 'contact.message_label' | t }}</label>
+          <textarea id="ContactFormMessage" name="contact[body]" rows="6" required>{{ form.body }}</textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary contact-submit"><div class="btn-fill"></div><span>{{ 'contact.submit' | t }}</span></button>
+    {% endif %}
+  {% endform %}
+
   <div class="contact-rows">
-    <div class="contact-row">
-      <span class="contact-label">{{ 'contact.email_label' | t }}</span>
-      <a href="mailto:saintorigin26@gmail.com" class="contact-value">saintorigin26@gmail.com</a>
-    </div>
     <div class="contact-row">
       <span class="contact-label">{{ 'contact.instagram_label' | t }}</span>
       <a href="https://instagram.com/saint.origine" target="_blank" rel="noopener" class="contact-value">@saint.origine</a>

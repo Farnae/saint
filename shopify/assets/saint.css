@@ -503,6 +503,14 @@ footer{background:var(--green);padding:80px 0 52px;}
 /* ============ CONTACT ============ */
 .contact-page{padding-bottom:180px;}
 .contact-intro{font-size:18px;line-height:1.85;color:var(--ink-dim);max-width:480px;margin-bottom:56px;}
+.contact-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:640px;margin-bottom:12px;}
+.field{display:flex;flex-direction:column;gap:10px;}
+.field-full{grid-column:1 / -1;}
+.field label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--stone);}
+.field input,.field textarea{border:none;border-bottom:1px solid var(--line-m);background:none;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:var(--ink);padding:8px 0;outline:none;transition:border-color .3s;}
+.field textarea{resize:vertical;line-height:1.6;}
+.field input:focus,.field textarea:focus{border-color:var(--ink);}
+.contact-submit{margin:28px 0 72px;}
 .contact-rows{border-top:1px solid var(--line);max-width:520px;}
 .contact-row{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);}
 .contact-label{font-size:11px;color:var(--stone);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;}
@@ -521,6 +529,7 @@ a.contact-value:hover{color:var(--green);}
   .editorial-break{aspect-ratio:4/3;}
   .hero-sub,.story-right p,.feature-desc,.uroko-copy p,.mat-intro,.mat-copy p,.cta-sub,.p-desc,.faq-a p,.contact-intro{font-size:15px;line-height:1.75;}
   .contact-row{flex-direction:column;align-items:flex-start;gap:6px;}
+  .contact-form-grid{grid-template-columns:1fr;gap:20px;}
   .contact-value{text-align:left;}
   .mat-copy p{font-size:14px;}
   .mobile-nav{padding:48px 32px;}
