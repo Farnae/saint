@@ -36,6 +36,8 @@
     "subscribed": "Thank you, you're on the list. We'll let you know on release day.",
     "already_subscribed": "You're already on the list. We'll let you know on release day.",
     "subscribe_error": "Something went wrong, please try again.",
+    "empty_email": "Please enter your email address.",
+    "invalid_email": "Invalid email address. Please check and try again.",
     "note": "No spam. Unsubscribe in one click.",
     "access_toggle": "Enter with password",
     "placeholder": "Password",

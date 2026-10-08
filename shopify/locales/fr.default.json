@@ -36,6 +36,8 @@
     "subscribed": "Merci, vous êtes bien inscrit·e. Vous serez prévenu·e dès la sortie.",
     "already_subscribed": "Vous êtes déjà inscrit·e. Vous serez prévenu·e dès la sortie.",
     "subscribe_error": "Une erreur est survenue, merci de réessayer.",
+    "empty_email": "Merci d'entrer votre adresse email.",
+    "invalid_email": "Adresse email non valide. Vérifiez et réessayez.",
     "note": "Sans spam. Désabonnement en un clic.",
     "access_toggle": "Accès avec mot de passe",
     "placeholder": "Mot de passe",
