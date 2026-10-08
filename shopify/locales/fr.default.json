@@ -28,6 +28,16 @@
     "freeship_note": "Livraison offerte dès 150 € d'achat."
   },
   "password": {
+    "kicker": "Casquette SAINT Éventail",
+    "title": "Soyez prévenu·e de la sortie.",
+    "sub": "La première pièce de la maison arrive bientôt. Laissez votre email pour être informé·e en avant-première, le jour de la sortie.",
+    "email_placeholder": "Votre adresse email",
+    "subscribe": "S'inscrire",
+    "subscribed": "Merci, vous êtes bien inscrit·e. Vous serez prévenu·e dès la sortie.",
+    "already_subscribed": "Vous êtes déjà inscrit·e. Vous serez prévenu·e dès la sortie.",
+    "subscribe_error": "Une erreur est survenue, merci de réessayer.",
+    "note": "Sans spam. Désabonnement en un clic.",
+    "access_toggle": "Accès avec mot de passe",
     "placeholder": "Mot de passe",
     "submit": "Entrer",
     "error": "Mot de passe incorrect. Réessayez."
