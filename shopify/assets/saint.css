@@ -33,8 +33,7 @@ button{font-family:'DM Sans',sans-serif;font-weight:400;color:var(--ink);cursor:
 
 /* ============ CURTAIN ============ */
 #curtain{position:fixed;inset:0;z-index:400;background:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;overflow:hidden;}
-#curtain .cw{font-family:'EB Garamond',serif;font-weight:400;font-style:normal;font-size:clamp(44px,7.5vw,88px);letter-spacing:.34em;padding-left:.34em;color:rgba(246,245,242,.96);opacity:0;animation:cwFade 1.2s ease forwards .3s;}
-#curtain .cw-sub{font-family:'EB Garamond',serif;font-style:italic;font-size:16px;letter-spacing:.22em;padding-left:.22em;color:rgba(246,245,242,.62);opacity:0;animation:cwFade 1.2s ease forwards .65s;}
+#curtain .cw-logo{width:clamp(220px,44vw,560px);height:auto;opacity:0;animation:cwFade 1.2s ease forwards .3s;}
 #curtain .cline{position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--champagne);transform-origin:left;transform:scaleX(0);animation:lineGrow 1.4s cubic-bezier(.76,0,.24,1) forwards .3s;}
 @keyframes cwFade{to{opacity:1;}}
 @keyframes lineGrow{to{transform:scaleX(1);}}
@@ -492,14 +491,23 @@ footer{background:var(--green);padding:80px 0 52px;}
 .faq-item.open .faq-a{max-height:200px;}
 .faq-a p{font-size:16px;line-height:1.82;color:var(--ink-dim);max-width:520px;}
 
-/* ============ POLICY (refund / terms / privacy / shipping) ============ */
-.policy-page{max-width:720px;padding-bottom:180px;font-size:16px;line-height:1.85;color:var(--ink-dim);}
-.policy-page h2,.policy-page h3{font-family:'Jost',sans-serif;font-weight:500;color:var(--ink);margin:40px 0 16px;}
-.policy-page h2:first-child,.policy-page h3:first-child{margin-top:0;}
-.policy-page p{margin-bottom:20px;}
-.policy-page ul,.policy-page ol{margin:0 0 20px 22px;}
-.policy-page li{margin-bottom:8px;}
-.policy-page a{color:var(--green);border-bottom:1px solid rgba(6,72,41,.25);}
+/* ============ POLICY PAGES (refund / terms / privacy / shipping) ============
+   Shopify renders /policies/* with its own markup (.shopify-policy__*), not a theme
+   template, so they are styled here; padding clears the fixed header. */
+.shopify-policy__container{max-width:760px!important;margin:0 auto!important;padding:220px 64px 180px!important;font-size:16px;line-height:1.85;color:var(--ink-dim);}
+.shopify-policy__title{margin-bottom:56px;padding-bottom:28px;border-bottom:1px solid var(--line);text-align:left!important;}
+.shopify-policy__title h1{font-family:'Jost',sans-serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.15;color:var(--ink);text-wrap:balance;}
+.shopify-policy__body h2,.shopify-policy__body h3{font-family:'Jost',sans-serif;font-weight:500;font-size:19px;color:var(--ink);margin:44px 0 14px;}
+.shopify-policy__body strong{color:var(--ink);font-weight:500;}
+.shopify-policy__body p{margin-bottom:18px;}
+.shopify-policy__body p:empty,.shopify-policy__body p:has(> br:only-child){display:none;}
+.shopify-policy__body ul,.shopify-policy__body ol{margin:0 0 18px 22px;}
+.shopify-policy__body li{margin-bottom:8px;}
+.shopify-policy__body a{color:var(--green);border-bottom:1px solid rgba(6,72,41,.25);word-break:break-word;}
+@media(max-width:960px){
+  .shopify-policy__container{padding:140px 32px 120px!important;font-size:15px;line-height:1.75;}
+  .shopify-policy__title{margin-bottom:36px;}
+}
 
 /* ============ CONTACT ============ */
 .contact-page{padding-bottom:180px;}
@@ -612,3 +620,5 @@ a.contact-value:hover{color:var(--green);}
 .foot-legal{display:flex;flex-wrap:wrap;gap:10px 28px;padding-bottom:24px;}
 .foot-legal a{font-size:11px;letter-spacing:.04em;color:rgba(232,237,233,.55);transition:color .3s;}
 .foot-legal a:hover{color:var(--champagne);}
+.p-return-link{color:var(--green);font-size:13px;letter-spacing:.04em;border-bottom:1px solid rgba(6,72,41,.25);padding-bottom:2px;transition:color .3s,border-color .3s;}
+.p-return-link:hover{color:var(--green-h);border-color:var(--green-h);}

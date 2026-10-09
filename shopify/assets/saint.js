@@ -444,3 +444,11 @@ document.querySelectorAll('.p-tabs-nav').forEach(nav=>{
     });
   });
 });
+
+/* ===== CONTACT: prefill subject from ?objet= (e.g. "Demander un retour" links) ===== */
+(function(){
+  const subject=document.getElementById('ContactFormSubject');
+  if(!subject || subject.value) return;
+  const preset=new URLSearchParams(location.search).get('objet');
+  if(preset) subject.value=preset.slice(0,80);
+})();

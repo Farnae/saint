@@ -178,8 +178,9 @@
       "p1": "Pièce en stock. Une fois votre commande expédiée, comptez 3 à 5 jours de livraison.",
       "returns_title": "Retours",
       "returns_p1": "Vous disposez de 14 jours après réception pour essayer votre pièce.",
-      "returns_p2": "La procédure est simple : contactez notre service client, nous vous guidons à chaque étape.",
-      "returns_p3": "L'article doit nous revenir intact, étiquettes attachées, dans son emballage d'origine."
+      "returns_p2": "Écrivez-nous via le formulaire de contact avec l'objet « Retour » et votre numéro de commande : nous vous répondons avec la marche à suivre.",
+      "returns_p3": "L'article doit nous revenir intact, étiquettes attachées, dans son emballage d'origine.",
+      "return_link": "Demander un retour"
     },
     "contact_panel": {
       "prefix": "Une question sur cette pièce&nbsp;? Écrivez-nous à"
@@ -189,9 +190,6 @@
     "eyebrow": "Collection",
     "title": "Toutes les silhouettes",
     "subtitle": "Peu de pièces sont façonnées à chaque saison."
-  },
-  "policy": {
-    "eyebrow": "Informations légales"
   },
   "contact": {
     "eyebrow": "Contact",

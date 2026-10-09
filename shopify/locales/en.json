@@ -178,8 +178,9 @@
       "p1": "This piece is in stock. Once your order has shipped, allow 3 to 5 days for delivery.",
       "returns_title": "Returns",
       "returns_p1": "You have 14 days after receipt to try your piece.",
-      "returns_p2": "The process is simple: contact our customer service and we'll guide you through every step.",
-      "returns_p3": "The item must come back to us intact, tags attached, in its original packaging."
+      "returns_p2": "Write to us through the contact form with the subject “Return” and your order number, and we'll reply with the next steps.",
+      "returns_p3": "The item must come back to us intact, tags attached, in its original packaging.",
+      "return_link": "Request a return"
     },
     "contact_panel": {
       "prefix": "Have a question about this piece? Write to us at"
@@ -189,9 +190,6 @@
     "eyebrow": "Collection",
     "title": "All the silhouettes",
     "subtitle": "Few pieces are crafted each season."
-  },
-  "policy": {
-    "eyebrow": "Legal"
   },
   "contact": {
     "eyebrow": "Contact",
