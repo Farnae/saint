@@ -149,19 +149,26 @@
     <h2 data-split>{{ 'index.cta.title_l1' | t }}<br><em>{{ 'index.cta.title_em_l1' | t }}<br>{{ 'index.cta.title_em_l2' | t }}</em></h2>
     <div class="cta-right">
       <p class="cta-sub">{{ 'index.cta.sub' | t }}</p>
-      {% form 'customer' %}
-        {% if form.posted_successfully? %}
-          <p class="cta-success">{{ 'index.cta.success' | t }}</p>
-        {% elsif form.errors %}
-          <p class="cta-error">{% if form.errors.messages['form'] %}{{ form.errors.messages['form'] }}{% else %}{{ 'index.cta.error_default' | t }}{% endif %}</p>
-        {% else %}
-          <input type="hidden" name="contact[tags]" value="newsletter">
-          <div class="cta-form">
-            <input type="email" name="contact[email]" placeholder="{{ 'index.cta.email_placeholder' | t }}" required>
-            <button type="submit">{{ 'index.cta.submit' | t }}</button>
-          </div>
-        {% endif %}
-      {% endform %}
+      {%- capture nl_msgs -%}{"empty":{{ 'general.newsletter.empty_email' | t | json }},"invalid":{{ 'general.newsletter.invalid_email' | t | json }},"success":{{ 'general.newsletter.success' | t | json }},"already":{{ 'general.newsletter.already' | t | json }},"error":{{ 'general.newsletter.error' | t | json }}}{%- endcapture -%}
+      <div class="newsletter" data-newsletter="{{ nl_msgs | escape }}">
+        {% form 'customer', id: 'newsletter-home' %}
+          {% if form.posted_successfully? %}
+            <p class="cta-success" data-newsletter-state="success">{{ 'general.newsletter.success' | t }}</p>
+          {% elsif form.errors contains 'email' %}
+            <p class="cta-success" data-newsletter-state="already">{{ 'general.newsletter.already' | t }}</p>
+          {% else %}
+            {% if form.errors %}
+              <p class="cta-error" data-newsletter-state="error">{{ 'general.newsletter.error' | t }}</p>
+            {% endif %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="cta-form" data-newsletter-field>
+              <input type="email" name="contact[email]" placeholder="{{ 'index.cta.email_placeholder' | t }}" aria-label="{{ 'index.cta.email_placeholder' | t }}" autocomplete="email" inputmode="email">
+              <button type="submit">{{ 'index.cta.submit' | t }}</button>
+            </div>
+            <p class="newsletter-hint" data-newsletter-hint aria-live="polite"></p>
+          {% endif %}
+        {% endform %}
+      </div>
       <p class="cta-note">{{ 'index.cta.note' | t }}</p>
     </div>
   </div>

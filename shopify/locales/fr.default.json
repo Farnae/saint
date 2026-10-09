@@ -20,12 +20,20 @@
       "our_story": "Notre histoire",
       "contact_heading": "Contact",
       "copyright": "© {{ year }} SAINT. Tous droits réservés.",
-      "location": "Paris, France"
+      "location": "Paris, France",
+      "legal_heading": "Informations légales"
     },
     "cart_js": {
       "added": "Ajouté !"
     },
-    "freeship_note": "Livraison offerte dès 150 € d'achat."
+    "freeship_note": "Livraison offerte dès 150 € d'achat.",
+    "newsletter": {
+      "empty_email": "Merci d'entrer votre adresse email.",
+      "invalid_email": "Adresse email non valide. Vérifiez et réessayez.",
+      "success": "Merci, vous êtes bien inscrit·e.",
+      "already": "Vous êtes déjà inscrit·e.",
+      "error": "Une erreur est survenue, merci de réessayer."
+    }
   },
   "password": {
     "kicker": "Casquette SAINT Éventail",
@@ -36,8 +44,6 @@
     "subscribed": "Merci, vous êtes bien inscrit·e. Vous serez prévenu·e dès la sortie.",
     "already_subscribed": "Vous êtes déjà inscrit·e. Vous serez prévenu·e dès la sortie.",
     "subscribe_error": "Une erreur est survenue, merci de réessayer.",
-    "empty_email": "Merci d'entrer votre adresse email.",
-    "invalid_email": "Adresse email non valide. Vérifiez et réessayez.",
     "note": "Sans spam. Désabonnement en un clic.",
     "access_toggle": "Accès avec mot de passe",
     "placeholder": "Mot de passe",
@@ -122,12 +128,11 @@
     "sub_default": "Toile jacquard, motif Uroko",
     "wishlist_aria": "Ajouter aux favoris",
     "add_to_cart": "Ajouter au panier",
-    "pay_in_installments": "Paiement en 3x sans frais",
     "reference_label": "Référence",
     "express": {
       "secure_payment": "Paiement sécurisé"
     },
-    "delivery_estimate": "Expédition estimée sous 4 à 6 semaines",
+    "delivery_estimate": "En stock — livraison sous 3 à 5 jours après l'expédition",
     "tabs": {
       "description": "Description",
       "fit": "Coupe & taille",
@@ -170,7 +175,7 @@
       "item4": "Séchage à plat ou sur une forme arrondie, à l'air libre et à l'abri du soleil direct, pour éviter toute décoloration."
     },
     "shipping_panel": {
-      "p1": "Expédition estimée sous 4 à 6 semaines, le temps d'un façonnage soigné et sans compromis.",
+      "p1": "Pièce en stock. Une fois votre commande expédiée, comptez 3 à 5 jours de livraison.",
       "returns_title": "Retours",
       "returns_p1": "Vous disposez de 14 jours après réception pour essayer votre pièce.",
       "returns_p2": "La procédure est simple : contactez notre service client, nous vous guidons à chaque étape.",
@@ -200,8 +205,7 @@
     "submit": "Envoyer",
     "form_success": "Merci, votre message a bien été envoyé. Nous vous répondons au plus vite.",
     "form_error": "Une erreur est survenue, merci de réessayer.",
-    "instagram_label": "Instagram",
-    "address_label": "Adresse"
+    "instagram_label": "Instagram"
   },
   "cart": {
     "eyebrow": "Panier",
@@ -224,8 +228,8 @@
     "a1": "Chaque pièce est façonnée avec un soin particulier, en petites séries, à partir de matières sélectionnées pour leur tenue dans le temps.",
     "q2": "Les éditions sont-elles vraiment limitées ?",
     "a2": "Oui. Chaque série est produite en quantité volontairement restreinte, pour préserver son caractère d'exception.",
-    "q3": "Quels sont les délais d'expédition ?",
-    "a3": "Chaque commande est expédiée sous 4 à 6 semaines, le temps nécessaire à un façonnage soigné et sans compromis.",
+    "q3": "Quels sont les délais de livraison ?",
+    "a3": "Nos pièces sont en stock. Une fois votre commande expédiée, comptez 3 à 5 jours de livraison.",
     "q4": "Puis-je retourner un article ?",
     "a4": "Vous disposez de 14 jours à réception pour retourner un article intact, étiquettes attachées, dans son emballage d'origine. Contactez notre service client pour lancer la procédure.",
     "q5": "Comment entretenir ma casquette ?",

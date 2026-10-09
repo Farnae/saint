@@ -126,6 +126,19 @@
         </ul>
       </div>
     </div>
+    {%- comment -%}
+      Pages légales (gérées dans Paramètres > Politiques). Elles n'apparaissent
+      qu'une fois sur le site : la page mot de passe n'utilise pas ce footer.
+      Volontairement sans "Coordonnées", qui afficherait l'adresse personnelle.
+    {%- endcomment -%}
+    {%- if shop.terms_of_service or shop.privacy_policy or shop.refund_policy or shop.shipping_policy -%}
+      <nav class="foot-legal" aria-label="{{ 'general.footer.legal_heading' | t }}">
+        {%- if shop.terms_of_service -%}<a href="{{ shop.terms_of_service.url }}">{{ shop.terms_of_service.title }}</a>{%- endif -%}
+        {%- if shop.privacy_policy -%}<a href="{{ shop.privacy_policy.url }}">{{ shop.privacy_policy.title }}</a>{%- endif -%}
+        {%- if shop.refund_policy -%}<a href="{{ shop.refund_policy.url }}">{{ shop.refund_policy.title }}</a>{%- endif -%}
+        {%- if shop.shipping_policy -%}<a href="{{ shop.shipping_policy.url }}">{{ shop.shipping_policy.title }}</a>{%- endif -%}
+      </nav>
+    {%- endif -%}
     <div class="foot-bottom">
       {% assign current_year = 'now' | date: '%Y' %}
       <span>{{ 'general.footer.copyright' | t: year: current_year }}</span>
@@ -158,5 +171,6 @@ window.SAINT_I18N = {
 };
 </script>
 {{ 'saint.js' | asset_url | script_tag }}
+{{ 'newsletter.js' | asset_url | script_tag }}
 </body>
 </html>

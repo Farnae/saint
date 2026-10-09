@@ -20,12 +20,20 @@
       "our_story": "Our story",
       "contact_heading": "Contact",
       "copyright": "© {{ year }} SAINT. All rights reserved.",
-      "location": "Paris, France"
+      "location": "Paris, France",
+      "legal_heading": "Legal"
     },
     "cart_js": {
       "added": "Added!"
     },
-    "freeship_note": "Free shipping from €150 of purchase."
+    "freeship_note": "Free shipping from €150 of purchase.",
+    "newsletter": {
+      "empty_email": "Please enter your email address.",
+      "invalid_email": "Invalid email address. Please check and try again.",
+      "success": "Thank you, you're subscribed.",
+      "already": "You're already subscribed.",
+      "error": "Something went wrong, please try again."
+    }
   },
   "password": {
     "kicker": "SAINT Éventail cap",
@@ -36,8 +44,6 @@
     "subscribed": "Thank you, you're on the list. We'll let you know on release day.",
     "already_subscribed": "You're already on the list. We'll let you know on release day.",
     "subscribe_error": "Something went wrong, please try again.",
-    "empty_email": "Please enter your email address.",
-    "invalid_email": "Invalid email address. Please check and try again.",
     "note": "No spam. Unsubscribe in one click.",
     "access_toggle": "Enter with password",
     "placeholder": "Password",
@@ -122,12 +128,11 @@
     "sub_default": "Jacquard canvas, Uroko pattern",
     "wishlist_aria": "Add to wishlist",
     "add_to_cart": "Add to cart",
-    "pay_in_installments": "Pay in 3 interest-free installments",
     "reference_label": "Reference",
     "express": {
       "secure_payment": "Secure payment"
     },
-    "delivery_estimate": "Estimated shipping in 4 to 6 weeks",
+    "delivery_estimate": "In stock — delivered within 3 to 5 days of shipping",
     "tabs": {
       "description": "Description",
       "fit": "Fit & sizing",
@@ -170,7 +175,7 @@
       "item4": "Dry flat or over a rounded form, in open air, away from direct sunlight to avoid any discolouration."
     },
     "shipping_panel": {
-      "p1": "Estimated shipping in 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
+      "p1": "This piece is in stock. Once your order has shipped, allow 3 to 5 days for delivery.",
       "returns_title": "Returns",
       "returns_p1": "You have 14 days after receipt to try your piece.",
       "returns_p2": "The process is simple: contact our customer service and we'll guide you through every step.",
@@ -200,8 +205,7 @@
     "submit": "Send",
     "form_success": "Thank you, your message has been sent. We'll get back to you shortly.",
     "form_error": "Something went wrong, please try again.",
-    "instagram_label": "Instagram",
-    "address_label": "Address"
+    "instagram_label": "Instagram"
   },
   "cart": {
     "eyebrow": "Cart",
@@ -224,8 +228,8 @@
     "a1": "Each piece is crafted with particular care, in small series, from materials chosen for how they hold up over time.",
     "q2": "Are the editions really limited?",
     "a2": "Yes. Each series is produced in a deliberately restricted quantity, to preserve its exceptional character.",
-    "q3": "What are the shipping times?",
-    "a3": "Each order ships within 4 to 6 weeks, the time needed for careful, uncompromising craftsmanship.",
+    "q3": "What are the delivery times?",
+    "a3": "Our pieces are in stock. Once your order has shipped, allow 3 to 5 days for delivery.",
     "q4": "Can I return an item?",
     "a4": "You have 14 days from receipt to return an intact item, tags attached, in its original packaging. Contact our customer service to start the process.",
     "q5": "How do I care for my cap?",
