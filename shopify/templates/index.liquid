@@ -52,11 +52,11 @@
 <div class="lookbook-wrap reveal" aria-label="{{ 'index.lookbook.aria' | t }}">
   <div class="lookbook-track">
     {% for image in cap_images %}
-      <div class="lookbook-slide"><img src="{{ image | asset_url }}" alt="Casquette SAINT &Eacute;ventail port&eacute;e" loading="lazy"></div>
+      <div class="lookbook-slide{% if image == 'saint-look-02.webp' %} hide-mobile{% endif %}"><img src="{{ image | asset_url }}" alt="Casquette SAINT &Eacute;ventail port&eacute;e" loading="lazy"></div>
     {% endfor %}
     {% comment %} duplicat pour boucle infinie du marquee {% endcomment %}
     {% for image in cap_images %}
-      <div class="lookbook-slide" aria-hidden="true"><img src="{{ image | asset_url }}" alt="" loading="lazy"></div>
+      <div class="lookbook-slide{% if image == 'saint-look-02.webp' %} hide-mobile{% endif %}" aria-hidden="true"><img src="{{ image | asset_url }}" alt="" loading="lazy"></div>
     {% endfor %}
   </div>
 </div>

@@ -172,7 +172,8 @@ html.started .fade-up{opacity:1;transform:translateY(0);}
 .home-banner::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(10,13,11,.55),rgba(10,13,11,0));pointer-events:none;}
 .home-banner-logo{position:absolute;left:50%;bottom:clamp(40px,8vh,88px);transform:translateX(-50%);width:clamp(150px,18vw,260px);height:auto;z-index:1;filter:drop-shadow(0 2px 14px rgba(0,0,0,.25));}
 .hero--after-banner .hero-copy{padding-top:120px;}
-.hero--after-banner .cap-hero{object-position:50% 62%;}
+.hero--after-banner .hpf{inset:0;}
+.hero--after-banner .cap-hero{height:100%;object-position:50% 62%;will-change:auto;transform:none;}
 .hero--after-banner .hero-visual::after{display:none;}
 /* Jacquard signature: heading + one large landscape photo */
 .signature-sect{background:var(--surface);border-bottom:1px solid var(--line);}
@@ -569,6 +570,7 @@ a.contact-value:hover{color:var(--green);}
   .stats-band{grid-template-columns:1fr;gap:0;}
   .stat+.stat{border-left:none;border-top:1px solid var(--line);}
   .lookbook-slide{flex:0 0 80vw;}
+  .lookbook-slide.hide-mobile{display:none;}
   .presse-inner{grid-template-columns:1fr;gap:48px;}
   .feature{grid-template-columns:1fr;gap:48px;padding-top:80px;padding-bottom:120px;}
   .feature-visual{aspect-ratio:4/3;}

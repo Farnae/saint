@@ -145,14 +145,6 @@ animateStockBar();
 const hdr=document.getElementById('hdr');
 if(hdr) window.addEventListener('scroll',()=>hdr.classList.toggle('sc',window.scrollY>60),{passive:true});
 
-/* ===== PARALLAX (hero image, desktop only — static on mobile) ===== */
-const heroImg=document.getElementById('hero-cap');
-if(!prefRed && heroImg && window.matchMedia('(min-width:961px)').matches){
-  window.addEventListener('scroll',()=>{
-    if(window.scrollY<window.innerHeight) heroImg.style.transform=`translateY(${window.scrollY*.22}px)`;
-  },{passive:true});
-}
-
 /* ===== DIRECTIONAL BUTTONS ===== */
 function getEnterDir(e,el){
   const r=el.getBoundingClientRect();
