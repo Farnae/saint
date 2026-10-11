@@ -4,9 +4,14 @@
   l'admin sans casser les liens "D&eacute;couvrir la pi&egrave;ce".
 {%- endcomment -%}
 {% assign product = collections.all.products.first %}
-{% assign cap_images = "saint-cap-front.webp,saint-cap-side.webp,saint-cap-texture.webp,saint-cap-interior.webp,saint-cap-outdoor.webp" | split: "," %}
+{% assign cap_images = "saint-cap-front.webp,saint-cap-side.webp,saint-cap-texture.webp,saint-cap-interior.webp,saint-photo-portrait.webp,saint-photo-duo-caps.webp" | split: "," %}
 
-<section class="hero">
+<section class="home-banner" aria-label="SAINT Origine">
+  <img class="home-banner-img" src="{{ 'saint-banner-duo.webp' | asset_url }}" alt="{{ 'index.editorial.alt' | t }}" width="2400" height="1351" fetchpriority="high">
+  <img class="home-banner-logo" src="{{ 'saint-logo.svg' | asset_url }}" alt="SAINT Origine" width="2030" height="574">
+</section>
+
+<section class="hero hero--after-banner">
   <div class="hero-copy">
     <p class="hero-kicker fade-up">{{ 'index.hero.kicker' | t }}</p>
     <h1>{{ 'index.hero.title_l1' | t }}<br><em>{{ 'index.hero.title_em' | t }}</em></h1>
@@ -18,7 +23,7 @@
     <p class="hero-edition fade-up d5">{{ 'index.hero.edition' | t }}</p>
   </div>
   <div class="hero-visual">
-    <div class="hpf"><img id="hero-cap" class="cap-hero" src="{{ 'saint-cap-model.webp' | asset_url }}" alt="Casquette SAINT &Eacute;ventail"></div>
+    <div class="hpf"><img id="hero-cap" class="cap-hero" src="{{ 'saint-photo-cap.webp' | asset_url }}" alt="Casquette SAINT &Eacute;ventail" loading="lazy"></div>
   </div>
 </section>
 
@@ -43,14 +48,10 @@
   </div>
 </section>
 
-<div class="editorial-break" id="editorial-break">
-  <img src="{{ 'saint-lifestyle-cap-banner.webp' | asset_url }}" alt="{{ 'index.editorial.alt' | t }}" loading="eager" fetchpriority="high">
-</div>
-
 <div class="lookbook-wrap reveal" aria-label="{{ 'index.lookbook.aria' | t }}">
   <div class="lookbook-track">
     {% for image in cap_images %}
-      <div class="lookbook-slide"><img src="{{ image | asset_url }}" alt="Casquette SAINT &Eacute;ventail" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" {% if forloop.first %}fetchpriority="high"{% endif %}><span class="lookbook-caption">{{ 'index.lookbook.view' | t }} {{ forloop.index }}</span></div>
+      <div class="lookbook-slide"><img src="{{ image | asset_url }}" alt="Casquette SAINT &Eacute;ventail" loading="lazy"><span class="lookbook-caption">{{ 'index.lookbook.view' | t }} {{ forloop.index }}</span></div>
     {% endfor %}
     {% comment %} duplicat pour boucle infinie du marquee {% endcomment %}
     {% for image in cap_images %}
@@ -117,7 +118,7 @@
     <p>{{ 'index.turntable.p' | t }}</p>
   </div>
   <div class="turntable-wrap">
-    <img class="turntable-media" src="{{ 'saint-cap-outdoor.webp' | asset_url }}" alt="D&eacute;tail casquette SAINT &Eacute;ventail" loading="lazy">
+    <img class="turntable-media" src="{{ 'saint-photo-eventail.webp' | asset_url }}" alt="Casquette SAINT &Eacute;ventail et son &eacute;ventail" loading="lazy">
     <div class="turntable-caption">{{ 'index.turntable.caption' | t }}</div>
   </div>
 </section>
