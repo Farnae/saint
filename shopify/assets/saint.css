@@ -217,7 +217,7 @@ html.started .fade-up{opacity:1;transform:translateY(0);}
 .card-visual{isolation:isolate;}
 .gallery-slide>div{isolation:isolate;}
 
-.lookbook-slide img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 1s cubic-bezier(.16,1,.3,1);}
+.lookbook-slide img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform 1s cubic-bezier(.16,1,.3,1);}
 .lookbook-wrap:hover .lookbook-slide img{transform:scale(1.03);}
 .lookbook-caption{position:absolute;bottom:18px;left:22px;font-size:10px;color:rgba(10,13,11,.55);letter-spacing:.1em;text-transform:uppercase;background:rgba(237,234,226,.85);padding:3px 8px;}
 
