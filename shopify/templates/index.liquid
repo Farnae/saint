@@ -51,18 +51,6 @@
   </div>
 </section>
 
-<div class="lookbook-wrap reveal" aria-label="{{ 'index.lookbook.aria' | t }}">
-  <div class="lookbook-track">
-    {% for image in cap_images %}
-      <div class="lookbook-slide{% if image == 'saint-look-02.webp' %} hide-mobile{% endif %}"><img src="{{ image | asset_url }}" alt="Casquette SAINT &Eacute;ventail port&eacute;e" loading="lazy"></div>
-    {% endfor %}
-    {% comment %} duplicat pour boucle infinie du marquee {% endcomment %}
-    {% for image in cap_images %}
-      <div class="lookbook-slide{% if image == 'saint-look-02.webp' %} hide-mobile{% endif %}" aria-hidden="true"><img src="{{ image | asset_url }}" alt="" loading="lazy"></div>
-    {% endfor %}
-  </div>
-</div>
-
 <section class="feature wrap reveal">
   <div class="feature-visual">
     <div class="img-reveal">
@@ -100,15 +88,17 @@
   </div>
 </section>
 
-<section class="signature-sect" id="matieres">
-  <div class="signature-head wrap reveal">
-    <h2 data-split>{{ 'index.materials.title_l1' | t }}<br>{{ 'index.materials.title_l2' | t }}</h2>
-    <p class="mat-intro">{{ 'index.materials.intro' | t }}</p>
+<div class="lookbook-wrap reveal" aria-label="{{ 'index.lookbook.aria' | t }}">
+  <div class="lookbook-track">
+    {% for image in cap_images %}
+      <div class="lookbook-slide{% if image == 'saint-look-02.webp' %} hide-mobile{% endif %}"><img src="{{ image | asset_url }}" alt="Casquette SAINT &Eacute;ventail port&eacute;e" loading="lazy"></div>
+    {% endfor %}
+    {% comment %} duplicat pour boucle infinie du marquee {% endcomment %}
+    {% for image in cap_images %}
+      <div class="lookbook-slide{% if image == 'saint-look-02.webp' %} hide-mobile{% endif %}" aria-hidden="true"><img src="{{ image | asset_url }}" alt="" loading="lazy"></div>
+    {% endfor %}
   </div>
-  <div class="signature-visual">
-    <img src="{{ 'saint-jacquard-signature.webp' | asset_url }}" alt="{{ 'index.materials.mat1_alt' | t }}" width="2400" height="1800" loading="lazy">
-  </div>
-</section>
+</div>
 
 <section class="story wrap reveal" id="maison">
   <div>
@@ -120,6 +110,16 @@
     <p>{{ 'index.story.p2' | t }}</p>
     <div class="srule"></div>
     <p>{{ 'index.story.p3' | t }}</p>
+  </div>
+</section>
+
+<section class="signature-sect" id="matieres">
+  <div class="signature-head wrap reveal">
+    <h2 data-split>{{ 'index.materials.title_l1' | t }}<br>{{ 'index.materials.title_l2' | t }}</h2>
+    <p class="mat-intro">{{ 'index.materials.intro' | t }}</p>
+  </div>
+  <div class="signature-visual">
+    <img src="{{ 'saint-jacquard-signature.webp' | asset_url }}" alt="{{ 'index.materials.mat1_alt' | t }}" width="2400" height="1800" loading="lazy">
   </div>
 </section>
 
