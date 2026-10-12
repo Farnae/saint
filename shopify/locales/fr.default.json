@@ -11,7 +11,9 @@
       "open_menu": "Ouvrir le menu"
     },
     "mobile_nav": {
-      "footer": "Maison parisienne. Édition N°001."
+      "footer": "Maison parisienne. Édition N°001.",
+      "shop_title": "La pièce",
+      "shop_cta": "Acheter"
     },
     "footer": {
       "brand_desc": "Maison parisienne d'accessoires, façonnés en petites séries à partir de matières sélectionnées avec exigence.",
@@ -121,6 +123,16 @@
       "email_placeholder": "Votre adresse email",
       "submit": "S'inscrire",
       "note": "Sans spam. Désabonnement en un clic."
+    },
+    "buy": {
+      "banner_cta": "Acheter",
+      "in_stock": "En stock",
+      "add_to_cart": "Ajouter au panier",
+      "details": "Voir les détails",
+      "reassure_ship": "Livraison offerte dès 150 €",
+      "reassure_returns": "Retours sous 14 jours",
+      "reassure_pay": "Paiement sécurisé",
+      "sticky_aria": "Acheter la casquette"
     }
   },
   "product": {

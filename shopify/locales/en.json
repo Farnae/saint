@@ -11,7 +11,9 @@
       "open_menu": "Open menu"
     },
     "mobile_nav": {
-      "footer": "Parisian house. Edition No.001."
+      "footer": "Parisian house. Edition No.001.",
+      "shop_title": "The piece",
+      "shop_cta": "Shop"
     },
     "footer": {
       "brand_desc": "A Parisian accessories house, crafted in small batches from materials selected with rigour.",
@@ -121,6 +123,16 @@
       "email_placeholder": "Your email address",
       "submit": "Subscribe",
       "note": "No spam. Unsubscribe in one click."
+    },
+    "buy": {
+      "banner_cta": "Shop now",
+      "in_stock": "In stock",
+      "add_to_cart": "Add to cart",
+      "details": "View details",
+      "reassure_ship": "Free shipping from €150",
+      "reassure_returns": "14-day returns",
+      "reassure_pay": "Secure payment",
+      "sticky_aria": "Buy the cap"
     }
   },
   "product": {

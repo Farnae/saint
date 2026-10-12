@@ -32,6 +32,7 @@ if(burger && mobileNav){
     burger.setAttribute('aria-expanded','false');
     mobileNav.classList.remove('open');
     mobileNav.setAttribute('aria-hidden','true');
+    document.documentElement.classList.remove('nav-open');
     document.documentElement.style.overflow='';
   };
   burger.addEventListener('click',()=>{
@@ -40,6 +41,7 @@ if(burger && mobileNav){
     burger.setAttribute('aria-expanded',String(willOpen));
     mobileNav.classList.toggle('open',willOpen);
     mobileNav.setAttribute('aria-hidden',String(!willOpen));
+    document.documentElement.classList.toggle('nav-open',willOpen);
     document.documentElement.style.overflow=willOpen?'hidden':'';
   });
   mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileNav));
@@ -443,4 +445,17 @@ document.querySelectorAll('.p-tabs-nav').forEach(nav=>{
   if(!subject || subject.value) return;
   const preset=new URLSearchParams(location.search).get('objet');
   if(preset) subject.value=preset.slice(0,80);
+})();
+
+/* ===== HOME: sticky buy bar on mobile, once the banner has scrolled away ===== */
+(function(){
+  const bar=document.getElementById('buy-sticky');
+  const banner=document.querySelector('.home-banner');
+  const footer=document.querySelector('footer');
+  if(!bar || !banner || !('IntersectionObserver' in window)) return;
+  bar.hidden=false;
+  let bannerVisible=true, footerVisible=false;
+  const update=()=>bar.classList.toggle('is-visible',!bannerVisible && !footerVisible);
+  new IntersectionObserver(([e])=>{bannerVisible=e.isIntersecting;update();},{threshold:0}).observe(banner);
+  if(footer) new IntersectionObserver(([e])=>{footerVisible=e.isIntersecting;update();},{threshold:0}).observe(footer);
 })();

@@ -61,32 +61,39 @@
 </header>
 
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-  <nav><ul>
+  {%- assign nav_product = collections.all.products.first -%}
+  <nav class="mnav-main"><ul>
     <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}><span>{{ 'general.nav.home' | t }}</span></a></li>
     <li><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" {% if template.name == 'collection' or template.name == 'list-collections' %}class="current"{% endif %}><span>{{ 'general.nav.collection' | t }}</span></a></li>
     <li><a href="/pages/faq" {% if template.name == 'page.faq' %}class="current"{% endif %}><span>{{ 'general.nav.faq' | t }}</span></a></li>
     <li><a href="/pages/contact" {% if template.name == 'page.contact' %}class="current"{% endif %}><span>{{ 'general.nav.contact' | t }}</span></a></li>
-    <li><a href="{{ routes.cart_url }}"><span>{{ 'general.nav.cart' | t }} ({{ cart.item_count }})</span></a></li>
+  </ul></nav>
+  {%- if nav_product -%}
+    <a class="mnav-product" href="{{ nav_product.url }}">
+      {%- if nav_product.featured_image -%}<img src="{{ nav_product.featured_image | image_url: width: 240 }}" alt="" width="120" height="120" loading="lazy">{%- endif -%}
+      <span class="mnav-product-txt">
+        <span class="mnav-product-kicker">{{ 'general.mobile_nav.shop_title' | t }}</span>
+        <span class="mnav-product-name">{{ nav_product.title }}</span>
+        <span class="mnav-product-price">{{ nav_product.price | money }}</span>
+      </span>
+      <span class="mnav-product-cta">{{ 'general.mobile_nav.shop_cta' | t }} &rarr;</span>
+    </a>
+  {%- endif -%}
+  <div class="mnav-meta">
+    <a href="{{ routes.cart_url }}">{{ 'general.nav.cart' | t }} ({{ cart.item_count }})</a>
     {% if shop.customer_accounts_enabled %}
-      {% if customer %}
-        <li><a href="{{ routes.account_url }}"><span>{{ 'general.nav.account' | t }}</span></a></li>
-      {% else %}
-        <li><a href="{{ routes.account_login_url }}"><span>{{ 'general.nav.login' | t }}</span></a></li>
-      {% endif %}
+      {% if customer %}<a href="{{ routes.account_url }}">{{ 'general.nav.account' | t }}</a>{% else %}<a href="{{ routes.account_login_url }}">{{ 'general.nav.login' | t }}</a>{% endif %}
     {% endif %}
     {% if localization.available_languages.size > 1 %}
-      <li>
-        {% form 'localization', id: 'lang-form-mobile' %}
-          <div class="lang-switch lang-switch-mobile">
-            {% for language in localization.available_languages %}
-              <button type="submit" name="locale_code" value="{{ language.iso_code }}" class="lang-btn{% if language.iso_code == localization.language.iso_code %} active{% endif %}">{{ language.iso_code }}</button>
-            {% endfor %}
-          </div>
-        {% endform %}
-      </li>
+      {% form 'localization', id: 'lang-form-mobile' %}
+        <div class="lang-switch lang-switch-mobile">
+          {% for language in localization.available_languages %}
+            <button type="submit" name="locale_code" value="{{ language.iso_code }}" class="lang-btn{% if language.iso_code == localization.language.iso_code %} active{% endif %}">{{ language.iso_code }}</button>
+          {% endfor %}
+        </div>
+      {% endform %}
     {% endif %}
-  </ul></nav>
-  <p class="mobile-nav-foot">{{ 'general.mobile_nav.footer' | t }}</p>
+  </div>
 </div>
 
 <main id="site-main">
