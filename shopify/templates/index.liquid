@@ -6,14 +6,14 @@
 {% assign product = collections.all.products.first %}
 {% assign buy_variant = product.selected_or_first_available_variant %}
 {% assign product_link = product.url | default: routes.all_products_collection_url | default: '/collections/all' %}
-{% assign cap_images = "saint-look-01.webp,saint-look-02.webp,saint-look-03.webp,saint-look-04.webp,saint-look-05.webp" | split: "," %}
+{% assign cap_images = "saint-look-01.webp,saint-look-02.webp,saint-look-03.webp,saint-look-04.webp" | split: "," %}
 {% assign product_shots = "saint-cap-front.webp,saint-cap-side.webp,saint-cap-texture.webp,saint-cap-interior.webp" | split: "," %}
 
 <section class="home-banner" aria-label="SAINT Origine">
   <img class="home-banner-img" src="{{ 'saint-banner-duo.webp' | asset_url }}" alt="{{ 'index.editorial.alt' | t }}" width="2560" height="1441" fetchpriority="high">
   <div class="home-banner-overlay">
     <img class="home-banner-logo" src="{{ 'saint-logo.svg' | asset_url }}" alt="SAINT Origine" width="2030" height="574">
-    <a class="home-banner-cta" href="{{ product_link }}">{{ 'index.buy.banner_cta' | t }}{% if product %} &middot; {{ product.price | money_without_trailing_zeros }}{% endif %}</a>
+    <a class="home-banner-cta" href="{{ product_link }}">{{ 'index.buy.banner_cta' | t }}</a>
   </div>
 </section>
 
@@ -91,11 +91,11 @@
 <div class="lookbook-wrap reveal" aria-label="{{ 'index.lookbook.aria' | t }}">
   <div class="lookbook-track">
     {% for image in cap_images %}
-      <div class="lookbook-slide{% if image == 'saint-look-02.webp' %} hide-mobile{% endif %}"><img src="{{ image | asset_url }}" alt="Casquette SAINT &Eacute;ventail port&eacute;e" loading="lazy"></div>
+      <div class="lookbook-slide"><img src="{{ image | asset_url }}" alt="Casquette SAINT &Eacute;ventail port&eacute;e" loading="lazy"></div>
     {% endfor %}
     {% comment %} duplicat pour boucle infinie du marquee {% endcomment %}
     {% for image in cap_images %}
-      <div class="lookbook-slide{% if image == 'saint-look-02.webp' %} hide-mobile{% endif %}" aria-hidden="true"><img src="{{ image | asset_url }}" alt="" loading="lazy"></div>
+      <div class="lookbook-slide" aria-hidden="true"><img src="{{ image | asset_url }}" alt="" loading="lazy"></div>
     {% endfor %}
   </div>
 </div>

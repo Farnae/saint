@@ -459,3 +459,19 @@ document.querySelectorAll('.p-tabs-nav').forEach(nav=>{
   new IntersectionObserver(([e])=>{bannerVisible=e.isIntersecting;update();},{threshold:0}).observe(banner);
   if(footer) new IntersectionObserver(([e])=>{footerVisible=e.isIntersecting;update();},{threshold:0}).observe(footer);
 })();
+
+/* ===== PRODUCT: dots under the swipeable photos (mobile) ===== */
+(function(){
+  const rail=document.querySelector('.produit-visual');
+  if(!rail) return;
+  const slides=rail.querySelectorAll('.produit-photo');
+  if(slides.length<2) return;
+  const dots=document.createElement('div');
+  dots.className='p-dots'; dots.setAttribute('aria-hidden','true');
+  slides.forEach((_,i)=>{const d=document.createElement('span'); if(!i) d.className='active'; dots.appendChild(d);});
+  rail.after(dots);
+  rail.addEventListener('scroll',()=>{
+    const i=Math.round(rail.scrollLeft/rail.clientWidth);
+    dots.querySelectorAll('span').forEach((d,j)=>d.classList.toggle('active',j===i));
+  },{passive:true});
+})();

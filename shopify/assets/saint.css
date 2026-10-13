@@ -264,12 +264,12 @@ html.started .fade-up{opacity:1;transform:translateY(0);}
 .lookbook-wrap:hover .lookbook-track{animation-play-state:paused;}
 @keyframes lbScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @media(prefers-reduced-motion:reduce){.lookbook-track{animation:none;overflow-x:auto;width:100%;flex-wrap:nowrap;}}
-.lookbook-slide{flex:0 0 44vw;height:68vh;position:relative;overflow:hidden;background:var(--vitrine);}
+.lookbook-slide{flex:0 0 auto;height:min(78vh,760px);aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--vitrine);}
 .lookbook-slide{isolation:isolate;}
 .card-visual{isolation:isolate;}
 .gallery-slide>div{isolation:isolate;}
 
-.lookbook-slide img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform 1s cubic-bezier(.16,1,.3,1);}
+.lookbook-slide img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform 1s cubic-bezier(.16,1,.3,1);}
 .lookbook-wrap:hover .lookbook-slide img{transform:scale(1.03);}
 .lookbook-caption{position:absolute;bottom:18px;left:22px;font-size:10px;color:rgba(10,13,11,.55);letter-spacing:.1em;text-transform:uppercase;background:rgba(237,234,226,.85);padding:3px 8px;}
 
@@ -617,11 +617,11 @@ a.contact-value:hover{color:var(--green);}
   .subhead{padding-top:140px;padding-bottom:60px;}
   .stats-band{grid-template-columns:1fr;gap:0;}
   .stat+.stat{border-left:none;border-top:1px solid var(--line);}
-  .lookbook-slide{flex:0 0 80vw;}
+  .lookbook-slide{flex:0 0 82vw;height:auto;}
   .lookbook-slide.hide-mobile{display:none;}
   .presse-inner{grid-template-columns:1fr;gap:48px;}
   .feature{grid-template-columns:1fr;gap:48px;padding-top:80px;padding-bottom:120px;}
-  .feature-visual{aspect-ratio:4/3;}
+  .feature-visual{aspect-ratio:1/1;margin:0 calc(-1 * var(--gutter));}
   .uroko-grid{grid-template-columns:1fr;}
   .cta-grid{grid-template-columns:1fr;gap:60px;}
   .coll-head{flex-direction:column;align-items:flex-start;gap:12px;}
@@ -637,7 +637,11 @@ a.contact-value:hover{color:var(--green);}
   /* product photos: swipeable horizontal carousel, one slide per screen */
   .produit-visual{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
   .produit-visual::-webkit-scrollbar{display:none;}
+  .produit-visual{margin:0 calc(-1 * var(--gutter));}
   .produit-photo{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:4/5;background:var(--vitrine);}
+  .p-dots{display:flex;justify-content:center;gap:8px;margin:14px 0 4px;}
+  .p-dots span{width:6px;height:6px;border-radius:50%;background:var(--line-m);transition:background .3s,transform .3s;}
+  .p-dots span.active{background:var(--ink);transform:scale(1.2);}
   .produit-photo img{width:100%;height:100%;object-fit:contain;}
 
   /* lookbook: swipe instead of auto-scrolling marquee (lighter + matches carousel feel) */
@@ -693,3 +697,13 @@ a.contact-value:hover{color:var(--green);}
 .foot-legal a:hover{color:var(--champagne);}
 .p-return-link{color:var(--green);font-size:13px;letter-spacing:.04em;border-bottom:1px solid rgba(6,72,41,.25);padding-bottom:2px;transition:color .3s,border-color .3s;}
 .p-return-link:hover{color:var(--green-h);border-color:var(--green-h);}
+
+/* ============ SPACING: consistent side gutters ============
+   Several sections combine .wrap with a "padding:X 0" shorthand, which wiped
+   the side padding and left text against the screen edges. */
+:root{--gutter:clamp(28px,5.5vw,80px);}
+@media(max-width:960px){:root{--gutter:28px;}}
+body .wrap{padding-left:var(--gutter);padding-right:var(--gutter);}
+.hero-copy{padding-left:var(--gutter);padding-right:var(--gutter);}
+.signature-head .mat-intro,.story-right p{max-width:520px;}
+@media(min-width:961px){.p-dots{display:none;}}
