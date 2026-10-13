@@ -21,11 +21,11 @@
 
 <div class="scroll-progress" aria-hidden="true"></div>
 {% if template.name == 'index' %}
-<div id="curtain"><img class="cw-logo" src="{{ 'saint-logo.svg' | asset_url }}" alt="SAINT Origine" width="2030" height="574"><div class="cline"></div></div>
+<div id="curtain"><img class="cw-logo" src="{{ 'saint-logo.svg' | asset_url }}" alt="SAINT Origine" width="3293" height="925"><div class="cline"></div></div>
 {% endif %}
 
 <header id="hdr">
-  <a href="{{ routes.root_url }}" class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">origine</span></a>
+  <a href="{{ routes.root_url }}" class="logo-link" aria-label="SAINT Origine">{% render 'saint-logo' %}</a>
   <div class="navmenu">
     <nav><ul>
       <li><a href="{{ routes.root_url }}" {% if template.name == 'index' %}class="current"{% endif %}>{{ 'general.nav.home' | t }}</a></li>
@@ -104,7 +104,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <a href="{{ routes.root_url }}" class="wordmark-block"><span class="wordmark">SAINT</span><span class="wordmark-sub">origine</span></a>
+        <a href="{{ routes.root_url }}" class="logo-link" aria-label="SAINT Origine">{% render 'saint-logo' %}</a>
         <p>{{ 'general.footer.brand_desc' | t }}</p>
       </div>
       <div class="foot-col">

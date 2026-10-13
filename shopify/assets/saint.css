@@ -130,7 +130,7 @@ nav a:hover::after,nav a.current::after{width:100%;}
 .mnav-meta form{margin-left:auto;}
 /* header stays on top of the open menu, in light colours */
 html.nav-open header{background:transparent!important;border-color:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
-html.nav-open header .wordmark,html.nav-open header .wordmark-sub,html.nav-open .cart-trigger-mobile{color:var(--green-text);}
+html.nav-open header .logo-link,html.nav-open .cart-trigger-mobile{color:var(--green-text);}
 html.nav-open .burger span{background:var(--green-text);}
 @media(max-width:960px){
   .burger{display:block;}
@@ -194,7 +194,9 @@ html.started .fade-up{opacity:1;transform:translateY(0);}
 .home-banner-cta:hover,.home-banner-cta:focus-visible{background:var(--green-text);color:var(--ink);}
 .hero--after-banner .hero-copy{padding-top:120px;}
 .hero--after-banner .hpf{inset:0;}
-.hero--after-banner .cap-hero{height:100%;object-position:50% 62%;will-change:auto;transform:none;}
+.hero--after-banner .cap-hero{height:100%;object-position:center;will-change:auto;transform:none;}
+.hero--after-banner{min-height:0;}
+.hero--after-banner .hero-visual{min-height:0;aspect-ratio:1292/1218;}
 .hero--after-banner .hero-visual::after{display:none;}
 /* Jacquard signature: heading + one large landscape photo */
 .signature-sect{background:var(--surface);border-bottom:1px solid var(--line);}
@@ -597,7 +599,7 @@ a.contact-value:hover{color:var(--green);}
   .home-banner{height:auto;min-height:0;aspect-ratio:4/5;}
   .home-banner-img{object-position:50% 30%;}
   .hero--after-banner .hero-copy{padding-top:72px;}
-  .hero--after-banner .hero-visual{min-height:0;aspect-ratio:4/5;}
+  .hero--after-banner .hero-visual{min-height:0;aspect-ratio:1292/1218;}
   .hero--after-banner .hero-visual{order:-1;}
   .hero--after-banner .hero-copy{padding-top:48px;}
   .buy-box{max-width:none;}
@@ -707,3 +709,12 @@ body .wrap{padding-left:var(--gutter);padding-right:var(--gutter);}
 .hero-copy{padding-left:var(--gutter);padding-right:var(--gutter);}
 .signature-head .mat-intro,.story-right p{max-width:520px;}
 @media(min-width:961px){.p-dots{display:none;}}
+
+/* ============ LOGO (vector, header / footer / password) ============ */
+.logo-link{display:inline-flex;align-items:center;color:var(--ink);line-height:0;}
+.site-logo{display:block;width:150px;height:auto;transition:width .5s cubic-bezier(.16,1,.3,1);}
+header.sc .site-logo{width:132px;}
+footer .logo-link{color:var(--green-text);margin-bottom:22px;}
+footer .site-logo{width:180px;}
+.pw-logo .site-logo{width:clamp(180px,30vw,260px);}
+@media(max-width:960px){.site-logo,header.sc .site-logo{width:118px;}footer .site-logo{width:150px;}}
