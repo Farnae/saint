@@ -1,0 +1,9 @@
+<div class="wrap subhead notfound">
+  <p class="eyebrow">404</p>
+  <h1>{{ 'general.404.title' | t }}</h1>
+  <p class="subhead-intro">{{ 'general.404.text' | t }}</p>
+  <div class="notfound-actions">
+    <a class="btn-primary" href="{{ routes.root_url }}"><span>{{ 'general.nav.home' | t }}</span></a>
+    <a class="btn-ghost" href="{{ routes.all_products_collection_url | default: '/collections/all' }}">{{ 'general.nav.collection' | t }}</a>
+  </div>
+</div>

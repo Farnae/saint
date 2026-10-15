@@ -1,37 +1,44 @@
 <div class="wrap subhead"><p class="eyebrow">{{ 'cart.eyebrow' | t }}</p><h1>{{ 'cart.title' | t }}</h1></div>
-<div class="wrap" style="padding-bottom:180px;">
+<div class="wrap cart-page">
   {% if cart.item_count == 0 %}
-    <div class="empty-cart">{{ 'cart.empty_text' | t }}<br><a href="{{ routes.all_products_collection_url | default: '/collections/all' }}">{{ 'cart.view_collection' | t }}</a></div>
+    <div class="empty-cart">
+      <p>{{ 'cart.empty_text' | t }}</p>
+      <a class="btn-primary" href="{{ routes.all_products_collection_url | default: '/collections/all' }}"><span>{{ 'cart.view_collection' | t }}</span></a>
+    </div>
   {% else %}
     {% form 'cart', cart %}
       <div class="panier-list">
         {% for item in cart.items %}
           <div class="panier-row">
-            <div class="p-thumb"><img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}"></div>
-            <div>
-              <h4>{{ item.product.title }}</h4>
-              <p class="ptsubsub">{{ item.variant.title | unless: 'Default Title' }}</p>
+            <a class="p-thumb" href="{{ item.url }}">{% if item.image %}<img src="{{ item.image | image_url: width: 300 }}" alt="{{ item.title | escape }}" width="150" height="188" loading="lazy">{% endif %}</a>
+            <div class="panier-info">
+              <h4><a href="{{ item.url }}">{{ item.product.title }}</a></h4>
+              {%- unless item.product.has_only_default_variant -%}<p class="ptsubsub">{{ item.variant.title }}</p>{%- endunless -%}
+              <p class="panier-unit">{{ item.final_price | default: item.variant.price | money }}</p>
               <a href="{{ item.url_to_remove }}" class="p-remove">{{ 'cart.remove' | t }}</a>
             </div>
             <div class="stepper cart-line-stepper" data-line-key="{{ item.key }}">
-              <button type="button" data-step="down">&minus;</button>
+              <button type="button" data-step="down" aria-label="−">&minus;</button>
               <span class="cart-qty-val">{{ item.quantity }}</span>
-              <button type="button" data-step="up">+</button>
+              <button type="button" data-step="up" aria-label="+">+</button>
             </div>
-            <div style="font-family:'Jost',sans-serif;">{{ item.final_line_price | money }}</div>
+            <div class="panier-line-price">{{ item.final_line_price | money }}</div>
           </div>
         {% endfor %}
       </div>
       <div class="panier-summary">
         <div class="panier-summary-box">
-          {% assign free_ship_threshold = 15000 %}
           <div class="sum-row"><span>{{ 'cart.subtotal' | t }}</span><span>{{ cart.total_price | money }}</span></div>
-          <div class="sum-row"><span>{{ 'cart.shipping' | t }}</span><span>{% if cart.total_price >= free_ship_threshold %}{{ 'cart.shipping_value' | t }}{% else %}{{ 'cart.shipping_paid' | t }}{% endif %}</span></div>
-          {% unless cart.total_price >= free_ship_threshold %}
-            <p class="cart-freeship-note">{{ 'general.freeship_note' | t }}</p>
-          {% endunless %}
+          <div class="sum-row"><span>{{ 'cart.shipping' | t }}</span><span>{{ 'cart.shipping_paid' | t }}</span></div>
+          <p class="cart-freeship-note">{{ 'general.freeship_note' | t }}</p>
           <div class="sum-row total"><span>{{ 'cart.total' | t }}</span><span>{{ cart.total_price | money }}</span></div>
-          <button type="submit" name="checkout" class="btn-add-cart" style="width:100%;margin-top:24px;text-align:center;"><span>{{ 'cart.checkout' | t }}</span></button>
+          <button type="submit" name="checkout" class="btn-add-cart btn-block"><span>{{ 'cart.checkout' | t }}</span></button>
+          {%- if shop.enabled_payment_types.size > 0 -%}
+            <div class="p-pay-badges cart-pay">
+              {%- for type in shop.enabled_payment_types -%}{{ type | payment_type_svg_tag: class: 'pay-icon' }}{%- endfor -%}
+            </div>
+          {%- endif -%}
+          <a class="cart-continue" href="{{ routes.all_products_collection_url | default: '/collections/all' }}">{{ 'cart.continue' | t }}</a>
         </div>
       </div>
     {% endform %}

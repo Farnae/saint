@@ -1,108 +1,192 @@
-<div class="wrap produit-wrap">
-  <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" class="back-link">&larr; {{ 'product.back_to_collection' | t }}</a>
-  <div class="produit-layout">
-    <div class="produit-visual">
-      {% for image in product.images %}
-        <div class="produit-photo"><img src="{{ image | image_url: width: 1400, format: 'webp' }}" alt="{{ product.title | escape }} &ndash; vue {{ forloop.index }}" loading="lazy"></div>
-      {% endfor %}
-    </div>
-    <div class="produit-info">
-      <div class="p-head">
-        <div>
-          <h1 class="p-name">{{ product.title }}</h1>
-          <p class="p-sub">{% if product.type != blank %}{{ product.type }}{% else %}{{ 'product.sub_default' | t }}{% endif %}</p>
-        </div>
-        <button class="p-wish" type="button" aria-label="{{ 'product.wishlist_aria' | t }}" onclick="this.classList.toggle('active')">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2 4.5 5.5 4c2-.3 3.8.6 5 2.2C11.7 4.6 13.5 3.7 15.5 4c3.5.5 5 4 3.5 7.7-2.5 4.7-10 9.3-10 9.3z"/></svg>
-        </button>
-      </div>
-      <p class="p-ref">{{ 'product.reference_label' | t }}&nbsp;: {{ product.selected_or_first_available_variant.sku | default: product.handle | upcase }}</p>
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- capture shipping_msg -%}{{ 'product.delivery_estimate' | t }}{%- endcapture -%}
 
-      {% form 'product', product %}
-        {% unless product.has_only_default_variant %}
-          <select name="id" style="display:block;margin-bottom:16px;">
-            {% for variant in product.variants %}
-              <option value="{{ variant.id }}" {% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}>{{ variant.title }}</option>
-            {% endfor %}
-          </select>
-        {% else %}
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-        {% endunless %}
-        <input type="hidden" name="quantity" value="1">
-        <div class="p-buy-bar">
-          <button type="submit" class="btn-buy-bar" {% unless product.available %}disabled{% endunless %}>
-            <span>{{ 'product.add_to_cart' | t }}</span>
-            <span class="p-price">{{ product.price | money }}</span>
-          </button>
-          <p class="p-buy-status">{% if product.available %}{{ 'index.feature.preorder' | t }}{% else %}{{ 'index.feature.soldout' | t }}{% endif %}</p>
-          {%- if shop.enabled_payment_types.size > 0 -%}
-            <div class="p-pay-badges">
-              {%- for type in shop.enabled_payment_types -%}
-                {{ type | payment_type_svg_tag: class: 'pay-icon' }}
+<div class="wrap produit-wrap">
+  <nav class="breadcrumb" aria-label="{{ 'product.breadcrumb_aria' | t }}">
+    <a href="{{ routes.root_url }}">{{ 'general.nav.home' | t }}</a>
+    <span aria-hidden="true">/</span>
+    <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}">{{ 'general.nav.collection' | t }}</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{{ product.title }}</span>
+  </nav>
+
+  <div class="produit-layout">
+    <div class="produit-gallery">
+      <div class="produit-visual" aria-label="{{ 'product.gallery_aria' | t }}">
+        {%- for image in product.images -%}
+          <figure class="produit-photo">
+            <img
+              src="{{ image | image_url: width: 1200 }}"
+              srcset="{{ image | image_url: width: 700 }} 700w, {{ image | image_url: width: 1200 }} 1200w, {{ image | image_url: width: 1800 }} 1800w"
+              sizes="(max-width: 960px) 100vw, 55vw"
+              alt="{{ image.alt | default: product.title | escape }} &ndash; {{ 'product.view_label' | t }} {{ forloop.index }}"
+              width="{{ image.width }}" height="{{ image.height }}"
+              {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+          </figure>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="produit-info">
+      <h1 class="p-name">{{ product.title }}</h1>
+      <p class="p-sub">{% if product.type != blank %}{{ product.type }}{% else %}{{ 'product.sub_default' | t }}{% endif %}</p>
+
+      <div class="p-price-row">
+        <span class="p-price" data-product-price>{{ current_variant.price | money }}</span>
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <s class="p-compare">{{ current_variant.compare_at_price | money }}</s>
+        {%- endif -%}
+      </div>
+
+      {% form 'product', product, id: 'product-form-main', class: 'p-form' %}
+        {%- unless product.has_only_default_variant -%}
+          {%- if product.options.size == 1 -%}
+            <fieldset class="p-option">
+              <legend class="p-option-label">{{ product.options.first }}</legend>
+              <div class="p-option-values">
+                {%- for variant in product.variants -%}
+                  <label class="p-pill{% unless variant.available %} is-unavailable{% endunless %}">
+                    <input type="radio" name="id" value="{{ variant.id }}" data-price="{{ variant.price | money | escape }}" data-available="{{ variant.available }}"
+                      {% if variant.id == current_variant.id %}checked{% endif %} {% unless variant.available %}disabled{% endunless %}>
+                    <span>{{ variant.title }}</span>
+                  </label>
+                {%- endfor -%}
+              </div>
+            </fieldset>
+          {%- else -%}
+            <label class="p-option-label" for="ProductVariant">{{ 'product.variant_label' | t }}</label>
+            <select class="p-select" name="id" id="ProductVariant">
+              {%- for variant in product.variants -%}
+                <option value="{{ variant.id }}" data-price="{{ variant.price | money | escape }}" {% if variant.id == current_variant.id %}selected{% endif %} {% unless variant.available %}disabled{% endunless %}>{{ variant.title }}{% unless variant.available %} &mdash; {{ 'product.sold_out' | t }}{% endunless %}</option>
               {%- endfor -%}
-            </div>
+            </select>
           {%- endif -%}
-        </div>
+        {%- else -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}">
+        {%- endunless -%}
+        <input type="hidden" name="quantity" value="1">
+
+        <button type="submit" class="btn-add-cart btn-block p-add" data-add-button {% unless product.available %}disabled{% endunless %}>
+          <span>{% if product.available %}{{ 'product.add_to_cart' | t }}{% else %}{{ 'product.sold_out' | t }}{% endif %}</span>
+        </button>
       {% endform %}
 
-      <div class="p-express">
-        <span>{{ 'product.express.secure_payment' | t }}</span>
-      </div>
-      <p class="p-delivery">{{ 'product.delivery_estimate' | t }}</p>
-      <p class="p-delivery p-freeship">{{ 'general.freeship_note' | t }}</p>
+      {%- if product.available -%}
+        <p class="p-stock"><span class="p-stock-dot" aria-hidden="true"></span>{{ shipping_msg }}</p>
+      {%- endif -%}
 
-      <div class="p-tabs">
-        <div class="p-tabs-nav">
-          <button class="p-tab-btn active" data-tab="desc">{{ 'product.tabs.description' | t }}</button>
-          <button class="p-tab-btn" data-tab="fit">{{ 'product.tabs.fit' | t }}</button>
-          <button class="p-tab-btn" data-tab="care">{{ 'product.tabs.care' | t }}</button>
-          <button class="p-tab-btn" data-tab="ship">{{ 'product.tabs.shipping' | t }}</button>
-          <button class="p-tab-btn" data-tab="contact">{{ 'product.tabs.contact' | t }}</button>
+      <ul class="p-reassure">
+        <li>{{ 'general.freeship_note' | t }}</li>
+        <li>{{ 'product.reassure_returns' | t }}</li>
+        <li>{{ 'product.express.secure_payment' | t }}</li>
+      </ul>
+
+      {%- if shop.enabled_payment_types.size > 0 -%}
+        <div class="p-pay-badges" aria-label="{{ 'product.payment_aria' | t }}">
+          {%- for type in shop.enabled_payment_types -%}
+            {{ type | payment_type_svg_tag: class: 'pay-icon' }}
+          {%- endfor -%}
         </div>
-        <div class="p-tab-panel active" data-panel="desc">
-          <div class="p-desc">{{ product.description }}</div>
-        </div>
-        <div class="p-tab-panel" data-panel="fit">
-          <div class="spec-tiles">
-            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">{{ 'product.spec_tiles.tile1_l1' | t }}<br>{{ 'product.spec_tiles.tile1_l2' | t }}</span><span class="spec-tile-lbl">{{ 'product.spec_tiles.tile1_label' | t }}</span></div>
-            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">{{ 'product.spec_tiles.tile2_l1' | t }}<br>{{ 'product.spec_tiles.tile2_l2' | t }}</span><span class="spec-tile-lbl">{{ 'product.spec_tiles.tile2_label' | t }}</span></div>
-            <div class="spec-tile"><span class="spec-tile-val" style="font-size:16px;line-height:1.3;">{{ 'product.spec_tiles.tile3_l1' | t }}<br>{{ 'product.spec_tiles.tile3_l2' | t }}</span><span class="spec-tile-lbl">{{ 'product.spec_tiles.tile3_label' | t }}</span></div>
+      {%- endif -%}
+
+      <div class="p-accordions">
+        <details class="p-acc" open>
+          <summary>{{ 'product.tabs.description' | t }}</summary>
+          <div class="p-acc-body p-desc">{{ product.description }}</div>
+        </details>
+
+        <details class="p-acc">
+          <summary>{{ 'product.tabs.fit' | t }}</summary>
+          <div class="p-acc-body">
+            <dl class="spec-rows">
+              <div class="spec-row"><dt>{{ 'product.spec_rows.pattern_label' | t }}</dt><dd>{{ 'product.spec_rows.pattern_val' | t }}</dd></div>
+              <div class="spec-row"><dt>{{ 'product.spec_rows.size_label' | t }}</dt><dd>{{ 'product.spec_rows.size_val' | t }}</dd></div>
+              <div class="spec-row"><dt>{{ 'product.spec_rows.closure_label' | t }}</dt><dd>{{ 'product.spec_rows.closure_val' | t }}</dd></div>
+              <div class="spec-row"><dt>{{ 'product.spec_rows.packaging_label' | t }}</dt><dd>{{ 'product.spec_rows.packaging_val' | t }}</dd></div>
+            </dl>
+            <p>{{ 'product.fit_panel.p1' | t }}</p>
           </div>
-          <div class="spec-rows">
-            {% for pt in product.metafields.specs %}
-              <div class="spec-row"><span class="spec-key">{{ pt.key }}</span><span class="spec-val">{{ pt.value }}</span></div>
-            {% else %}
-              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.pattern_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.pattern_val' | t }}</span></div>
-              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.size_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.size_val' | t }}</span></div>
-              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.closure_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.closure_val' | t }}</span></div>
-              <div class="spec-row"><span class="spec-key">{{ 'product.spec_rows.packaging_label' | t }}</span><span class="spec-val">{{ 'product.spec_rows.packaging_val' | t }}</span></div>
-            {% endfor %}
+        </details>
+
+        <details class="p-acc">
+          <summary>{{ 'product.tabs.care' | t }}</summary>
+          <div class="p-acc-body">
+            <p>{{ 'product.care_panel.intro' | t }}</p>
+            <ul class="p-care-list">
+              <li>{{ 'product.care_panel.item1' | t }}</li>
+              <li>{{ 'product.care_panel.item2' | t }}</li>
+              <li>{{ 'product.care_panel.item3' | t }}</li>
+              <li>{{ 'product.care_panel.item4' | t }}</li>
+            </ul>
           </div>
-          <p class="p-fit-copy">{{ 'product.fit_panel.p1' | t }}</p>
-          <p class="p-fit-copy">{{ 'product.fit_panel.p2' | t }}</p>
-        </div>
-        <div class="p-tab-panel" data-panel="care">
-          <p class="p-care-intro">{{ 'product.care_panel.intro' | t }}</p>
-          <ul class="p-care-list">
-            <li>{{ 'product.care_panel.item1' | t }}</li>
-            <li>{{ 'product.care_panel.item2' | t }}</li>
-            <li>{{ 'product.care_panel.item3' | t }}</li>
-            <li>{{ 'product.care_panel.item4' | t }}</li>
-          </ul>
-        </div>
-        <div class="p-tab-panel" data-panel="ship">
-          <p>{{ 'product.shipping_panel.p1' | t }}</p>
-          <p class="p-freeship-note">{{ 'general.freeship_note' | t }}</p>
-          <h4 class="p-returns-title">{{ 'product.shipping_panel.returns_title' | t }}</h4>
-          <p>{{ 'product.shipping_panel.returns_p1' | t }}</p>
-          <p>{{ 'product.shipping_panel.returns_p2' | t }}</p>
-          <p>{{ 'product.shipping_panel.returns_p3' | t }}</p>
-          <p><a class="p-return-link" href="/pages/contact?objet=Retour">{{ 'product.shipping_panel.return_link' | t }} &rarr;</a></p>
-        </div>
-        <div class="p-tab-panel" data-panel="contact">
-          <p>{{ 'product.contact_panel.prefix' | t }} <a href="mailto:saintorigin26@gmail.com" style="color:var(--green);border-bottom:1px solid var(--line-m);">saintorigin26@gmail.com</a>.</p>
-        </div>
+        </details>
+
+        <details class="p-acc">
+          <summary>{{ 'product.tabs.shipping' | t }}</summary>
+          <div class="p-acc-body">
+            <p>{{ 'product.shipping_panel.p1' | t }}</p>
+            <p>{{ 'general.freeship_note' | t }}</p>
+            <p><strong>{{ 'product.shipping_panel.returns_title' | t }}.</strong> {{ 'product.shipping_panel.returns_p1' | t }} {{ 'product.shipping_panel.returns_p3' | t }}</p>
+            <p>{{ 'product.shipping_panel.returns_p2' | t }}</p>
+            <p class="p-acc-links">
+              <a href="/pages/contact?objet=Retour">{{ 'product.shipping_panel.return_link' | t }}</a>
+              {%- if shop.refund_policy -%}<a href="{{ shop.refund_policy.url }}">{{ shop.refund_policy.title }}</a>{%- endif -%}
+              {%- if shop.shipping_policy -%}<a href="{{ shop.shipping_policy.url }}">{{ shop.shipping_policy.title }}</a>{%- endif -%}
+            </p>
+          </div>
+        </details>
+
+        <details class="p-acc">
+          <summary>{{ 'product.tabs.faq' | t }}</summary>
+          <div class="p-acc-body">
+            <p><strong>{{ 'faq.q1' | t }}</strong><br>{{ 'faq.a1' | t }}</p>
+            <p><strong>{{ 'faq.q3' | t }}</strong><br>{{ 'faq.a3' | t }}</p>
+            <p><strong>{{ 'faq.q4' | t }}</strong><br>{{ 'faq.a4' | t }}</p>
+            <p class="p-acc-links"><a href="/pages/faq">{{ 'product.all_faq' | t }}</a></p>
+          </div>
+        </details>
+
+        <details class="p-acc">
+          <summary>{{ 'product.tabs.contact' | t }}</summary>
+          <div class="p-acc-body">
+            <p>{{ 'product.contact_panel.text' | t }}</p>
+            <p class="p-acc-links">
+              <a href="/pages/contact">{{ 'general.nav.contact' | t }}</a>
+              {%- if shop.terms_of_service -%}<a href="{{ shop.terms_of_service.url }}">{{ shop.terms_of_service.title }}</a>{%- endif -%}
+              {%- if shop.privacy_policy -%}<a href="{{ shop.privacy_policy.url }}">{{ shop.privacy_policy.title }}</a>{%- endif -%}
+            </p>
+          </div>
+        </details>
       </div>
     </div>
   </div>
 </div>
+
+{%- if product.available -%}
+<div class="buy-sticky" id="buy-sticky" data-sticky-target="#product-form-main" hidden>
+  <div class="buy-sticky-info">
+    <span class="buy-sticky-name">{{ product.title }}</span>
+    <span class="buy-sticky-price" data-product-price>{{ current_variant.price | money }}</span>
+  </div>
+  <button type="submit" form="product-form-main" class="buy-sticky-btn"><span>{{ 'product.add_to_cart' | t }}</span></button>
+</div>
+{%- endif -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | strip_newlines | truncate: 500 | json }},
+  "brand": {"@type": "Brand", "name": "SAINT Origine"},
+  {%- if product.featured_image %}"image": [{% for image in product.images limit: 5 %}"https:{{ image | image_url: width: 1200 | remove: 'https:' }}"{% unless forloop.last %},{% endunless %}{% endfor %}],{% endif %}
+  "url": "{{ shop.url }}{{ product.url }}",
+  "offers": [{% for variant in product.variants %}{
+    "@type": "Offer",
+    "price": "{{ variant.price | divided_by: 100.0 }}",
+    "priceCurrency": "{{ cart.currency.iso_code | default: 'EUR' }}",
+    "availability": "https://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+    "url": "{{ shop.url }}{{ variant.url | default: product.url }}"
+  }{% unless forloop.last %},{% endunless %}{% endfor %}]
+}
+</script>

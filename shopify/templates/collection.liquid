@@ -1,25 +1,34 @@
 <div class="wrap subhead">
   <p class="eyebrow">{{ 'collection.eyebrow' | t }}</p>
   <h1>{{ 'collection.title' | t }}</h1>
+  <p class="subhead-intro">{{ 'collection.subtitle' | t }}</p>
 </div>
 <section class="collection wrap">
-  <div class="coll-head">
-    <h2>{{ collection.title }}</h2>
-    <p>{{ 'collection.subtitle' | t }}</p>
-  </div>
   <div class="grid">
     {% for product in collection.products %}
-      <a class="card" href="{{ product.url }}">
-        <div class="card-visual">
-          <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
-        </div>
-        <h3>{{ product.title }}</h3>
-        <p class="card-sub">{{ product.type }}</p>
+      <article class="card">
+        <a class="card-link" href="{{ product.url }}">
+          <div class="card-visual">
+            {%- if product.featured_image -%}
+              <img src="{{ product.featured_image | image_url: width: 900 }}" srcset="{{ product.featured_image | image_url: width: 600 }} 600w, {{ product.featured_image | image_url: width: 900 }} 900w" sizes="(max-width: 960px) 100vw, 33vw" alt="{{ product.featured_image.alt | default: product.title | escape }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+            {%- endif -%}
+          </div>
+          <h3>{{ product.title }}</h3>
+          {%- if product.type != blank -%}<p class="card-sub">{{ product.type }}</p>{%- endif -%}
+        </a>
         <div class="card-price-row">
           <span class="card-price-val">{{ product.price | money }}</span>
-          <button class="add" type="button" data-quick-add="{{ product.selected_or_first_available_variant.id }}" onclick="event.preventDefault();">+</button>
+          {%- if product.available and product.has_only_default_variant -%}
+            <button class="add" type="button" data-quick-add="{{ product.selected_or_first_available_variant.id }}" aria-label="{{ 'product.add_to_cart' | t }} — {{ product.title | escape }}"><span>{{ 'product.add_to_cart' | t }}</span></button>
+          {%- elsif product.available -%}
+            <a class="add" href="{{ product.url }}"><span>{{ 'collection.choose' | t }}</span></a>
+          {%- else -%}
+            <span class="card-soldout">{{ 'product.sold_out' | t }}</span>
+          {%- endif -%}
         </div>
-      </a>
+      </article>
+    {% else %}
+      <p class="empty-cart">{{ 'collection.empty' | t }}</p>
     {% endfor %}
   </div>
 </section>

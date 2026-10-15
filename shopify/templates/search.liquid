@@ -1,0 +1,29 @@
+<div class="wrap subhead">
+  <p class="eyebrow">{{ 'general.search.eyebrow' | t }}</p>
+  <h1>{% if search.performed %}{{ 'general.search.results_for' | t: terms: search.terms }}{% else %}{{ 'general.search.title' | t }}{% endif %}</h1>
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
+    <label for="SearchInput" class="visually-hidden">{{ 'general.search.placeholder' | t }}</label>
+    <input type="search" id="SearchInput" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}">
+    <input type="hidden" name="type" value="product">
+    <button type="submit" class="btn-primary"><span>{{ 'general.search.submit' | t }}</span></button>
+  </form>
+</div>
+<section class="collection wrap">
+  {%- if search.performed -%}
+    <div class="grid">
+      {%- for item in search.results -%}
+        {%- if item.object_type == 'product' -%}
+          <article class="card">
+            <a class="card-link" href="{{ item.url }}">
+              <div class="card-visual">{%- if item.featured_image -%}<img src="{{ item.featured_image | image_url: width: 900 }}" alt="{{ item.title | escape }}" loading="lazy">{%- endif -%}</div>
+              <h3>{{ item.title }}</h3>
+            </a>
+            <div class="card-price-row"><span class="card-price-val">{{ item.price | money }}</span></div>
+          </article>
+        {%- endif -%}
+      {%- else -%}
+        <p class="empty-cart">{{ 'general.search.no_results' | t }}</p>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
