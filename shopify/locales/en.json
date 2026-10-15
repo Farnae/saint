@@ -39,10 +39,10 @@
   },
   "password": {
     "kicker": "SAINT Éventail cap",
-    "title": "The first piece of the house.",
-    "sub": "Made in a small run, in jacquard canvas. A piece designed to last.",
+    "title": "Be the first to know.",
+    "sub": "The house's first piece is coming soon. Leave your email to be notified first, on release day.",
     "email_placeholder": "Your email address",
-    "subscribe": "Notify me",
+    "subscribe": "Subscribe",
     "subscribed": "Thank you, you're on the list. We'll let you know on release day.",
     "already_subscribed": "You're already on the list. We'll let you know on release day.",
     "subscribe_error": "Something went wrong, please try again.",
@@ -50,8 +50,7 @@
     "access_toggle": "Enter with password",
     "placeholder": "Password",
     "submit": "Enter",
-    "error": "Incorrect password. Please try again.",
-    "badge": "Coming soon"
+    "error": "Incorrect password. Please try again."
   },
   "index": {
     "hero": {
