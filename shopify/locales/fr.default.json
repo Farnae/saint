@@ -26,8 +26,7 @@
       "legal_heading": "Informations légales"
     },
     "cart_js": {
-      "added": "Ajouté !",
-      "add_error": "Impossible d'ajouter cet article. Merci de réessayer."
+      "added": "Ajouté !"
     },
     "freeship_note": "Livraison offerte dès 150 € d'achat.",
     "newsletter": {
@@ -36,19 +35,6 @@
       "success": "Merci, vous êtes bien inscrit·e.",
       "already": "Vous êtes déjà inscrit·e.",
       "error": "Une erreur est survenue, merci de réessayer."
-    },
-    "skip_to_content": "Aller au contenu",
-    "404": {
-      "title": "Cette page est introuvable.",
-      "text": "Le lien est peut-être erroné ou la page a été déplacée."
-    },
-    "search": {
-      "eyebrow": "Recherche",
-      "title": "Rechercher",
-      "results_for": "Résultats pour « {{ terms }} »",
-      "placeholder": "Rechercher une pièce",
-      "submit": "Rechercher",
-      "no_results": "Aucun résultat."
     }
   },
   "password": {
@@ -167,8 +153,7 @@
       "fit": "Coupe & taille",
       "care": "Entretien",
       "shipping": "Livraison & retours",
-      "contact": "Contact & informations",
-      "faq": "Questions fréquentes"
+      "contact": "Contact"
     },
     "spec_tiles": {
       "tile1_l1": "Jacquard",
@@ -213,24 +198,13 @@
       "return_link": "Demander un retour"
     },
     "contact_panel": {
-      "prefix": "Une question sur cette pièce&nbsp;? Écrivez-nous à",
-      "text": "Une question sur cette pièce ou sur votre commande ? Écrivez-nous via le formulaire de contact, nous répondons personnellement à chaque message."
-    },
-    "breadcrumb_aria": "Fil d'Ariane",
-    "gallery_aria": "Photos du produit",
-    "view_label": "vue",
-    "variant_label": "Variante",
-    "sold_out": "Épuisé",
-    "reassure_returns": "Retours sous 14 jours",
-    "payment_aria": "Moyens de paiement acceptés",
-    "all_faq": "Toutes les questions"
+      "prefix": "Une question sur cette pièce&nbsp;? Écrivez-nous à"
+    }
   },
   "collection": {
     "eyebrow": "Collection",
     "title": "Toutes les silhouettes",
-    "subtitle": "Peu de pièces sont façonnées à chaque saison.",
-    "choose": "Choisir",
-    "empty": "Aucune pièce disponible pour le moment."
+    "subtitle": "Peu de pièces sont façonnées à chaque saison."
   },
   "contact": {
     "eyebrow": "Contact",
@@ -258,10 +232,7 @@
     "shipping_value": "Offerte",
     "shipping_paid": "Calculée à l'étape suivante",
     "total": "Total",
-    "checkout": "Passer commande",
-    "shipping_note": "Frais de livraison calculés à l'étape suivante.",
-    "view_cart": "Voir le panier",
-    "continue": "Continuer mes achats"
+    "checkout": "Passer commande"
   },
   "faq": {
     "eyebrow": "FAQ",

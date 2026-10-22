@@ -26,8 +26,7 @@
       "legal_heading": "Legal"
     },
     "cart_js": {
-      "added": "Added!",
-      "add_error": "This item could not be added. Please try again."
+      "added": "Added!"
     },
     "freeship_note": "Free shipping from €150 of purchase.",
     "newsletter": {
@@ -36,19 +35,6 @@
       "success": "Thank you, you're subscribed.",
       "already": "You're already subscribed.",
       "error": "Something went wrong, please try again."
-    },
-    "skip_to_content": "Skip to content",
-    "404": {
-      "title": "This page could not be found.",
-      "text": "The link may be wrong or the page may have moved."
-    },
-    "search": {
-      "eyebrow": "Search",
-      "title": "Search",
-      "results_for": "Results for “{{ terms }}”",
-      "placeholder": "Search for a piece",
-      "submit": "Search",
-      "no_results": "No results."
     }
   },
   "password": {
@@ -167,8 +153,7 @@
       "fit": "Fit & sizing",
       "care": "Care",
       "shipping": "Shipping & returns",
-      "contact": "Contact & information",
-      "faq": "FAQ"
+      "contact": "Contact"
     },
     "spec_tiles": {
       "tile1_l1": "Jacquard",
@@ -213,24 +198,13 @@
       "return_link": "Request a return"
     },
     "contact_panel": {
-      "prefix": "Have a question about this piece? Write to us at",
-      "text": "A question about this piece or your order? Write to us through the contact form, we answer every message personally."
-    },
-    "breadcrumb_aria": "Breadcrumb",
-    "gallery_aria": "Product photos",
-    "view_label": "view",
-    "variant_label": "Variant",
-    "sold_out": "Sold out",
-    "reassure_returns": "14-day returns",
-    "payment_aria": "Accepted payment methods",
-    "all_faq": "All questions"
+      "prefix": "Have a question about this piece? Write to us at"
+    }
   },
   "collection": {
     "eyebrow": "Collection",
     "title": "All the silhouettes",
-    "subtitle": "Few pieces are crafted each season.",
-    "choose": "Choose",
-    "empty": "No pieces available right now."
+    "subtitle": "Few pieces are crafted each season."
   },
   "contact": {
     "eyebrow": "Contact",
@@ -258,10 +232,7 @@
     "shipping_value": "Free",
     "shipping_paid": "Calculated at checkout",
     "total": "Total",
-    "checkout": "Checkout",
-    "shipping_note": "Shipping calculated at the next step.",
-    "view_cart": "View cart",
-    "continue": "Continue shopping"
+    "checkout": "Checkout"
   },
   "faq": {
     "eyebrow": "FAQ",
