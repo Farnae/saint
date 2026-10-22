@@ -940,3 +940,31 @@ h1,h2,h3{text-wrap:balance;}
 .search-form{display:flex;gap:12px;margin-top:32px;max-width:560px;}
 .search-form input[type=search]{flex:1;min-height:52px;border:1px solid var(--line-m);padding:0 16px;font:inherit;font-size:15px;background:#fff;}
 @media(max-width:960px){.page-article{padding-top:120px;padding-bottom:100px;}.rte{font-size:15px;}.search-form{flex-direction:column;}}
+
+/* ===== Product photos on white + less green on mobile ===== */
+:root{--paper:#FAFAF8;}
+.hero--after-banner .hero-visual{aspect-ratio:1/1;background:var(--paper);}
+.hero--after-banner .cap-hero{object-fit:contain;}
+.signature-visual{aspect-ratio:16/10;max-height:none;background:var(--paper);}
+.signature-visual img{object-fit:contain;}
+.signature-sect,.signature-head{background:var(--paper);}
+
+/* mobile menu: ivory panel, ink text, green kept as an accent only */
+.mobile-nav{background:var(--paper);}
+.mnav-main a{color:var(--stone);}
+.mnav-main a:hover,.mnav-main a.current{color:var(--ink);}
+.mnav-product{border-color:var(--line-m);background:#fff;color:var(--ink);}
+.mnav-product-kicker{color:var(--stone);}
+.mnav-product-cta{color:var(--green);border-bottom-color:var(--green);}
+.mnav-meta{border-top-color:var(--line);}
+.mnav-meta a{color:var(--ink-dim);}
+.lang-switch-mobile .lang-btn{color:var(--stone);}
+.lang-switch-mobile .lang-btn.active{color:var(--ink);}
+html.nav-open header .logo-link,html.nav-open .cart-trigger-mobile{color:var(--ink);}
+html.nav-open .burger span{background:var(--ink);}
+
+@media(max-width:960px){
+  /* manifesto: light on phones, the brand green becomes the text colour */
+  .manifesto{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .manifesto-line h3{color:var(--green);}
+}
