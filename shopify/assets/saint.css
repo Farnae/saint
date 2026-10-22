@@ -941,13 +941,8 @@ h1,h2,h3{text-wrap:balance;}
 .search-form input[type=search]{flex:1;min-height:52px;border:1px solid var(--line-m);padding:0 16px;font:inherit;font-size:15px;background:#fff;}
 @media(max-width:960px){.page-article{padding-top:120px;padding-bottom:100px;}.rte{font-size:15px;}.search-form{flex-direction:column;}}
 
-/* ===== Product photos on white + less green on mobile ===== */
+/* ===== Less green on mobile ===== */
 :root{--paper:#FAFAF8;}
-.hero--after-banner .hero-visual{aspect-ratio:1/1;background:var(--paper);}
-.hero--after-banner .cap-hero{object-fit:contain;}
-.signature-visual{aspect-ratio:16/10;max-height:none;background:var(--paper);}
-.signature-visual img{object-fit:contain;}
-.signature-sect,.signature-head{background:var(--paper);}
 
 /* mobile menu: ivory panel, ink text, green kept as an accent only */
 .mobile-nav{background:var(--paper);}
