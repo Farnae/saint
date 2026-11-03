@@ -96,7 +96,10 @@
   </div>
 </div>
 
-<main id="site-main">
+{%- assign themed_page = false -%}
+{%- if template.name == 'index' or template.name == 'product' or template.name == 'collection' or template.name == 'cart' -%}{%- assign themed_page = true -%}{%- endif -%}
+{%- if template.name == 'page' and template.suffix == 'contact' or template.name == 'page' and template.suffix == 'faq' -%}{%- assign themed_page = true -%}{%- endif -%}
+<main id="site-main"{% unless themed_page %} class="main--system"{% endunless %}>
   {{ content_for_layout }}
 </main>
 
