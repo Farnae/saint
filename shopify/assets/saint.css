@@ -867,3 +867,21 @@ footer .logo-link,.foot-brand .wordmark{color:var(--ink);}
 @media(max-width:960px){.produit-photo{aspect-ratio:3/4;}.produit-photo img{height:100%;object-fit:cover;}}
 @media(max-width:960px){.produit-visual{align-items:flex-start;}}
 @media(max-width:960px){.produit-layout{gap:0;}.produit-info{padding-top:36px;}}
+/* écran de chargement : on garde le vert SAINT */
+#curtain{background:var(--green);}
+#curtain .site-logo{color:var(--green-text);}
+#curtain .cline{background:var(--beige);}
+/* panier latéral : serif, vignette sans bordures */
+.cart-drawer-head h3{font-family:'EB Garamond',serif;font-size:24px;font-weight:400;}
+.cd-info h4{font-family:'EB Garamond',serif;font-size:18px;font-weight:400;letter-spacing:0;}
+.cd-thumb{width:72px;aspect-ratio:3/4;background:none;overflow:hidden;}
+.cd-thumb img{object-fit:cover;}
+.cart-drawer-row{grid-template-columns:72px 1fr auto;}
+.p-thumb{background:none;overflow:hidden;}.p-thumb img{width:100%;height:100%;object-fit:cover;}
+/* onglet Histoire */
+.p-story p{font-size:14px;line-height:1.85;color:var(--ink-dim);margin-bottom:14px;}
+.p-story .p-story-kicker{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);margin:22px 0 8px;}
+.p-story .p-story-kicker:first-child{margin-top:0;}
+.signature-visual{aspect-ratio:2/1;}
+@media(max-width:960px){.signature-visual{aspect-ratio:4/3;}.signature-visual img{object-position:72% center;}}
+.p-tabs-nav{flex-wrap:nowrap;gap:22px;overflow-x:auto;scrollbar-width:none;}.p-tab-btn{white-space:nowrap;flex-shrink:0;}

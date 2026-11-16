@@ -26,7 +26,8 @@
       "legal_heading": "Informations légales"
     },
     "cart_js": {
-      "added": "Ajouté !"
+      "added": "Ajouté !",
+      "max_qty": "Chaque commande est limitée à 5 pièces."
     },
     "freeship_note": "Livraison offerte dès 150 € d'achat.",
     "newsletter": {
@@ -158,7 +159,8 @@
       "fit": "Coupe & taille",
       "care": "Entretien",
       "shipping": "Livraison & retours",
-      "contact": "Contact"
+      "contact": "Contact",
+      "story": "Histoire"
     },
     "spec_tiles": {
       "tile1_l1": "Jacquard",
@@ -204,6 +206,15 @@
     },
     "contact_panel": {
       "prefix": "Une question sur cette pièce&nbsp;? Écrivez-nous à"
+    },
+    "story_panel": {
+      "k1": "Le motif",
+      "p1": "Uroko, l'écaille, habillait autrefois armures et kimonos : un symbole de protection et de renouveau. On y retrouve aussi la vague seigaiha et la forme de l'éventail, qui donne son nom à la casquette.",
+      "k2": "Le jacquard",
+      "p2": "Le motif n'est pas imprimé : il est tissé. Chaque fil est commandé un à un pour faire apparaître le dessin dans l'épaisseur de la toile, ton sur ton. Un savoir-faire confié à un atelier spécialisé dans le tissage jacquard, choisi pour la précision de son métier.",
+      "k3": "La maison",
+      "p3": "SAINT est une maison parisienne qui préfère créer peu, mais créer juste. Une première pièce, produite en petite série, pensée pour durer.",
+      "link": "Découvrir la maison"
     }
   },
   "collection": {

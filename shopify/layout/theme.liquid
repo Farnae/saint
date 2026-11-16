@@ -8,6 +8,14 @@
 <title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
 {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
 <link rel="canonical" href="{{ canonical_url }}">
+<meta property="og:site_name" content="SAINT Origine">
+<meta property="og:title" content="{{ page_title | default: shop.name | escape }}">
+<meta property="og:description" content="{{ page_description | default: shop.description | default: 'Maison parisienne. Casquette SAINT Éventail en jacquard Uroko.' | escape }}">
+<meta property="og:type" content="{% if template.name == 'product' %}product{% else %}website{% endif %}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:image" content="https:{% if template.name == 'product' and product.handle == 'casquette-saint-eventail' %}{{ 'saint-p-profil.webp' | asset_url }}{% else %}{{ 'saint-banner-duo.webp' | asset_url }}{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -173,6 +181,9 @@ window.SAINT_I18N = {
   cartEmpty: {{ 'cart.empty_text' | t | json }},
   freeship: {{ 'general.freeship_note' | t | json }},
   freeShipThreshold: 15000,
+  maxQty: 5,
+  maxQtyMsg: {{ 'general.cart_js.max_qty' | t | json }},
+  thumbs: { "casquette-saint-eventail": {{ 'saint-p-profil.webp' | asset_url | json }} },
   subtotal: {{ 'cart.subtotal' | t | json }},
   total: {{ 'cart.total' | t | json }},
   checkout: {{ 'cart.checkout' | t | json }},

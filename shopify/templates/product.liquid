@@ -4,7 +4,7 @@
     <div class="produit-visual">
       {%- comment -%} Casquette Éventail : photos réelles du thème (studio + portées). Autres produits : photos Shopify. {%- endcomment -%}
       {%- if product.handle == 'casquette-saint-eventail' -%}
-        {%- assign gallery = "saint-p-profil.webp|Profil,saint-p-dessus.webp|Vue de dessus,saint-p-dos.webp|Dos et sangle en cuir,saint-p-interieur.webp|Intérieur doublé,saint-p-detail.webp|Détail du jacquard,saint-look-noir.webp|Portée,saint-look-matiere.webp|Le jacquard en lumière naturelle" | split: "," -%}
+        {%- assign gallery = "saint-p-profil.webp|Profil,saint-look-noir.webp|Portée,saint-p-dessus.webp|Vue de dessus,saint-p-dos.webp|Dos et sangle en cuir,saint-p-interieur.webp|Intérieur doublé,saint-p-detail.webp|Détail du jacquard,saint-look-story-1.webp|Portée de profil,saint-look-story-3.webp|Portée de face" | split: "," -%}
         {%- for g in gallery -%}
           {%- assign gp = g | split: "|" -%}
           <div class="produit-photo"><img src="{{ gp[0] | asset_url }}" alt="{{ product.title | escape }} &ndash; {{ gp[1] }}" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}></div>
@@ -63,6 +63,7 @@
       <div class="p-tabs">
         <div class="p-tabs-nav">
           <button class="p-tab-btn active" data-tab="desc">{{ 'product.tabs.description' | t }}</button>
+          <button class="p-tab-btn" data-tab="story">{{ 'product.tabs.story' | t }}</button>
           <button class="p-tab-btn" data-tab="fit">{{ 'product.tabs.fit' | t }}</button>
           <button class="p-tab-btn" data-tab="care">{{ 'product.tabs.care' | t }}</button>
           <button class="p-tab-btn" data-tab="ship">{{ 'product.tabs.shipping' | t }}</button>
@@ -70,6 +71,17 @@
         </div>
         <div class="p-tab-panel active" data-panel="desc">
           <div class="p-desc">{{ product.description }}</div>
+        </div>
+        <div class="p-tab-panel" data-panel="story">
+          <div class="p-story">
+            <p class="p-story-kicker">{{ 'product.story_panel.k1' | t }}</p>
+            <p>{{ 'product.story_panel.p1' | t }}</p>
+            <p class="p-story-kicker">{{ 'product.story_panel.k2' | t }}</p>
+            <p>{{ 'product.story_panel.p2' | t }}</p>
+            <p class="p-story-kicker">{{ 'product.story_panel.k3' | t }}</p>
+            <p>{{ 'product.story_panel.p3' | t }}</p>
+            <p><a class="p-return-link" href="/pages/maison">{{ 'product.story_panel.link' | t }} &rarr;</a></p>
+          </div>
         </div>
         <div class="p-tab-panel" data-panel="fit">
           <div class="spec-tiles">

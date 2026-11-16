@@ -259,15 +259,34 @@ if(editorialBreak){
 }
 
 /* ===== REAL SHOPIFY CART: header count + add-to-cart feedback ===== */
+function cartTotalQty(){
+  const scope=document.querySelector('#cart-drawer.open')||document.querySelector('.panier-list')||document;
+  let n=0; scope.querySelectorAll('.cart-line-stepper .cart-qty-val').forEach(el=>n+=(+el.textContent||0));
+  return n;
+}
 function updateCartCountFromShopify(){
   fetch('/cart.js').then(r=>r.json()).then(cart=>{
     document.querySelectorAll('.cart-count').forEach(el=>el.textContent=cart.item_count);
   });
 }
+/* Limite : MAX_QTY pièces au total par commande (toutes lignes confondues). */
+const MAX_QTY=(window.SAINT_I18N&&window.SAINT_I18N.maxQty)||5;
+function maxQtyNotice(){ if(window.saintToast) window.saintToast((window.SAINT_I18N&&window.SAINT_I18N.maxQtyMsg)||('Limité à '+MAX_QTY+' pièces par commande.'),'info'); }
+function cartThumb(item){
+  const map=(window.SAINT_I18N&&window.SAINT_I18N.thumbs)||{};
+  return map[item.handle]||item.image;
+}
 function handleAddToCartSubmit(e){
   e.preventDefault();
   const form=e.currentTarget;
   const btn=e.submitter || form.querySelector('button[type="submit"]:not([disabled]),.btn-add-cart:not([disabled])');
+  const wanted=+(form.querySelector('[name="quantity"]')||{}).value||1;
+  fetch('/cart.js').then(r=>r.json()).then(cart=>{
+    if(cart.item_count+wanted>MAX_QTY){ maxQtyNotice(); openCartDrawer(); return; }
+    doAddToCart(form,btn);
+  }).catch(()=>doAddToCart(form,btn));
+}
+function doAddToCart(form,btn){
   fetch('/cart/add.js',{
     method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
@@ -320,6 +339,7 @@ function bindCartDrawerRowControls(){
         if(stepper.classList.contains('busy')) return;
         const current=+valEl.textContent||1;
         const next=btn.dataset.step==='down'?current-1:current+1;
+        if(next>current && cartTotalQty()>=MAX_QTY){ maxQtyNotice(); return; }
         stepper.classList.add('busy');
         fetch('/cart/change.js',{
           method:'POST',
@@ -355,7 +375,7 @@ function renderCartDrawer(){
       const variant=(item.variant_title && item.variant_title!=='Default Title')
         ? '<p class="cd-variant">'+item.variant_title+'</p>' : '';
       return '<div class="cart-drawer-row">'
-        +'<div class="cd-thumb"><img src="'+item.image+'" alt="'+item.product_title+'"></div>'
+        +'<div class="cd-thumb"><img src="'+cartThumb(item)+'" alt="'+item.product_title+'"></div>'
         +'<div class="cd-info"><h4>'+item.product_title+'</h4>'+variant
         +'<div class="stepper cart-line-stepper" data-line-key="'+item.key+'">'
         +'<button type="button" data-step="down">&minus;</button>'
@@ -385,11 +405,14 @@ document.addEventListener('click',function(e){
   if(!quickAdd) return;
   e.preventDefault();
   addRipple(e,quickAdd);
+  fetch('/cart.js').then(r=>r.json()).then(cart=>{
+  if(cart.item_count>=MAX_QTY){ maxQtyNotice(); return; }
   fetch('/cart/add.js',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({items:[{id:quickAdd.dataset.quickAdd,quantity:1}]})
   }).then(r=>r.json()).then(updateCartCountFromShopify);
+  });
 });
 updateCartCountFromShopify();
 
@@ -417,6 +440,7 @@ document.querySelectorAll('.cart-line-stepper[data-line-key]').forEach(stepper=>
       if(stepper.classList.contains('busy')) return;
       const current=+valEl.textContent||1;
       const next=btn.dataset.step==='down'?current-1:current+1;
+      if(next>current && cartTotalQty()>=MAX_QTY){ maxQtyNotice(); return; }
       stepper.classList.add('busy');
       fetch('/cart/change.js',{
         method:'POST',

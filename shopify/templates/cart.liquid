@@ -7,7 +7,7 @@
       <div class="panier-list">
         {% for item in cart.items %}
           <div class="panier-row">
-            <div class="p-thumb"><img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}"></div>
+            <div class="p-thumb">{%- if item.product.handle == 'casquette-saint-eventail' -%}<img src="{{ 'saint-p-profil.webp' | asset_url }}" alt="{{ item.title | escape }}">{%- else -%}<img src="{{ item.image | image_url: width: 320 }}" alt="{{ item.title | escape }}">{%- endif -%}</div>
             <div>
               <h4>{{ item.product.title }}</h4>
               {%- unless item.product.has_only_default_variant -%}<p class="ptsubsub">{{ item.variant.title }}</p>{%- endunless -%}

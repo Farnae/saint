@@ -26,7 +26,8 @@
       "legal_heading": "Legal"
     },
     "cart_js": {
-      "added": "Added!"
+      "added": "Added!",
+      "max_qty": "Each order is limited to 5 pieces."
     },
     "freeship_note": "Free shipping from €150 of purchase.",
     "newsletter": {
@@ -158,7 +159,8 @@
       "fit": "Fit & sizing",
       "care": "Care",
       "shipping": "Shipping & returns",
-      "contact": "Contact"
+      "contact": "Contact",
+      "story": "Story"
     },
     "spec_tiles": {
       "tile1_l1": "Jacquard",
@@ -204,6 +206,15 @@
     },
     "contact_panel": {
       "prefix": "Have a question about this piece? Write to us at"
+    },
+    "story_panel": {
+      "k1": "The motif",
+      "p1": "Uroko, the scale, once adorned armour and kimonos: a symbol of protection and renewal. It also echoes the seigaiha wave and the shape of the fan, which gives the cap its name.",
+      "k2": "The jacquard",
+      "p2": "The motif is not printed: it is woven. Each thread is controlled one by one so the design appears within the cloth itself, tone on tone. A craft entrusted to a workshop specialised in jacquard weaving, chosen for the precision of its work.",
+      "k3": "The house",
+      "p3": "SAINT is a Parisian house that would rather create little, but create right. A first piece, produced in a small series, made to last.",
+      "link": "Discover the house"
     }
   },
   "collection": {

@@ -6,7 +6,7 @@
 {% assign product = collections.all.products.first %}
 {% assign buy_variant = product.selected_or_first_available_variant %}
 {% assign product_link = product.url | default: routes.all_products_collection_url | default: '/collections/all' %}
-{% assign cap_images = "saint-look-story-1.webp,saint-look-noir.webp,saint-look-story-2.webp,saint-look-mains.webp,saint-look-story-3.webp,saint-look-profil.webp" | split: "," %}
+{% assign cap_images = "saint-look-01.webp,saint-look-noir.webp,saint-look-02.webp,saint-look-mains.webp,saint-look-03.webp,saint-look-profil.webp,saint-look-04.webp" | split: "," %}
 {% assign product_shots = "saint-p-profil.webp,saint-p-dessus.webp,saint-p-dos.webp,saint-p-interieur.webp" | split: "," %}
 
 <section class="home-banner" aria-label="SAINT Origine">
@@ -98,7 +98,7 @@
     <p class="mat-intro">{{ 'index.materials.intro' | t }}</p>
   </div>
   <div class="signature-visual">
-    <img src="{{ 'saint-jacquard-signature.webp' | asset_url }}" alt="{{ 'index.materials.mat1_alt' | t }}" width="1917" height="1441" loading="lazy">
+    <img src="{{ 'saint-jacquard-pierre.webp' | asset_url }}" alt="{{ 'index.materials.mat1_alt' | t }}" width="1774" height="887" loading="lazy">
   </div>
 </section>
 
