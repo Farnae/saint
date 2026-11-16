@@ -1,0 +1,78 @@
+{%- comment -%}
+  « La Maison » : l'histoire, le motif, la matière et la façon de faire.
+  Affiché sous l'inscription de la page d'attente, et comme page /pages/maison
+  (modèle page.maison) une fois la boutique ouverte.
+  signup_url : où mène le bouton final (ancre du formulaire d'inscription).
+{%- endcomment -%}
+{%- assign signup_url = signup_url | default: '#pw-notify' -%}
+
+<div class="maison">
+
+  <section class="ms-hero">
+    <img src="{{ 'saint-cap-texture.webp' | asset_url }}" alt="Le jacquard Uroko de la casquette SAINT Éventail, en gros plan" width="1254" height="1254" loading="lazy">
+  </section>
+
+  <section class="ms-block ms-intro">
+    <p class="ms-kicker">La Maison</p>
+    <h2 class="ms-title">Créer peu,<br>mais créer juste.</h2>
+    <p class="ms-lead">SAINT est née d'une intention simple&nbsp;: prendre le temps de concevoir des pièces qui ont du sens, loin du rythme des tendances. Une maison parisienne, une première pièce, et l'exigence de ne rien laisser au hasard.</p>
+  </section>
+
+  <section class="ms-dark">
+    <div class="ms-block">
+      <p class="ms-kicker">Le motif</p>
+      <h2 class="ms-title">Uroko,<br>l'écaille qui protège.</h2>
+      <p class="ms-lead">Dans le textile japonais traditionnel, le motif Uroko habillait armures et kimonos, symbole de protection et de renouveau. Il puise aussi dans le seigaiha, la vague ancestrale du calme et de la bonne fortune, et dans la forme de l'éventail, que l'on retrouve sur le médaillon de chaque casquette.</p>
+    </div>
+    <figure class="ms-figure">
+      <img src="{{ 'saint-photo-eventail.webp' | asset_url }}" alt="La casquette SAINT Éventail et son éventail" width="1809" height="1705" loading="lazy">
+      <figcaption>Casquette Éventail, jacquard Uroko et visière finition cuir</figcaption>
+    </figure>
+    <ol class="ms-principles">
+      <li><span>I</span><h3>Le motif dans la matière</h3><p>Il n'est pas imprimé&nbsp;: il est tissé. Le dessin naît dans le fil, et ne s'efface pas.</p></li>
+      <li><span>II</span><h3>Une palette retenue</h3><p>Des tons justes, pensés pour durer. Le vert profond en signature.</p></li>
+      <li><span>III</span><h3>Peu de pièces, mieux faites</h3><p>Une seule pièce pour commencer, produite en petite série.</p></li>
+    </ol>
+  </section>
+
+  <section class="ms-block">
+    <p class="ms-kicker">La matière</p>
+    <h2 class="ms-title">Un savoir-faire<br>de tisserand.</h2>
+    <p class="ms-lead">Le jacquard est l'un des tissages les plus exigeants&nbsp;: chaque fil est commandé un à un pour faire apparaître le motif dans l'épaisseur de la toile. Notre casquette est réalisée par un atelier spécialisé dans le tissage jacquard, choisi pour la précision de son métier.</p>
+  </section>
+
+  <section class="ms-details">
+    <figure><img src="{{ 'saint-cap-side.webp' | asset_url }}" alt="Profil de la casquette" width="1254" height="1254" loading="lazy"><figcaption>La silhouette</figcaption></figure>
+    <figure><img src="{{ 'saint-cap-interior.webp' | asset_url }}" alt="Intérieur de la casquette" width="1254" height="1254" loading="lazy"><figcaption>L'intérieur</figcaption></figure>
+  </section>
+
+  <section class="ms-block">
+    <dl class="ms-specs">
+      <div><dt>La toile</dt><dd>Jacquard monogrammé Uroko, tissé ton sur ton</dd></div>
+      <div><dt>La visière</dt><dd>Structurée, en finition cuir</dd></div>
+      <div><dt>La calotte</dt><dd>Souple, non rigide&nbsp;: elle épouse la forme du crâne</dd></div>
+      <div><dt>Le réglage</dt><dd>Sangle arrière, montée avec un angle étudié pour un maintien net</dd></div>
+      <div><dt>L'écrin</dt><dd>Livrée dans son sac en coton SAINT Origine</dd></div>
+    </dl>
+  </section>
+
+  <section class="ms-block ms-palette-wrap">
+    <p class="ms-kicker">Les couleurs</p>
+    <p class="ms-lead">Le vert SAINT, profond et calme. Il s'accorde au brun du cuir, au beige du jacquard, à l'écru et au noir.</p>
+    <ul class="ms-palette">
+      <li><span style="background:#064829"></span>Vert SAINT</li>
+      <li><span style="background:#6B4430"></span>Brun cuir</li>
+      <li><span style="background:#CDB89A"></span>Beige jacquard</li>
+      <li><span style="background:#F6F5F2"></span>Écru</li>
+      <li><span style="background:#111412"></span>Noir</li>
+    </ul>
+  </section>
+
+  <section class="ms-cta">
+    <p class="ms-kicker">Édition limitée</p>
+    <h2 class="ms-title">Pourquoi pas vous&nbsp;?</h2>
+    <p class="ms-lead">Les pièces étant produites en petite quantité, l'ordre d'inscription fera foi.</p>
+    <a class="ms-btn" href="{{ signup_url }}">Rejoindre la liste</a>
+  </section>
+
+</div>
