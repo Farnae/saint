@@ -1,8 +1,8 @@
 /* Newsletter forms: strict email check, AJAX submit (no page reload), toast feedback.
    Markup: a [data-newsletter] wrapper (JSON messages) containing the Shopify customer
    form, an email input inside [data-newsletter-field] and a [data-newsletter-hint].
-   The server-rendered result carries [data-newsletter-state]; we read it from the
-   fetched page to know whether the signup succeeded. */
+   Validation happens here; the form is then submitted normally and the page that
+   Shopify sends back shows the result ([data-newsletter-state] + toast). */
 (function(){
   var EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)*\.[a-z]{2,}$/i;
   var hideTimer;
@@ -37,6 +37,10 @@
     hideTimer = setTimeout(function(){ preset.classList.remove('is-visible'); }, 5000);
   }
 
+  // Retour après inscription : on ramène la personne au message du formulaire.
+  var state = document.querySelector('[data-newsletter-state]');
+  if (state) state.closest('[data-newsletter]').scrollIntoView({ block: 'center' });
+
   document.querySelectorAll('[data-newsletter]').forEach(function(wrap){
     var form = wrap.querySelector('form');
     var input = form && form.querySelector('input[type="email"]');
@@ -51,13 +55,6 @@
       if (field) field.classList.toggle('has-error', !!message);
       if (hint) hint.textContent = message || '';
       input.setAttribute('aria-invalid', message ? 'true' : 'false');
-    }
-
-    function done(message){
-      var p = document.createElement('p');
-      p.className = 'cta-success newsletter-done';
-      p.textContent = message;
-      form.replaceWith(p);
     }
 
     input.addEventListener('input', function(){ if (field && field.classList.contains('has-error')) setError(''); });
@@ -94,24 +91,11 @@
       busy = true;
       wrap.classList.add('is-loading');
 
-      fetch(form.action, { method: 'POST', body: new FormData(form), credentials: 'same-origin' })
-        .then(function(res){
-          // Shopify may ask for a captcha: let the browser handle it with a normal submit.
-          if (/\/challenge/.test(res.url)) { HTMLFormElement.prototype.submit.call(form); return null; }
-          var postedOk = /[?&]customer_posted=true/.test(res.url);
-          return res.text().then(function(html){ return { html: html, postedOk: postedOk }; });
-        })
-        .then(function(result){
-          if (result === null) return;
-          var doc = new DOMParser().parseFromString(result.html, 'text/html');
-          var marker = doc.querySelector('[data-newsletter-state]');
-          var state = marker ? marker.getAttribute('data-newsletter-state') : (result.postedOk ? 'success' : '');
-          if (state === 'success') { showToast(msgs.success, 'success'); done(msgs.success); }
-          else if (state === 'already') { showToast(msgs.already, 'info'); done(msgs.already); }
-          else { showToast(msgs.error, 'error'); }
-        })
-        .catch(function(){ showToast(msgs.error, 'error'); })
-        .then(function(){ busy = false; wrap.classList.remove('is-loading'); });
+      // Envoi classique (rechargement de page) : Shopify suit sa propre redirection
+      // et affiche lui-même le bon message (inscrit / déjà inscrit / erreur).
+      // L'envoi en arrière-plan (fetch) pouvait renvoyer le formulaire deux fois
+      // et afficher « déjà inscrit » à une personne qui venait de s'inscrire.
+      HTMLFormElement.prototype.submit.call(form);
     });
   });
 })();

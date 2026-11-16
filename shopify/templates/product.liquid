@@ -4,7 +4,7 @@
     <div class="produit-visual">
       {%- comment -%} Casquette Éventail : photos réelles du thème (studio + portées). Autres produits : photos Shopify. {%- endcomment -%}
       {%- if product.handle == 'casquette-saint-eventail' -%}
-        {%- assign gallery = "saint-p-profil.webp|Profil,saint-look-noir.webp|Portée,saint-p-dessus.webp|Vue de dessus,saint-p-dos.webp|Dos et sangle en cuir,saint-p-interieur.webp|Intérieur doublé,saint-p-detail.webp|Détail du jacquard,saint-look-story-1.webp|Portée de profil,saint-look-story-3.webp|Portée de face" | split: "," -%}
+        {%- assign gallery = "saint-p-profil.webp|Profil,saint-look-noir.webp|Portée,saint-p-dessus.webp|Vue de dessus,saint-p-dos.webp|Dos et sangle réglable,saint-p-interieur.webp|Intérieur doublé,saint-p-detail.webp|Détail du jacquard,saint-look-story-1.webp|Portée de profil,saint-look-story-3.webp|Portée de face" | split: "," -%}
         {%- for g in gallery -%}
           {%- assign gp = g | split: "|" -%}
           <div class="produit-photo"><img src="{{ gp[0] | asset_url }}" alt="{{ product.title | escape }} &ndash; {{ gp[1] }}" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}></div>
