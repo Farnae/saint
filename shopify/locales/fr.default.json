@@ -29,13 +29,14 @@
       "added": "Ajouté !",
       "max_qty": "Chaque commande est limitée à 5 pièces."
     },
-    "freeship_note": "Livraison offerte dès 150 € d'achat.",
+    "freeship_note": "Livraison offerte sur les premières commandes.",
     "newsletter": {
       "empty_email": "Merci d'entrer votre adresse email.",
       "invalid_email": "Adresse email non valide. Vérifiez et réessayez.",
       "success": "Merci, vous êtes bien inscrit·e.",
       "already": "Vous êtes déjà inscrit·e.",
-      "error": "Une erreur est survenue, merci de réessayer."
+      "error": "Une erreur est survenue, merci de réessayer.",
+      "rejected_email": "Cette adresse email n'a pas été acceptée. Vérifiez-la et réessayez."
     }
   },
   "password": {
@@ -138,7 +139,7 @@
       "in_stock": "En stock",
       "add_to_cart": "Ajouter au panier",
       "details": "Voir les détails",
-      "reassure_ship": "Livraison offerte dès 150 €",
+      "reassure_ship": "Livraison offerte",
       "reassure_returns": "Retours sous 14 jours",
       "reassure_pay": "Paiement sécurisé",
       "sticky_aria": "Acheter la casquette"

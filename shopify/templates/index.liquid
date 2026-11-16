@@ -139,13 +139,22 @@
       {%- capture nl_msgs -%}{"empty":{{ 'general.newsletter.empty_email' | t | json }},"invalid":{{ 'general.newsletter.invalid_email' | t | json }},"success":{{ 'general.newsletter.success' | t | json }},"already":{{ 'general.newsletter.already' | t | json }},"error":{{ 'general.newsletter.error' | t | json }}}{%- endcapture -%}
       <div class="newsletter" data-newsletter="{{ nl_msgs | escape }}">
         {% form 'customer', id: 'newsletter-home' %}
+      {%- comment -%}
+        « Déjà inscrit » uniquement si Shopify dit que l'email est déjà utilisé.
+        Toute autre erreur sur l'email (domaine refusé, adresse inexistante…)
+        affiche un message d'erreur et laisse le formulaire pour réessayer.
+      {%- endcomment -%}
+      {%- assign email_err = '' -%}
+      {%- if form.errors -%}{%- assign email_err = form.errors.messages['email'] | append: '' | downcase -%}{%- endif -%}
+      {%- assign email_taken = false -%}
+      {%- if email_err contains 'taken' or email_err contains 'déjà' or email_err contains 'utilis' -%}{%- assign email_taken = true -%}{%- endif -%}
           {% if form.posted_successfully? %}
             <p class="cta-success" data-newsletter-state="success">{{ 'general.newsletter.success' | t }}</p>
-          {% elsif form.errors contains 'email' %}
+          {% elsif email_taken %}
             <p class="cta-success" data-newsletter-state="already">{{ 'general.newsletter.already' | t }}</p>
           {% else %}
             {% if form.errors %}
-              <p class="cta-error" data-newsletter-state="error">{{ 'general.newsletter.error' | t }}</p>
+              <p class="cta-error" data-newsletter-state="error">{% if email_err != '' %}{{ 'general.newsletter.rejected_email' | t }}{% else %}{{ 'general.newsletter.error' | t }}{% endif %}</p>
             {% endif %}
             <input type="hidden" name="contact[tags]" value="newsletter">
             <div class="cta-form" data-newsletter-field>

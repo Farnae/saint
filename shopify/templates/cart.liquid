@@ -24,7 +24,7 @@
       </div>
       <div class="panier-summary">
         <div class="panier-summary-box">
-          {% assign free_ship_threshold = 15000 %}
+          {%- comment -%} Lancement : livraison offerte à tous (0). Pour revenir à « offerte dès 150 € », mettre 15000 ici et dans layout/theme.liquid. {%- endcomment -%}{% assign free_ship_threshold = 0 %}
           <div class="sum-row"><span>{{ 'cart.subtotal' | t }}</span><span>{{ cart.total_price | money }}</span></div>
           <div class="sum-row"><span>{{ 'cart.shipping' | t }}</span><span>{% if cart.total_price >= free_ship_threshold %}{{ 'cart.shipping_value' | t }}{% else %}{{ 'cart.shipping_paid' | t }}{% endif %}</span></div>
           {% unless cart.total_price >= free_ship_threshold %}

@@ -29,13 +29,14 @@
       "added": "Added!",
       "max_qty": "Each order is limited to 5 pieces."
     },
-    "freeship_note": "Free shipping from €150 of purchase.",
+    "freeship_note": "Free shipping on our first orders.",
     "newsletter": {
       "empty_email": "Please enter your email address.",
       "invalid_email": "Invalid email address. Please check and try again.",
       "success": "Thank you, you're subscribed.",
       "already": "You're already subscribed.",
-      "error": "Something went wrong, please try again."
+      "error": "Something went wrong, please try again.",
+      "rejected_email": "This email address was not accepted. Please check it and try again."
     }
   },
   "password": {
@@ -138,7 +139,7 @@
       "in_stock": "In stock",
       "add_to_cart": "Add to cart",
       "details": "View details",
-      "reassure_ship": "Free shipping from €150",
+      "reassure_ship": "Free shipping",
       "reassure_returns": "14-day returns",
       "reassure_pay": "Secure payment",
       "sticky_aria": "Buy the cap"
