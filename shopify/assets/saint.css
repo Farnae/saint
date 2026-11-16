@@ -885,3 +885,6 @@ footer .logo-link,.foot-brand .wordmark{color:var(--ink);}
 .signature-visual{aspect-ratio:2/1;}
 @media(max-width:960px){.signature-visual{aspect-ratio:4/3;}.signature-visual img{object-position:72% center;}}
 .p-tabs-nav{flex-wrap:nowrap;gap:22px;overflow-x:auto;scrollbar-width:none;}.p-tab-btn{white-space:nowrap;flex-shrink:0;}
+/* texte du jacquard : jamais plus large que l'écran */
+body .signature-head{padding-left:var(--gutter);padding-right:var(--gutter);}
+.signature-head h2,.signature-head .mat-intro{max-width:min(520px,100%);margin-left:auto;margin-right:auto;overflow-wrap:break-word;}
