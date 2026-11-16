@@ -42,7 +42,7 @@
     "title": "Soyez prévenu·e de la sortie.",
     "sub": "La première pièce de la maison arrive bientôt. Laissez votre email pour être informé·e en avant-première, le jour de la sortie.",
     "email_placeholder": "Votre adresse email",
-    "subscribe": "S'inscrire",
+    "subscribe": "Rejoindre la liste",
     "subscribed": "Merci, vous êtes bien inscrit·e. Vous serez prévenu·e dès la sortie.",
     "already_subscribed": "Vous êtes déjà inscrit·e. Vous serez prévenu·e dès la sortie.",
     "subscribe_error": "Une erreur est survenue, merci de réessayer.",
@@ -50,7 +50,12 @@
     "access_toggle": "Accès avec mot de passe",
     "placeholder": "Mot de passe",
     "submit": "Entrer",
-    "error": "Mot de passe incorrect. Réessayez."
+    "error": "Mot de passe incorrect. Réessayez.",
+    "first_name": "Prénom",
+    "email_label": "E-mail",
+    "phone_label": "Téléphone (facultatif)",
+    "sms_consent": "J'accepte de recevoir un SMS de SAINT ORIGINE pour le lancement et les accès anticipés. Désinscription à tout moment.",
+    "phone_invalid": "Numéro de téléphone non valide."
   },
   "index": {
     "hero": {

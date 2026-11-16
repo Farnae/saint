@@ -68,6 +68,27 @@
       var value = input.value.trim();
       var error = !value ? msgs.empty : (!EMAIL_RE.test(value) ? msgs.invalid : '');
       if (error) { setError(error); showToast(error, 'error'); input.focus(); return; }
+      // Optional phone: saved as customer tags (tel-33612345678, sms-ok) so it
+      // never blocks the signup the way an invalid phone field would.
+      var phone = form.querySelector('[data-phone]');
+      var tags = form.querySelector('input[name="contact[tags]"]');
+      if (tags) {
+        if (!tags.dataset.base) tags.dataset.base = tags.value;
+        var list = [tags.dataset.base];
+        if (phone && phone.value.trim()) {
+          var digits = phone.value.replace(/[^0-9+]/g, '');
+          if (/^0\d{9}$/.test(digits)) digits = '33' + digits.slice(1);
+          digits = digits.replace(/^\+/, '').replace(/^00/, '');
+          if (!/^\d{8,15}$/.test(digits)) {
+            var perr = msgs.phone || 'Numéro de téléphone non valide.';
+            setError(perr); showToast(perr, 'error'); phone.focus(); return;
+          }
+          list.push('tel-' + digits);
+          var sms = form.querySelector('[data-sms]');
+          if (sms && sms.checked) list.push('sms-ok');
+        }
+        tags.value = list.join(',');
+      }
       setError('');
       input.value = value;
       busy = true;
