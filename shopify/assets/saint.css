@@ -1,20 +1,22 @@
 :root{
-  --bg:#FFFFFF;
-  --surface:#F7F7F5;
-  --surface-2:#FAFAF9;
-  --ink:#111412;
-  --ink-dim:rgba(17,20,18,.58);
-  --stone:#5A6660;
+  --bg:#FAF8F4;
+  --surface:#F3EEE6;
+  --surface-2:#F6F2EB;
+  --ink:#151310;
+  --ink-dim:rgba(21,19,16,.6);
+  --stone:#6E675E;
   --green:#064829;
   --green-h:#0B5A34;
   --green-deep:#033018;
-  --green-light:rgba(35,48,42,.08);
-  --green-text:#F6F5F2;
-  --champagne:#B5982A;
-  --line:rgba(17,20,18,.08);
-  --line-m:rgba(17,20,18,.14);
+  --green-light:rgba(6,72,41,.07);
+  --green-text:#FAF8F4;
+  --champagne:#8A6A4A;
+  --brun:#6B4A33;
+  --beige:#D9C9AE;
+  --line:rgba(21,19,16,.08);
+  --line-m:rgba(21,19,16,.15);
   --danger:#9C3B2A;
-  --vitrine:#FFFFFF;
+  --vitrine:#F1ECE3;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:auto;}
@@ -758,7 +760,7 @@ footer .site-logo{width:112px;}
 .maison img{display:block;width:100%;height:auto;object-fit:cover;}
 .maison figcaption{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#9A938A;margin-top:16px;}
 .ms-wide{max-width:1100px;margin:120px auto 0;padding:0 28px;}
-.ms-wide img{aspect-ratio:16/8;}
+.ms-wide img{aspect-ratio:16/9;object-position:center 40%;}
 .ms-mid{max-width:720px;margin:100px auto 0;padding:0 28px;}
 .ms-mid img{aspect-ratio:4/3;}
 .ms-principles{list-style:none;margin:0;padding:0;display:grid;gap:64px;}
@@ -768,7 +770,7 @@ footer .site-logo{width:112px;}
 .ms-principles h3{font-family:'EB Garamond',serif;font-weight:400;font-size:26px;margin:0 0 10px;color:#111;}
 .ms-principles p{font-family:'DM Sans',sans-serif;font-weight:300;font-size:15px;line-height:1.85;color:#6B655C;margin:0;}
 .ms-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:880px;margin:100px auto 0;padding:0 28px;}
-.ms-pair img{aspect-ratio:1/1;}
+.ms-pair img{aspect-ratio:3/4;}
 .ms-specs{margin:0;text-align:left;}
 .ms-specs div{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(17,17,17,.1);}
 .ms-specs div:last-child{border-bottom:1px solid rgba(17,17,17,.1);}
@@ -800,3 +802,68 @@ footer .site-logo{width:112px;}
   .ms-palette{gap:12px;}
   .ms-palette span{width:56px;height:56px;}
 }
+
+/* ============ ÉPURÉ — écru, beige, brun, noir. Le vert SAINT : boutons uniquement ============ */
+#curtain{background:var(--bg);}
+#curtain .site-logo{width:clamp(200px,36vw,440px);height:auto;color:var(--ink);opacity:0;animation:cwFade 1.2s ease forwards .3s;}
+#curtain .cline{height:1px;background:var(--brun);}
+header.sc{background:rgba(250,248,244,.9);}
+.scroll-progress{background:var(--brun);width:1px;}
+/* menu mobile : clair */
+.mobile-nav{background:var(--bg);}
+.mnav-main a{color:rgba(21,19,16,.45);}
+.mnav-main a:hover,.mnav-main a.current{color:var(--ink);}
+.mnav-main a.current::before{background:var(--green);}
+.mnav-product{border:1px solid var(--line-m);background:var(--surface);color:var(--ink);}
+.mnav-product-kicker{color:var(--stone);}
+.mnav-meta{border-top:1px solid var(--line);}
+.mnav-meta a{color:var(--stone);}
+.lang-switch-mobile .lang-btn{color:var(--stone);}
+.lang-switch-mobile .lang-btn.active{color:var(--ink);}
+html.nav-open header .logo-link,html.nav-open .cart-trigger-mobile{color:var(--ink);}
+html.nav-open .burger span{background:var(--ink);}
+/* manifeste : plus de bloc vert */
+.manifesto{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.manifesto-line h3{font-family:'EB Garamond',serif;font-size:clamp(26px,3.4vw,40px);color:var(--ink);}
+/* pied de page beige, sobre */
+footer{background:var(--surface);border-top:1px solid var(--line);}
+footer .logo-link,.foot-brand .wordmark{color:var(--ink);}
+.foot-brand p,.foot-col ul li a,.foot-legal a,footer .ig-link{color:var(--stone);}
+.foot-col h5{color:rgba(21,19,16,.45);}
+.foot-col ul li a:hover,.foot-legal a:hover,footer .ig-link:hover{color:var(--ink);}
+.foot-bottom{color:rgba(21,19,16,.42);border-top:1px solid var(--line);}
+/* titres : serif fin, sans vert */
+.hero h1,.feature-copy h2,.story h2,.signature-head h2,.uroko-copy h2,.cta h2,.subhead h1,.p-name{font-family:'EB Garamond',serif;font-weight:400;letter-spacing:0;}
+.hero h1 em,.cta h2 em{color:var(--brun);font-style:italic;}
+.slabel,.hero-kicker,.eyebrow{color:var(--stone);letter-spacing:.28em;}
+.uroko-motif svg path{stroke:var(--brun);}
+.buy-dot{background:var(--green);box-shadow:0 0 0 3px var(--green-light);}
+/* boutons : le vert, net et fin */
+.btn-primary,.btn-add-cart,.btn-buy-bar,.buy-sticky-btn,.main--system button,.main--system input[type=submit],.main--system .btn{background:var(--green);color:var(--green-text);letter-spacing:.2em;border-radius:0;}
+.btn-buy-bar{padding:20px 26px;}
+.btn-ghost{color:var(--ink);border-bottom:1px solid var(--line-m);}
+.btn-ghost:hover{color:var(--green);border-color:var(--green);}
+.bag:hover,.add:hover{background:var(--green);border-color:var(--green);color:var(--green-text);}
+.cta-form button{color:var(--green);letter-spacing:.2em;}
+.cta-success{color:var(--ink);}
+.p-tab-btn.active{color:var(--ink);}
+.saint-toast{background:var(--ink);box-shadow:0 12px 32px rgba(21,19,16,.16);}
+.saint-toast.is-success{background:var(--green);}
+/* page d'attente / maison */
+.ms-btn{border-color:var(--green);color:var(--green);}
+.ms-btn:hover{background:var(--green);color:var(--green-text);}
+.pw-submit{background:var(--green);color:var(--green-text);}
+.pw-submit:hover{background:var(--green-h);}
+.ms-kicker,.ms-principles span{color:var(--stone);}
+/* galerie produit : fond beige des photos studio */
+.produit-photo,.feature-shot,.card-visual,.lookbook-slide{background:var(--vitrine);}
+.produit-photo img,.feature-shot img{display:block;width:100%;height:auto;}
+.feature-shot{aspect-ratio:3/4;}
+.feature-shot img{height:100%;object-fit:cover;}
+.card-visual img{width:100%;height:100%;object-fit:cover;}
+.uroko-sect::before{display:none;}
+.card-visual img{padding:0;}
+.coll-head h2{font-family:'EB Garamond',serif;}
+@media(max-width:960px){.produit-photo{aspect-ratio:3/4;}.produit-photo img{height:100%;object-fit:cover;}}
+@media(max-width:960px){.produit-visual{align-items:flex-start;}}
+@media(max-width:960px){.produit-layout{gap:0;}.produit-info{padding-top:36px;}}

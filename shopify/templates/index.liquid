@@ -6,8 +6,8 @@
 {% assign product = collections.all.products.first %}
 {% assign buy_variant = product.selected_or_first_available_variant %}
 {% assign product_link = product.url | default: routes.all_products_collection_url | default: '/collections/all' %}
-{% assign cap_images = "saint-look-01.webp,saint-look-02.webp,saint-look-03.webp,saint-look-04.webp" | split: "," %}
-{% assign product_shots = "saint-cap-front.webp,saint-cap-side.webp,saint-cap-texture.webp,saint-cap-interior.webp" | split: "," %}
+{% assign cap_images = "saint-look-story-1.webp,saint-look-noir.webp,saint-look-story-2.webp,saint-look-mains.webp,saint-look-story-3.webp,saint-look-profil.webp" | split: "," %}
+{% assign product_shots = "saint-p-profil.webp,saint-p-dessus.webp,saint-p-dos.webp,saint-p-interieur.webp" | split: "," %}
 
 <section class="home-banner" aria-label="SAINT Origine">
   <img class="home-banner-img" src="{{ 'saint-banner-duo.webp' | asset_url }}" alt="{{ 'index.editorial.alt' | t }}" width="2560" height="1441" fetchpriority="high">
@@ -54,7 +54,7 @@
 <section class="feature feature--grid wrap reveal">
   <div class="feature-grid">
     {%- for image in product_shots -%}
-      <figure class="feature-shot"><img src="{{ image | asset_url }}" alt="{{ 'index.feature.shot_alt' | t }} {{ forloop.index }}" width="1254" height="1254" loading="lazy"></figure>
+      <figure class="feature-shot"><img src="{{ image | asset_url }}" alt="{{ 'index.feature.shot_alt' | t }} {{ forloop.index }}" width="1086" height="1448" loading="lazy"></figure>
     {%- endfor -%}
   </div>
   <div class="feature-copy">
@@ -102,7 +102,7 @@
   </div>
 </section>
 
-<section class="uroko-sect" style="--uroko-texture:url('{{ 'uroko-detail.png' | asset_url }}');">
+<section class="uroko-sect">
   <div class="wrap uroko-grid">
     <div class="uroko-motif reveal">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

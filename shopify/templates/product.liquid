@@ -2,9 +2,18 @@
   <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" class="back-link">&larr; {{ 'product.back_to_collection' | t }}</a>
   <div class="produit-layout">
     <div class="produit-visual">
-      {% for image in product.images %}
-        <div class="produit-photo"><img src="{{ image | image_url: width: 1400, format: 'webp' }}" alt="{{ product.title | escape }} &ndash; vue {{ forloop.index }}" loading="lazy"></div>
-      {% endfor %}
+      {%- comment -%} Casquette Éventail : photos réelles du thème (studio + portées). Autres produits : photos Shopify. {%- endcomment -%}
+      {%- if product.handle == 'casquette-saint-eventail' -%}
+        {%- assign gallery = "saint-p-profil.webp|Profil,saint-p-dessus.webp|Vue de dessus,saint-p-dos.webp|Dos et sangle en cuir,saint-p-interieur.webp|Intérieur doublé,saint-p-detail.webp|Détail du jacquard,saint-look-noir.webp|Portée,saint-look-matiere.webp|Le jacquard en lumière naturelle" | split: "," -%}
+        {%- for g in gallery -%}
+          {%- assign gp = g | split: "|" -%}
+          <div class="produit-photo"><img src="{{ gp[0] | asset_url }}" alt="{{ product.title | escape }} &ndash; {{ gp[1] }}" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}></div>
+        {%- endfor -%}
+      {%- else -%}
+        {% for image in product.images %}
+          <div class="produit-photo"><img src="{{ image | image_url: width: 1400, format: 'webp' }}" alt="{{ product.title | escape }} &ndash; vue {{ forloop.index }}" loading="lazy"></div>
+        {% endfor %}
+      {%- endif -%}
     </div>
     <div class="produit-info">
       <div class="p-head">

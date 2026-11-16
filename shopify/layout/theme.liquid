@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#064829">
+<meta name="theme-color" content="#FAF8F4">
 <link rel="icon" type="image/svg+xml" href="{{ 'favicon.svg' | asset_url }}">
 <title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
 {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
@@ -21,7 +21,7 @@
 
 <div class="scroll-progress" aria-hidden="true"></div>
 {% if template.name == 'index' %}
-<div id="curtain"><img class="cw-logo" src="{{ 'saint-logo.svg' | asset_url }}" alt="SAINT Origine" width="3293" height="925"><div class="cline"></div></div>
+<div id="curtain">{% render 'saint-logo' %}<div class="cline"></div></div>
 {% endif %}
 
 <header id="hdr">
@@ -70,7 +70,7 @@
   </ul></nav>
   {%- if nav_product -%}
     <a class="mnav-product" href="{{ nav_product.url }}">
-      {%- if nav_product.featured_image -%}<img src="{{ nav_product.featured_image | image_url: width: 240 }}" alt="" width="120" height="120" loading="lazy">{%- endif -%}
+      {%- if nav_product.handle == 'casquette-saint-eventail' -%}<img src="{{ 'saint-p-profil.webp' | asset_url }}" alt="" width="120" height="120" loading="lazy">{%- elsif nav_product.featured_image -%}<img src="{{ nav_product.featured_image | image_url: width: 240 }}" alt="" width="120" height="120" loading="lazy">{%- endif -%}
       <span class="mnav-product-txt">
         <span class="mnav-product-kicker">{{ 'general.mobile_nav.shop_title' | t }}</span>
         <span class="mnav-product-name">{{ nav_product.title }}</span>

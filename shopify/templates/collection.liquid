@@ -11,7 +11,7 @@
     {% for product in collection.products %}
       <a class="card" href="{{ product.url }}">
         <div class="card-visual">
-          <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">
+          {%- if product.handle == 'casquette-saint-eventail' -%}<img src="{{ 'saint-p-profil.webp' | asset_url }}" alt="{{ product.title | escape }}" loading="lazy">{%- else -%}<img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" loading="lazy">{%- endif -%}
         </div>
         <h3>{{ product.title }}</h3>
         <p class="card-sub">{{ product.type }}</p>
