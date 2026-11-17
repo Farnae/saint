@@ -58,7 +58,6 @@
     var msgs = JSON.parse(wrap.getAttribute('data-newsletter'));
     var field = wrap.querySelector('[data-newsletter-field]');
     var hint = wrap.querySelector('[data-newsletter-hint]');
-    var busy = false;
     form.noValidate = true;
 
     function setError(message){
@@ -69,12 +68,20 @@
 
     input.addEventListener('input', function(){ if (field && field.classList.contains('has-error')) setError(''); });
 
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      if (busy) return;
+    // Contrôle AVANT tout autre script (phase de capture sur document) :
+    // la protection anti-robots de Shopify (captcha) écoute aussi l'envoi du
+    // formulaire ; si nos vérifications passent après elle, elle envoie quand
+    // même. Ici : données invalides -> on bloque tout ; données valides -> on
+    // laisse l'envoi normal se faire, Shopify ajoute son jeton captcha.
+    document.addEventListener('submit', function(e){
+      if (e.target !== form) return;
+      function block(message, el){
+        e.preventDefault(); e.stopImmediatePropagation(); e.stopPropagation();
+        setError(message); showToast(message, 'error'); el.focus();
+      }
       var value = input.value.trim();
       var error = !value ? msgs.empty : (!EMAIL_RE.test(value) ? msgs.invalid : '');
-      if (error) { setError(error); showToast(error, 'error'); input.focus(); return; }
+      if (error) return block(error, input);
       // Optional phone: saved as customer tags (tel-33612345678, sms-ok) so it
       // never blocks the signup the way an invalid phone field would.
       var phone = form.querySelector('[data-phone]');
@@ -86,10 +93,7 @@
           var digits = phone.value.replace(/[^0-9+]/g, '');
           if (/^0\d{9}$/.test(digits)) digits = '33' + digits.slice(1);
           digits = digits.replace(/^\+/, '').replace(/^00/, '');
-          if (!/^\d{8,15}$/.test(digits)) {
-            var perr = msgs.phone || 'Numéro de téléphone non valide.';
-            setError(perr); showToast(perr, 'error'); phone.focus(); return;
-          }
+          if (!/^\d{8,15}$/.test(digits)) return block(msgs.phone || 'Numéro de téléphone non valide.', phone);
           list.push('tel-' + digits);
           var sms = form.querySelector('[data-sms]');
           if (sms && sms.checked) list.push('sms-ok');
@@ -98,14 +102,8 @@
       }
       setError('');
       input.value = value;
-      busy = true;
       wrap.classList.add('is-loading');
-
-      // Envoi classique (rechargement de page) : Shopify suit sa propre redirection
-      // et affiche lui-même le bon message (inscrit / déjà inscrit / erreur).
-      // L'envoi en arrière-plan (fetch) pouvait renvoyer le formulaire deux fois
-      // et afficher « déjà inscrit » à une personne qui venait de s'inscrire.
-      HTMLFormElement.prototype.submit.call(form);
-    });
+      // pas de preventDefault : envoi normal (+ captcha Shopify si demandé)
+    }, true);
   });
 })();
