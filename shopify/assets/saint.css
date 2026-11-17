@@ -889,3 +889,8 @@ footer .logo-link,.foot-brand .wordmark{color:var(--ink);}
 body .signature-head{padding-left:var(--gutter);padding-right:var(--gutter);}
 .signature-head h2,.signature-head .mat-intro{max-width:min(520px,100%);margin-left:auto;margin-right:auto;overflow-wrap:break-word;}
 @media(max-width:700px){.ms-wide img{object-position:72% center;}}
+/* La Maison : cadrages */
+.maison .ms-wide img{aspect-ratio:auto;height:auto;}
+.maison .ms-mid{max-width:560px;}
+.maison .ms-mid img{aspect-ratio:4/5;object-position:center 30%;}
+@media(max-width:700px){.maison .ms-wide img{aspect-ratio:4/3;height:auto;object-fit:cover;object-position:72% center;}.maison .ms-mid{max-width:none;}}

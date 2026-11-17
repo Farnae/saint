@@ -39,7 +39,17 @@
 
   // Retour après inscription : on ramène la personne au message du formulaire.
   var state = document.querySelector('[data-newsletter-state]');
-  if (state) state.closest('[data-newsletter]').scrollIntoView({ block: 'center' });
+  var stateWrap = state && state.closest('[data-newsletter]');
+  if (stateWrap) stateWrap.scrollIntoView({ block: 'center' });
+
+  // Mot de passe incorrect : Shopify recharge la page ; on revient sur le champ.
+  var pwError = document.querySelector('.pw-error');
+  if (pwError) {
+    var pwBox = pwError.closest('details'); if (pwBox) pwBox.open = true;
+    pwError.scrollIntoView({ block: 'center' });
+    var pwInput = document.getElementById('Password'); if (pwInput) pwInput.focus({ preventScroll: true });
+    showToast(pwError.textContent.trim(), 'error');
+  }
 
   document.querySelectorAll('[data-newsletter]').forEach(function(wrap){
     var form = wrap.querySelector('form');
